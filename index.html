@@ -23,13 +23,10 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; overflow-x:hidden; }
   h1,h2,h3,h4 { font-family:'Syne',sans-serif; }
-
-  /* SCROLLBAR */
   ::-webkit-scrollbar { width:6px; }
   ::-webkit-scrollbar-track { background:var(--bg); }
   ::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
 
-  /* LAYOUT */
   .app { display:flex; min-height:100vh; }
   .sidebar { width:240px; background:var(--surface); border-right:1px solid var(--border); display:flex; flex-direction:column; padding:24px 0; position:fixed; height:100vh; overflow-y:auto; z-index:100; }
   .sidebar-logo { padding:0 20px 28px; border-bottom:1px solid var(--border); margin-bottom:16px; }
@@ -45,7 +42,6 @@
   .page { display:none; }
   .page.active { display:block; }
 
-  /* CARDS */
   .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:24px; }
   .card-sm { padding:16px; border-radius:12px; }
   .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -54,14 +50,12 @@
   .flex { display:flex; align-items:center; gap:12px; }
   .flex-col { display:flex; flex-direction:column; gap:8px; }
 
-  /* TYPOGRAPHY */
   .page-title { font-size:28px; font-weight:800; margin-bottom:4px; }
   .page-sub { color:var(--muted); font-size:14px; margin-bottom:28px; }
   .section-title { font-size:16px; font-weight:700; margin-bottom:16px; }
   .label { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); font-weight:600; margin-bottom:4px; }
   .value { font-size:24px; font-weight:700; font-family:'Syne',sans-serif; }
 
-  /* BUTTONS */
   .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:10px; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:500; transition:all .2s; }
   .btn-primary { background:var(--accent); color:#fff; }
   .btn-primary:hover { background:#3a78f0; transform:translateY(-1px); }
@@ -74,13 +68,11 @@
   .btn-sm { padding:6px 14px; font-size:13px; border-radius:8px; }
   .btn-danger { background:#2d1414; border:1px solid #f87171; color:var(--red); }
 
-  /* INPUTS */
   textarea, input, select { background:var(--surface2); border:1px solid var(--border); color:var(--text); border-radius:10px; padding:12px 16px; font-family:'DM Sans',sans-serif; font-size:14px; outline:none; transition:border .2s; width:100%; }
   textarea:focus, input:focus, select:focus { border-color:var(--accent); }
   textarea { resize:vertical; min-height:120px; }
   select option { background:var(--surface2); }
 
-  /* BADGES */
   .badge { display:inline-flex; align-items:center; gap:5px; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
   .badge-blue { background:rgba(79,140,255,.15); color:var(--accent); }
   .badge-green { background:rgba(34,211,165,.15); color:var(--green); }
@@ -88,11 +80,9 @@
   .badge-red { background:rgba(248,113,113,.15); color:var(--red); }
   .badge-purple { background:rgba(168,85,247,.15); color:var(--accent2); }
 
-  /* PROGRESS BAR */
   .progress-bar { height:6px; background:var(--border); border-radius:3px; overflow:hidden; }
   .progress-fill { height:100%; border-radius:3px; transition:width .5s ease; }
 
-  /* TIMER PAGE */
   .timer-display { font-size:44px; font-family:'Syne',sans-serif; font-weight:800; text-align:center; letter-spacing:-1px; line-height:1; }
   .timer-label { text-align:center; color:var(--muted); font-size:13px; margin-top:6px; }
   .timer-controls { display:flex; justify-content:center; gap:12px; margin-top:24px; }
@@ -103,7 +93,6 @@
   .mode-tab { flex:1; padding:8px; text-align:center; border-radius:8px; cursor:pointer; font-size:13px; font-weight:500; color:var(--muted); transition:all .2s; }
   .mode-tab.active { background:var(--accent); color:#fff; }
 
-  /* AI PANEL */
   .ai-bubble { background:linear-gradient(135deg,rgba(79,140,255,.1),rgba(168,85,247,.1)); border:1px solid rgba(79,140,255,.2); border-radius:16px; padding:20px; }
   .ai-bubble .ai-icon { font-size:28px; margin-bottom:8px; }
   .topic-item { background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:14px 18px; margin-bottom:8px; cursor:pointer; transition:all .2s; }
@@ -114,7 +103,6 @@
   .subtopic-item { padding:6px 12px; color:var(--muted); font-size:13px; border-left:2px solid var(--border); margin-bottom:4px; cursor:pointer; transition:all .2s; border-radius:0 8px 8px 0; }
   .subtopic-item:hover { color:var(--text); border-left-color:var(--accent); background:rgba(79,140,255,.07); }
 
-  /* DIFFICULTY QUIZ */
   .quiz-option { background:var(--surface2); border:2px solid var(--border); border-radius:12px; padding:14px 20px; cursor:pointer; transition:all .2s; margin-bottom:8px; font-size:14px; }
   .quiz-option:hover { border-color:var(--accent); }
   .quiz-option.selected-easy { border-color:var(--green); background:rgba(34,211,165,.08); }
@@ -122,7 +110,6 @@
   .quiz-progress-bar { height:4px; background:var(--border); border-radius:2px; margin-bottom:24px; overflow:hidden; }
   .quiz-progress-fill { height:100%; background:linear-gradient(90deg,var(--accent),var(--accent2)); border-radius:2px; transition:width .4s; }
 
-  /* STUDY SLIDE BUTTONS */
   .study-btn-group { display:flex; flex-direction:column; gap:10px; }
   .slide-btn { display:flex; align-items:center; gap:0; border-radius:14px; overflow:hidden; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; width:100%; height:52px; position:relative; transition:all .25s; }
   .slide-btn-track { position:absolute; inset:0; border-radius:14px; transition:all .3s; }
@@ -130,7 +117,6 @@
   .slide-btn-content { position:absolute; left:58px; right:16px; display:flex; align-items:center; justify-content:space-between; z-index:2; pointer-events:none; }
   .slide-btn-label { font-size:13px; font-weight:600; letter-spacing:.3px; transition:all .3s; }
   .slide-btn-status { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; opacity:.7; transition:all .3s; }
-  /* OFF state */
   .slide-btn-watched .slide-btn-track { background:rgba(34,211,165,.08); border:1.5px solid rgba(34,211,165,.2); }
   .slide-btn-watched .slide-btn-thumb { background:rgba(34,211,165,.15); color:var(--green); }
   .slide-btn-watched .slide-btn-label { color:var(--green); }
@@ -147,7 +133,6 @@
   .slide-btn-notes .slide-btn-thumb { background:rgba(168,85,247,.15); color:var(--accent2); }
   .slide-btn-notes .slide-btn-label { color:var(--accent2); }
   .slide-btn-notes .slide-btn-status { color:var(--muted); }
-  /* ON state */
   .slide-btn-watched.on .slide-btn-track { background:rgba(34,211,165,.18); border-color:var(--green); box-shadow:0 0 16px rgba(34,211,165,.2); }
   .slide-btn-watched.on .slide-btn-thumb { left:calc(100% - 48px); background:var(--green); color:#0a1a14; }
   .slide-btn-watched.on .slide-btn-status { color:var(--green); opacity:1; }
@@ -157,11 +142,7 @@
   .slide-btn-review.on .slide-btn-track { background:rgba(251,191,36,.18); border-color:var(--yellow); box-shadow:0 0 16px rgba(251,191,36,.2); }
   .slide-btn-review.on .slide-btn-thumb { left:calc(100% - 48px); background:var(--yellow); color:#1a1200; }
   .slide-btn-review.on .slide-btn-status { color:var(--yellow); opacity:1; }
-  /* Deprecated old classes kept for compatibility */
-  .study-action-btn { display:none; }
-  .btn-watched,.btn-exercise,.btn-review,.btn-notes { }
 
-  /* YOUTUBE PANEL */
   .yt-card { background:var(--surface2); border:1px solid var(--border); border-radius:12px; overflow:hidden; cursor:pointer; transition:all .2s; }
   .yt-card:hover { border-color:var(--accent); transform:translateY(-2px); }
   .yt-thumb { width:100%; height:120px; object-fit:cover; background:var(--border); display:flex; align-items:center; justify-content:center; font-size:36px; }
@@ -169,7 +150,6 @@
   .yt-title { font-size:13px; font-weight:500; line-height:1.4; margin-bottom:4px; }
   .yt-channel { font-size:11px; color:var(--muted); }
 
-  /* POPUP */
   .popup-overlay { position:fixed; inset:0; background:rgba(0,0,0,.7); backdrop-filter:blur(4px); z-index:999; display:none; align-items:center; justify-content:center; }
   .popup-overlay.open { display:flex; }
   .popup-box { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:32px; max-width:440px; width:90%; text-align:center; animation:popIn .3s cubic-bezier(.34,1.56,.64,1); }
@@ -178,14 +158,12 @@
   .popup-title { font-size:20px; font-weight:700; margin-bottom:8px; }
   .popup-text { color:var(--muted); font-size:14px; line-height:1.6; margin-bottom:24px; }
 
-  /* STAT CARDS */
   .stat-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; }
   .stat-icon { font-size:28px; margin-bottom:12px; }
   .stat-value { font-size:32px; font-weight:800; font-family:'Syne',sans-serif; }
   .stat-label { font-size:12px; color:var(--muted); margin-top:4px; }
   .stat-change { font-size:12px; color:var(--green); margin-top:8px; }
 
-  /* HEAT MAP */
   .heatmap { display:grid; grid-template-columns:repeat(52,1fr); gap:3px; }
   .heat-cell { width:100%; aspect-ratio:1; border-radius:2px; background:var(--border); transition:all .2s; cursor:default; }
   .heat-1 { background:rgba(79,140,255,.25); }
@@ -193,45 +171,34 @@
   .heat-3 { background:rgba(79,140,255,.75); }
   .heat-4 { background:var(--accent); }
 
-  /* SCHEDULE */
   .schedule-day { background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:16px; }
   .schedule-day-title { font-size:13px; font-weight:700; color:var(--accent); margin-bottom:12px; }
   .schedule-item { background:var(--card); border-radius:8px; padding:10px 12px; margin-bottom:6px; border-left:3px solid var(--accent); }
   .schedule-item-title { font-size:13px; font-weight:500; }
   .schedule-item-time { font-size:11px; color:var(--muted); margin-top:2px; }
 
-  /* LOADING */
   .loading { display:flex; align-items:center; gap:8px; color:var(--muted); font-size:14px; }
   .spinner { width:18px; height:18px; border:2px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin .7s linear infinite; }
   @keyframes spin { to { transform:rotate(360deg); } }
 
-  /* NOTIFICATION */
   .notif { position:fixed; top:24px; right:24px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 18px; font-size:13px; z-index:9999; animation:slideIn .3s ease; max-width:320px; }
   @keyframes slideIn { from { transform:translateX(120%); } to { transform:translateX(0); } }
 
-  /* MOBILE */
   @media(max-width:768px) {
     .sidebar { width:200px; }
     .main { margin-left:200px; padding:20px; }
     .grid3 { grid-template-columns:1fr 1fr; }
     .grid4 { grid-template-columns:1fr 1fr; }
-    .timer-display { font-size:250%; position: relative; }
   }
 
-  /* GLOW EFFECTS */
   .glow-blue { box-shadow:0 0 20px rgba(79,140,255,.15); }
   .glow-green { box-shadow:0 0 20px rgba(34,211,165,.15); }
-
-  /* TAG */
   .tag { display:inline-block; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:2px 8px; font-size:11px; color:var(--muted); margin:2px; }
-
-  /* DIFFICULTY DOT */
   .diff-dot { width:10px; height:10px; border-radius:50%; display:inline-block; margin-right:6px; }
   .diff-easy { background:var(--green); }
   .diff-medium { background:var(--yellow); }
   .diff-hard { background:var(--red); }
 
-  /* TOGGLE */
   .toggle-wrap { display:flex; align-items:center; gap:10px; }
   .toggle { width:40px; height:22px; background:var(--border); border-radius:11px; cursor:pointer; position:relative; transition:background .2s; }
   .toggle.on { background:var(--accent); }
@@ -255,21 +222,279 @@
   .font-bold { font-weight:700; }
   .font-sm { font-size:13px; }
   .between { justify-content:space-between; }
+
+  /* ===== MULTI-CONTEST / PROFILES ===== */
+  .contest-switcher {
+    padding: 12px 14px;
+    margin: 0 10px 8px;
+    background: rgba(79,140,255,.07);
+    border: 1px solid rgba(79,140,255,.18);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all .2s;
+    position: relative;
+  }
+  .contest-switcher:hover { background: rgba(79,140,255,.13); border-color: rgba(79,140,255,.35); }
+  .contest-switcher-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:var(--muted); font-weight:600; margin-bottom:5px; }
+  .contest-switcher-name { font-size:13px; font-weight:700; color:var(--text); display:flex; align-items:center; justify-content:space-between; gap:6px; }
+  .contest-switcher-emoji { font-size:16px; }
+  .contest-switcher-arrow { color:var(--muted); font-size:11px; transition:transform .2s; }
+  .contest-switcher.open .contest-switcher-arrow { transform:rotate(180deg); }
+
+  .contest-dropdown {
+    position:fixed; z-index:9000;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 8px;
+    min-width: 220px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,.5);
+    display: none;
+  }
+  .contest-dropdown.open { display:block; animation: fadeIn .15s ease; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+
+  .contest-option {
+    display: flex; align-items: center; gap:10px;
+    padding: 10px 12px; border-radius: 9px;
+    cursor: pointer; transition: background .15s;
+    border: 1px solid transparent;
+    margin-bottom: 3px;
+  }
+  .contest-option:hover { background: rgba(79,140,255,.09); border-color: rgba(79,140,255,.2); }
+  .contest-option.active { background: rgba(79,140,255,.14); border-color: rgba(79,140,255,.35); }
+  .contest-option-emoji { font-size:18px; flex-shrink:0; }
+  .contest-option-info { flex:1; min-width:0; }
+  .contest-option-name { font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .contest-option-meta { font-size:11px; color:var(--muted); margin-top:2px; }
+  .contest-option-check { color:var(--accent); font-size:14px; flex-shrink:0; }
+  .contest-option-badge { display:inline-block; padding:1px 7px; border-radius:10px; font-size:10px; font-weight:700; }
+
+  .contest-dropdown-header { padding:6px 12px 10px; border-bottom:1px solid var(--border); margin-bottom:6px; }
+  .contest-dropdown-title { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); font-weight:600; }
+  .contest-add-btn { display:flex; align-items:center; gap:8px; padding:10px 12px; border-radius:9px; cursor:pointer; color:var(--accent); font-size:13px; font-weight:600; border:1px dashed rgba(79,140,255,.3); margin-top:6px; transition:background .15s; }
+  .contest-add-btn:hover { background:rgba(79,140,255,.09); }
+
+  /* contest color dot */
+  .cdot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+
+  /* Sidebar active contest strip */
+  .sidebar-contest-strip {
+    margin: 0 10px 4px;
+    padding: 6px 12px;
+    background: transparent;
+    border-radius: 8px;
+    display: flex; align-items:center; gap:6px;
+  }
+
+  /* Contest manager page */
+  .contest-card {
+    background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px;
+    transition: border-color .2s;
+    position:relative; overflow:hidden;
+  }
+  .contest-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background: var(--ccolor, var(--accent));
+  }
+  .contest-card:hover { border-color: var(--ccolor, var(--accent)); }
+  .contest-card.current { border-color: var(--ccolor, var(--accent)); box-shadow: 0 0 20px rgba(79,140,255,.1); }
+  .contest-card-emoji { font-size:32px; margin-bottom:10px; }
+  .contest-card-name { font-size:17px; font-weight:700; margin-bottom:4px; }
+  .contest-card-date { font-size:12px; color:var(--muted); margin-bottom:12px; }
+  .contest-card-stats { display:flex; gap:16px; margin-bottom:14px; }
+  .contest-stat { text-align:center; }
+  .contest-stat-val { font-size:20px; font-weight:800; font-family:'Syne',sans-serif; }
+  .contest-stat-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.8px; }
+
+  /* Countdown badge */
+  .countdown-badge { display:inline-flex; align-items:center; gap:5px; padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; }
+  .countdown-urgent { background:rgba(248,113,113,.15); color:var(--red); }
+  .countdown-warning { background:rgba(251,191,36,.15); color:var(--yellow); }
+  .countdown-ok { background:rgba(34,211,165,.15); color:var(--green); }
+
+  /* Edit contest popup */
+  .color-picker { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
+  .color-swatch { width:28px; height:28px; border-radius:50%; cursor:pointer; border:2px solid transparent; transition:all .15s; }
+  .color-swatch:hover, .color-swatch.selected { border-color:#fff; transform:scale(1.15); }
+
+  /* ===== INFINITE SUBTOPIC TREE ===== */
+  .tree-node {
+    position: relative;
+  }
+  .tree-node + .tree-node { margin-top: 4px; }
+
+  .tree-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 9px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    transition: border-color .18s, background .18s;
+    min-height: 38px;
+  }
+  .tree-row:hover { border-color: rgba(79,140,255,.4); background: rgba(79,140,255,.04); }
+
+  .tree-toggle {
+    width: 20px; height: 20px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 10px;
+    color: var(--muted);
+    flex-shrink: 0;
+    transition: background .15s, transform .2s;
+    user-select: none;
+  }
+  .tree-toggle:hover { background: rgba(79,140,255,.15); color: var(--accent); }
+  .tree-toggle.open { transform: rotate(90deg); color: var(--accent); }
+  .tree-toggle.leaf { cursor: default; opacity: 0; pointer-events: none; }
+
+  .tree-checkbox {
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    border: 1.5px solid var(--border);
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    transition: all .15s;
+  }
+  .tree-checkbox:hover { border-color: var(--green); }
+  .tree-checkbox.checked { background: var(--green); border-color: var(--green); color: #0a1a14; }
+  .tree-checkbox.exercise { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .tree-name {
+    flex: 1;
+    font-size: 13px;
+    cursor: pointer;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+  .tree-name:hover { color: var(--accent); }
+
+  .tree-depth-indicator {
+    width: 3px;
+    border-radius: 2px;
+    flex-shrink: 0;
+    align-self: stretch;
+    min-height: 16px;
+  }
+
+  .tree-actions {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  .tree-row:hover .tree-actions { opacity: 1; }
+
+  .tree-action-btn {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    transition: background .15s, color .15s;
+  }
+  .tree-action-btn:hover { background: rgba(79,140,255,.15); color: var(--accent); }
+  .tree-action-btn.danger:hover { background: rgba(248,113,113,.15); color: var(--red); }
+
+  .tree-children {
+    display: none;
+    margin-top: 4px;
+    margin-left: 16px;
+    padding-left: 12px;
+    border-left: 1.5px dashed rgba(79,140,255,.2);
+  }
+  .tree-children.open { display: block; }
+
+  .tree-add-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px dashed rgba(79,140,255,.2);
+    background: rgba(79,140,255,.03);
+    transition: border-color .15s;
+  }
+  .tree-add-row:focus-within { border-color: var(--accent); }
+  .tree-add-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text);
+    font-size: 12px;
+    padding: 0;
+    outline: none;
+    min-width: 0;
+  }
+  .tree-add-input::placeholder { color: var(--muted); }
+  .tree-add-btn {
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background .15s;
+  }
+  .tree-add-btn:hover { background: rgba(79,140,255,.15); }
+
+  /* depth colors */
+  .depth-0 { background: var(--accent); }
+  .depth-1 { background: var(--accent2); }
+  .depth-2 { background: var(--green); }
+  .depth-3 { background: var(--yellow); }
+  .depth-4 { background: #f87171; }
+
+  .depth-row-0 { background: var(--surface2); }
+  .depth-row-1 { background: rgba(168,85,247,.05); }
+  .depth-row-2 { background: rgba(34,211,165,.05); }
+  .depth-row-3 { background: rgba(251,191,36,.05); }
+  .depth-row-4 { background: rgba(248,113,113,.05); }
+
+  .tree-badge-exercise { display:inline-flex; align-items:center; padding:1px 6px; border-radius:10px; font-size:10px; font-weight:600; background:rgba(79,140,255,.15); color:var(--accent); margin-left:4px; }
 </style>
 </head>
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar">
   <div class="sidebar-logo">
     <h1>EstudoPro</h1>
     <span>Painel Inteligente</span>
   </div>
+
+  <!-- CONTEST SWITCHER -->
+  <div class="contest-switcher" id="contest-switcher" onclick="toggleContestDropdown()">
+    <div class="contest-switcher-label">Concurso Ativo</div>
+    <div class="contest-switcher-name">
+      <span id="switcher-emoji" class="contest-switcher-emoji">🏛️</span>
+      <span id="switcher-name" style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Nenhum selecionado</span>
+      <span class="contest-switcher-arrow">▾</span>
+    </div>
+  </div>
+
   <div class="nav-section">Principal</div>
   <div class="nav-item active" onclick="showPage('dashboard')"><span class="nav-icon">🏠</span> Dashboard</div>
   <div class="nav-item" onclick="showPage('timer')"><span class="nav-icon">⏱️</span> Temporizador</div>
   <div class="nav-item" onclick="showPage('planner')"><span class="nav-icon">📅</span> Planejamento</div>
-  <div class="nav-section">Conteúdo IA</div>
+  <div class="nav-section">Concursos</div>
+  <div class="nav-item" onclick="showPage('concursos')"><span class="nav-icon">🏛️</span> Meus Concursos</div>
   <div class="nav-item" onclick="showPage('ia-conteudo')"><span class="nav-icon">🤖</span> Dividir Conteúdo</div>
   <div class="nav-item" onclick="showPage('quiz-dificuldade')"><span class="nav-icon">🎯</span> Quiz de Dificuldade</div>
   <div class="nav-item" onclick="showPage('materias')"><span class="nav-icon">📚</span> Matérias</div>
@@ -278,79 +503,61 @@
   <div class="nav-item" onclick="showPage('revisoes')"><span class="nav-icon">🔄</span> Revisões</div>
 </div>
 
-<!-- MAIN -->
+<!-- CONTEST DROPDOWN (portaled outside sidebar for z-index) -->
+<div class="contest-dropdown" id="contest-dropdown">
+  <div class="contest-dropdown-header">
+    <div class="contest-dropdown-title">Alternar Concurso</div>
+  </div>
+  <div id="contest-dropdown-list"></div>
+  <div class="contest-add-btn" onclick="closeContestDropdown();showPage('concursos')">
+    <span>+</span><span>Gerenciar Concursos</span>
+  </div>
+</div>
+
 <div class="main">
 
-<!-- ====== DASHBOARD ====== -->
+<!-- DASHBOARD -->
 <div class="page active" id="page-dashboard">
   <div class="flex between mb24">
     <div>
       <div class="page-title">Bom dia! 👋</div>
       <div class="page-sub">Você tem <span id="today-topics" style="color:var(--accent)">0 tópicos</span> para estudar hoje.</div>
     </div>
-    <button class="btn btn-primary" onclick="showPage('ia-conteudo')">+ Adicionar Concurso</button>
+    <button class="btn btn-primary" onclick="showPage('concursos')">+ Novo Concurso</button>
   </div>
-
   <div class="grid4 mb24">
-    <div class="stat-card">
-      <div class="stat-icon">⏱️</div>
-      <div class="stat-value" id="dash-total-hours">0h</div>
-      <div class="stat-label">Horas Estudadas</div>
-      <div class="stat-change">↑ essa semana</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">✅</div>
-      <div class="stat-value" id="dash-done-topics">0</div>
-      <div class="stat-label">Tópicos Concluídos</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">🔥</div>
-      <div class="stat-value" id="dash-streak">0</div>
-      <div class="stat-label">Dias Seguidos</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-icon">🔄</div>
-      <div class="stat-value" id="dash-pending-reviews">0</div>
-      <div class="stat-label">Revisões Pendentes</div>
-    </div>
+    <div class="stat-card"><div class="stat-icon">⏱️</div><div class="stat-value" id="dash-total-hours">0h</div><div class="stat-label">Horas Estudadas</div><div class="stat-change">↑ essa semana</div></div>
+    <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-value" id="dash-done-topics">0</div><div class="stat-label">Tópicos Concluídos</div></div>
+    <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value" id="dash-streak">0</div><div class="stat-label">Dias Seguidos</div></div>
+    <div class="stat-card"><div class="stat-icon">🔄</div><div class="stat-value" id="dash-pending-reviews">0</div><div class="stat-label">Revisões Pendentes</div></div>
   </div>
-
   <div class="grid2 mb24">
     <div class="card">
       <div class="section-title">📅 Agenda de Hoje</div>
-      <div id="today-schedule-list">
-        <div class="text-muted font-sm text-center" style="padding:24px 0">Sem matérias planejadas.<br>Adicione um concurso para começar!</div>
-      </div>
+      <div id="today-schedule-list"><div class="text-muted font-sm text-center" style="padding:24px 0">Sem matérias planejadas.</div></div>
     </div>
     <div class="card">
       <div class="section-title">🔄 Revisar Agora</div>
-      <div id="review-now-list">
-        <div class="text-muted font-sm text-center" style="padding:24px 0">Nenhuma revisão pendente.</div>
-      </div>
+      <div id="review-now-list"><div class="text-muted font-sm text-center" style="padding:24px 0">Nenhuma revisão pendente.</div></div>
     </div>
   </div>
-
   <div class="card mb24">
     <div class="section-title">📈 Atividade dos Últimos 7 Dias</div>
     <canvas id="weekChart" height="80"></canvas>
   </div>
-
   <div class="card">
     <div class="flex between mb16">
       <div class="section-title" style="margin:0">📚 Matérias & Progresso</div>
       <button class="btn btn-sm btn-outline" onclick="showPage('materias')">Ver tudo</button>
     </div>
-    <div id="dash-subjects-list">
-      <div class="text-muted font-sm text-center" style="padding:16px">Adicione um concurso para ver suas matérias aqui.</div>
-    </div>
+    <div id="dash-subjects-list"><div class="text-muted font-sm text-center" style="padding:16px">Adicione um concurso.</div></div>
   </div>
 </div>
 
-<!-- ====== TIMER ====== -->
+<!-- TIMER -->
 <div class="page" id="page-timer">
   <div class="page-title">⏱️ Temporizador</div>
   <div class="page-sub">Técnica Pomodoro e cronômetro livre</div>
-
   <div class="grid2">
     <div class="card text-center">
       <div class="mode-tabs">
@@ -359,7 +566,6 @@
         <div class="mode-tab" onclick="setTimerMode('long',this)">🛋️ Pausa Longa</div>
         <div class="mode-tab" onclick="setTimerMode('free',this)">⏱ Livre</div>
       </div>
-
       <div class="timer-ring">
         <svg width="260" height="260" viewBox="0 0 260 260">
           <circle cx="130" cy="130" r="116" fill="none" stroke="var(--border)" stroke-width="8"/>
@@ -371,97 +577,48 @@
           <div class="timer-label" id="timerLabel">Foco</div>
         </div>
       </div>
-
       <div class="timer-controls">
         <button class="btn btn-outline btn-sm" onclick="resetTimer()">↺ Reset</button>
         <button class="btn btn-primary" id="timerBtn" onclick="toggleTimer()">▶ Iniciar</button>
         <button class="btn btn-outline btn-sm" onclick="skipTimer()">⏭ Pular</button>
       </div>
-
       <div class="mt24" style="display:flex; justify-content:center; gap:24px;">
-        <div>
-          <div class="label">Sessões</div>
-          <div style="font-size:24px; font-weight:700; font-family:'Syne'" id="pomodoroCount">0</div>
-        </div>
-        <div>
-          <div class="label">Meta Hoje</div>
-          <div style="font-size:24px; font-weight:700; font-family:'Syne'">8</div>
-        </div>
+        <div><div class="label">Sessões</div><div style="font-size:24px; font-weight:700; font-family:'Syne'" id="pomodoroCount">0</div></div>
+        <div><div class="label">Meta Hoje</div><div style="font-size:24px; font-weight:700; font-family:'Syne'">8</div></div>
       </div>
     </div>
-
     <div class="flex-col" style="gap:16px">
       <div class="card">
         <div class="section-title">⚙️ Configurações</div>
         <div class="flex-col" style="gap:12px">
-          <div>
-            <div class="label mb8">Matéria Atual</div>
-            <select id="timerSubject" onchange="updateTimerSubject()">
-              <option value="">Selecione uma matéria...</option>
-            </select>
-          </div>
-          <div>
-            <div class="label mb8">Tópico</div>
-            <select id="timerTopic">
-              <option value="">Selecione um tópico...</option>
-            </select>
-          </div>
-          <div>
-            <div class="label mb8">Duração Pomodoro (min)</div>
-            <input type="number" id="pomoDuration" value="25" min="1" max="90" onchange="updateDuration()">
-          </div>
-          <div class="toggle-wrap">
-            <div class="toggle on" id="soundToggle" onclick="this.classList.toggle('on')"></div>
-            <span class="font-sm">Sons de notificação</span>
-          </div>
+          <div><div class="label mb8">Matéria Atual</div><select id="timerSubject" onchange="updateTimerSubject()"><option value="">Selecione...</option></select></div>
+          <div><div class="label mb8">Tópico</div><select id="timerTopic"><option value="">Selecione...</option></select></div>
+          <div><div class="label mb8">Duração Pomodoro (min)</div><input type="number" id="pomoDuration" value="25" min="1" max="90" onchange="updateDuration()"></div>
+          <div class="toggle-wrap"><div class="toggle on" id="soundToggle" onclick="this.classList.toggle('on')"></div><span class="font-sm">Sons de notificação</span></div>
         </div>
       </div>
-
       <div class="card">
         <div class="section-title">📋 Sessões de Hoje</div>
-        <div id="todaySessions">
-          <div class="text-muted font-sm">Nenhuma sessão ainda hoje.</div>
-        </div>
+        <div id="todaySessions"><div class="text-muted font-sm">Nenhuma sessão ainda hoje.</div></div>
       </div>
-
       <div class="card">
         <div class="section-title">🎯 Ações Rápidas</div>
         <div class="study-btn-group">
-          <!-- Aula Assistida -->
           <button class="slide-btn slide-btn-watched" id="btn-watched" onclick="markWatched()">
-            <div class="slide-btn-track"></div>
-            <div class="slide-btn-thumb">🎓</div>
-            <div class="slide-btn-content">
-              <span class="slide-btn-label">Aula Assistida</span>
-              <span class="slide-btn-status" id="status-watched">DESLIGADO</span>
-            </div>
+            <div class="slide-btn-track"></div><div class="slide-btn-thumb">🎓</div>
+            <div class="slide-btn-content"><span class="slide-btn-label">Aula Assistida</span><span class="slide-btn-status" id="status-watched">DESLIGADO</span></div>
           </button>
-          <!-- Exercício Feito -->
           <button class="slide-btn slide-btn-exercise" id="btn-exercise" onclick="markExercise()">
-            <div class="slide-btn-track"></div>
-            <div class="slide-btn-thumb">✏️</div>
-            <div class="slide-btn-content">
-              <span class="slide-btn-label">Exercício Feito</span>
-              <span class="slide-btn-status" id="status-exercise">DESLIGADO</span>
-            </div>
+            <div class="slide-btn-track"></div><div class="slide-btn-thumb">✏️</div>
+            <div class="slide-btn-content"><span class="slide-btn-label">Exercício Feito</span><span class="slide-btn-status" id="status-exercise">DESLIGADO</span></div>
           </button>
-          <!-- Marcar Revisão -->
           <button class="slide-btn slide-btn-review" id="btn-review" onclick="markReview()">
-            <div class="slide-btn-track"></div>
-            <div class="slide-btn-thumb">🔄</div>
-            <div class="slide-btn-content">
-              <span class="slide-btn-label">Marcar Revisão</span>
-              <span class="slide-btn-status" id="status-review">DESLIGADO</span>
-            </div>
+            <div class="slide-btn-track"></div><div class="slide-btn-thumb">🔄</div>
+            <div class="slide-btn-content"><span class="slide-btn-label">Marcar Revisão</span><span class="slide-btn-status" id="status-review">DESLIGADO</span></div>
           </button>
-          <!-- Anotações -->
-          <button class="slide-btn slide-btn-notes" onclick="openNotes()" style="cursor:pointer">
-            <div class="slide-btn-track"></div>
-            <div class="slide-btn-thumb">📝</div>
-            <div class="slide-btn-content">
-              <span class="slide-btn-label">Anotações</span>
-              <span class="slide-btn-status" style="color:var(--accent2);opacity:.7">ABRIR</span>
-            </div>
+          <button class="slide-btn slide-btn-notes" onclick="openNotes()">
+            <div class="slide-btn-track"></div><div class="slide-btn-thumb">📝</div>
+            <div class="slide-btn-content"><span class="slide-btn-label">Anotações</span><span class="slide-btn-status" style="color:var(--accent2);opacity:.7">ABRIR</span></div>
           </button>
         </div>
       </div>
@@ -469,98 +626,63 @@
   </div>
 </div>
 
-<!-- ====== PLANEJAMENTO ====== -->
+<!-- PLANEJAMENTO -->
 <div class="page" id="page-planner">
   <div class="page-title">📅 Planejamento Semanal</div>
   <div class="page-sub">Sua divisão de estudos gerada pela IA</div>
-
   <div class="card mb24 ai-bubble">
     <div class="ai-icon">🤖</div>
     <div class="flex between">
-      <div>
-        <div class="font-bold mb8">Dicas Personalizadas de Estudo</div>
-        <div id="ai-study-tips" class="font-sm text-muted">Faça o <b style="color:var(--accent)">Quiz de Dificuldade</b> para receber dicas personalizadas!</div>
-      </div>
+      <div><div class="font-bold mb8">Dicas Personalizadas de Estudo</div><div id="ai-study-tips" class="font-sm text-muted">Faça o Quiz de Dificuldade para receber dicas!</div></div>
       <button class="btn btn-sm btn-primary" onclick="generateSchedule()">🗓️ Gerar Plano</button>
     </div>
   </div>
-
-  <div id="weekly-schedule" class="grid3">
-    <div class="text-muted font-sm text-center" style="grid-column:1/-1; padding:40px">Clique em "Gerar Plano" para criar sua grade de estudos.</div>
-  </div>
+  <div id="weekly-schedule" class="grid3"><div class="text-muted font-sm text-center" style="grid-column:1/-1; padding:40px">Clique em "Gerar Plano".</div></div>
 </div>
 
-<!-- ====== IA CONTEÚDO ====== -->
+<!-- IA CONTEÚDO -->
 <div class="page" id="page-ia-conteudo">
   <div class="page-title">🤖 Dividir Conteúdo com IA</div>
-  <div class="page-sub">Cole o conteúdo programático e a IA organizará tudo por tópicos</div>
-
+  <div class="page-sub" id="ia-conteudo-sub">Cole o conteúdo programático e a IA organizará tudo</div>
   <div class="grid2 mb24">
     <div class="card">
       <div class="section-title">📋 Conteúdo Programático</div>
-      <div class="mb16">
-        <div class="label mb8">Nome do Concurso / Curso</div>
-        <input type="text" id="contestName" placeholder="Ex: PCDF 2025 — Escrivão">
-      </div>
-      <div class="mb16">
-        <div class="label mb8">Cole o edital ou conteúdo programático</div>
-        <textarea id="contestContent" rows="10" placeholder="Ex:&#10;LÍNGUA PORTUGUESA&#10;- Interpretação de texto&#10;- Morfologia&#10;- Sintaxe&#10;&#10;DIREITO PENAL&#10;- Teoria do Crime&#10;- Punibilidade..."></textarea>
-      </div>
-      <div class="mb16">
-        <div class="label mb8">Data da Prova (opcional)</div>
-        <input type="date" id="examDate">
-      </div>
-      <button class="btn btn-primary w100" onclick="processContentWithAI()">
-        <span>🤖 Processar com IA</span>
-      </button>
+      <div class="mb16"><div class="label mb8">Nome do Concurso / Curso</div><input type="text" id="contestName" placeholder="Ex: PCDF 2025 — Escrivão"></div>
+      <div class="mb16"><div class="label mb8">Cole o edital ou conteúdo programático</div><textarea id="contestContent" rows="10" placeholder="Ex:&#10;LÍNGUA PORTUGUESA&#10;- Interpretação de texto&#10;- Morfologia&#10;&#10;DIREITO PENAL&#10;- Teoria do Crime..."></textarea></div>
+      <div class="mb16"><div class="label mb8">Data da Prova (opcional)</div><input type="date" id="examDate"></div>
+      <button class="btn btn-primary w100" onclick="processContentWithAI()"><span>🤖 Processar com IA</span></button>
     </div>
-
     <div class="card">
       <div class="section-title">📚 Matérias Identificadas</div>
-      <div id="ai-result">
-        <div class="ai-bubble text-center" style="padding:32px">
-          <div style="font-size:40px; margin-bottom:12px">🤖</div>
-          <div class="font-sm text-muted">A IA irá identificar e organizar as matérias automaticamente.</div>
-        </div>
-      </div>
+      <div id="ai-result"><div class="ai-bubble text-center" style="padding:32px"><div style="font-size:40px;margin-bottom:12px">🤖</div><div class="font-sm text-muted">A IA irá identificar e organizar as matérias automaticamente.</div></div></div>
     </div>
   </div>
 </div>
 
-<!-- ====== QUIZ DIFICULDADE ====== -->
+<!-- QUIZ DIFICULDADE -->
 <div class="page" id="page-quiz-dificuldade">
   <div class="page-title">🎯 Quiz de Dificuldade</div>
   <div class="page-sub">Nos diga o que é fácil ou difícil para você</div>
-
   <div class="card" style="max-width:640px; margin:0 auto">
-    <div id="quiz-container">
-      <div class="text-center" style="padding:40px">
-        <div style="font-size:48px; margin-bottom:16px">🎯</div>
-        <div class="font-bold mb8" style="font-size:18px">Avaliação de Dificuldade</div>
-        <div class="text-muted font-sm mb24">Primeiro, adicione matérias em "Dividir Conteúdo" para iniciar o quiz.</div>
-        <button class="btn btn-primary" onclick="startDifficultyQuiz()">Iniciar Avaliação</button>
-      </div>
-    </div>
+    <div id="quiz-container"><div class="text-center" style="padding:40px"><div style="font-size:48px;margin-bottom:16px">🎯</div><div class="font-bold mb8" style="font-size:18px">Avaliação de Dificuldade</div><div class="text-muted font-sm mb24">Adicione matérias primeiro.</div><button class="btn btn-primary" onclick="startDifficultyQuiz()">Iniciar Avaliação</button></div></div>
   </div>
-
   <div class="card mt24" id="quiz-results" style="display:none; max-width:640px; margin:24px auto 0">
     <div class="section-title">📊 Resultado da Avaliação</div>
     <div id="quiz-result-content"></div>
   </div>
 </div>
 
-<!-- ====== MATÉRIAS ====== -->
+<!-- MATÉRIAS -->
 <div class="page" id="page-materias">
   <div class="flex between mb24">
     <div>
       <div class="page-title">📚 Matérias</div>
-      <div class="page-sub">Gerencie seus tópicos e acesse vídeos</div>
+      <div class="page-sub">Subtópicos infinitos — clique em ▶ para expandir e + para adicionar</div>
     </div>
   </div>
-
   <div id="subjects-container">
     <div class="text-center" style="padding:60px">
-      <div style="font-size:48px; margin-bottom:16px">📚</div>
+      <div style="font-size:48px;margin-bottom:16px">📚</div>
       <div class="font-bold mb8">Nenhuma matéria adicionada</div>
       <div class="text-muted font-sm mb24">Use a IA para processar seu conteúdo programático</div>
       <button class="btn btn-primary" onclick="showPage('ia-conteudo')">+ Adicionar Conteúdo</button>
@@ -568,24 +690,20 @@
   </div>
 </div>
 
-<!-- ====== PROGRESSO ====== -->
+<!-- PROGRESSO -->
 <div class="page" id="page-progresso">
   <div class="page-title">📊 Progresso</div>
   <div class="page-sub">Acompanhe sua evolução</div>
-
   <div class="grid4 mb24">
     <div class="stat-card"><div class="stat-icon">📖</div><div class="stat-value" id="prog-total-time">0h</div><div class="stat-label">Total Estudado</div></div>
     <div class="stat-card"><div class="stat-icon">✅</div><div class="stat-value" id="prog-done">0</div><div class="stat-label">Tópicos Concluídos</div></div>
     <div class="stat-card"><div class="stat-icon">🎯</div><div class="stat-value" id="prog-exercises">0</div><div class="stat-label">Exercícios Feitos</div></div>
     <div class="stat-card"><div class="stat-icon">🏆</div><div class="stat-value" id="prog-streak">0</div><div class="stat-label">Maior Sequência</div></div>
   </div>
-
   <div class="card mb24">
-    <div class="section-title mb16">🔥 Mapa de Atividade (Últimos 3 Meses)</div>
-    <div id="heatmap-container" style="overflow-x:auto; padding-bottom:8px">
-      <div class="heatmap" id="activity-heatmap"></div>
-    </div>
-    <div class="flex gap8 mt16" style="justify-content:flex-end; align-items:center">
+    <div class="section-title mb16">🔥 Mapa de Atividade</div>
+    <div style="overflow-x:auto;padding-bottom:8px"><div class="heatmap" id="activity-heatmap"></div></div>
+    <div class="flex gap8 mt16" style="justify-content:flex-end;align-items:center">
       <span class="text-muted font-sm">Menos</span>
       <div style="width:12px;height:12px;border-radius:2px;background:var(--border)"></div>
       <div style="width:12px;height:12px;border-radius:2px" class="heat-1"></div>
@@ -595,83 +713,85 @@
       <span class="text-muted font-sm">Mais</span>
     </div>
   </div>
-
   <div class="card">
     <div class="section-title">📚 Desempenho por Matéria</div>
-    <div id="subject-progress-list">
-      <div class="text-muted font-sm text-center" style="padding:24px">Nenhuma matéria registrada ainda.</div>
-    </div>
+    <div id="subject-progress-list"><div class="text-muted font-sm text-center" style="padding:24px">Nenhuma matéria registrada.</div></div>
   </div>
 </div>
 
-<!-- ====== REVISÕES ====== -->
+<!-- REVISÕES -->
 <div class="page" id="page-revisoes">
   <div class="page-title">🔄 Curva de Esquecimento</div>
   <div class="page-sub">Revisões programadas para fixar o conteúdo</div>
-
   <div class="card mb24 ai-bubble">
     <div class="flex gap8">
       <div style="font-size:32px">🧠</div>
-      <div>
-        <div class="font-bold mb8">Como funciona a Curva de Esquecimento?</div>
-        <div class="font-sm text-muted">Baseado na curva de Ebbinghaus, o sistema programa revisões em <b style="color:var(--yellow)">3, 5, 7, 10 e 15 dias</b> após cada exercício marcado como feito. Quando o prazo vencer, você será notificado e o exercício será automaticamente desmarcado.</div>
-      </div>
+      <div><div class="font-bold mb8">Como funciona?</div><div class="font-sm text-muted">Revisões em <b style="color:var(--yellow)">3, 5, 7, 10 e 15 dias</b> após cada exercício marcado.</div></div>
     </div>
   </div>
-
   <div class="card">
     <div class="section-title">📋 Todas as Revisões Programadas</div>
-    <div id="all-reviews-list">
-      <div class="text-muted font-sm text-center" style="padding:32px">Nenhuma revisão programada.<br>Marque exercícios como feitos para criar revisões.</div>
+    <div id="all-reviews-list"><div class="text-muted font-sm text-center" style="padding:32px">Nenhuma revisão programada.</div></div>
+  </div>
+</div>
+
+<!-- CONCURSOS PAGE -->
+<div class="page" id="page-concursos">
+  <div class="flex between mb24">
+    <div>
+      <div class="page-title">🏛️ Meus Concursos</div>
+      <div class="page-sub">Gerencie e alterne entre seus editais</div>
     </div>
+    <button class="btn btn-primary" onclick="openNewContestPopup()">+ Novo Concurso</button>
+  </div>
+  <div id="contests-grid" class="grid3"></div>
+  <div id="contests-empty" style="display:none" class="text-center" style="padding:60px">
+    <div style="font-size:48px;margin-bottom:16px">🏛️</div>
+    <div class="font-bold mb8">Nenhum concurso cadastrado</div>
+    <div class="text-muted font-sm mb24">Crie seu primeiro perfil de concurso</div>
+    <button class="btn btn-primary" onclick="openNewContestPopup()">+ Criar Concurso</button>
   </div>
 </div>
 
 </div><!-- end main -->
 
-<!-- ====== POPUP REVISÃO ====== -->
+<!-- POPUPS -->
 <div class="popup-overlay" id="review-popup">
   <div class="popup-box">
     <div class="popup-icon">🧠</div>
     <div class="popup-title">Hora de Revisar!</div>
-    <div class="popup-text" id="review-popup-text">Um exercício foi desmarcado automaticamente. É hora de rever este conteúdo para fixar na memória!</div>
-    <div style="display:flex; gap:8px; justify-content:center;">
+    <div class="popup-text" id="review-popup-text">Hora de revisar!</div>
+    <div style="display:flex;gap:8px;justify-content:center;">
       <button class="btn btn-outline" onclick="closePopup('review-popup')">Depois</button>
       <button class="btn btn-primary" onclick="goToReview()">📚 Revisar Agora</button>
     </div>
   </div>
 </div>
 
-<!-- ====== POPUP YOUTUBE ====== -->
 <div class="popup-overlay" id="youtube-popup">
-  <div class="popup-box" style="max-width:600px; text-align:left">
+  <div class="popup-box" style="max-width:600px;text-align:left">
     <div class="flex between mb16">
-      <div class="popup-title" style="font-size:18px" id="yt-popup-title">Vídeos para estudar</div>
+      <div class="popup-title" style="font-size:18px" id="yt-popup-title">Vídeos</div>
       <button class="btn btn-ghost btn-sm" onclick="closePopup('youtube-popup')">✕</button>
     </div>
     <div class="mb16">
       <div class="flex gap8">
-        <input type="text" id="yt-search-input" placeholder="Buscar no YouTube..." style="flex:1">
+        <input type="text" id="yt-search-input" placeholder="Buscar..." style="flex:1">
         <button class="btn btn-primary btn-sm" onclick="searchYouTube()">🔍 Buscar</button>
       </div>
     </div>
-    <div id="yt-results" class="grid3" style="max-height:340px; overflow-y:auto; gap:10px">
-      <div class="text-muted font-sm text-center" style="grid-column:1/-1; padding:20px">Buscando vídeos...</div>
-    </div>
-    <div class="mt16 text-center">
-      <a id="yt-direct-link" href="#" target="_blank" class="btn btn-outline btn-sm">▶ Abrir YouTube Diretamente</a>
-    </div>
+    <div id="yt-results" class="grid3" style="max-height:340px;overflow-y:auto;gap:10px"><div class="text-muted font-sm text-center" style="grid-column:1/-1;padding:20px">Buscando...</div></div>
+    <div class="mt16 text-center"><a id="yt-direct-link" href="#" target="_blank" class="btn btn-outline btn-sm">▶ Abrir YouTube</a></div>
   </div>
 </div>
 
-<!-- ====== POPUP NOTAS ====== -->
 <div class="popup-overlay" id="notes-popup">
-  <div class="popup-box" style="max-width:500px; text-align:left">
+  <div class="popup-box" style="max-width:500px;text-align:left">
     <div class="flex between mb16">
       <div class="popup-title" style="font-size:18px">📝 Anotações</div>
       <button class="btn btn-ghost btn-sm" onclick="closePopup('notes-popup')">✕</button>
     </div>
-    <textarea id="notes-textarea" rows="8" placeholder="Suas anotações aqui..."></textarea>
+    <textarea id="notes-textarea" rows="8" placeholder="Suas anotações..."></textarea>
     <div class="flex gap8 mt16">
       <button class="btn btn-outline" onclick="closePopup('notes-popup')">Cancelar</button>
       <button class="btn btn-primary" onclick="saveNotes()">💾 Salvar</button>
@@ -679,31 +799,448 @@
   </div>
 </div>
 
+<!-- NEW/EDIT CONTEST POPUP -->
+<div class="popup-overlay" id="contest-popup">
+  <div class="popup-box" style="max-width:480px;text-align:left">
+    <div class="flex between mb20">
+      <div class="popup-title" style="font-size:18px" id="contest-popup-title">🏛️ Novo Concurso</div>
+      <button class="btn btn-ghost btn-sm" onclick="closePopup('contest-popup')">✕</button>
+    </div>
+    <div class="flex-col" style="gap:14px">
+      <div>
+        <div class="label mb8">Nome do Concurso *</div>
+        <input type="text" id="cp-name" placeholder="Ex: PCDF 2025 — Escrivão">
+      </div>
+      <div class="grid2" style="gap:12px">
+        <div>
+          <div class="label mb8">Emoji</div>
+          <input type="text" id="cp-emoji" placeholder="🏛️" maxlength="2" style="font-size:20px;text-align:center">
+        </div>
+        <div>
+          <div class="label mb8">Data da Prova</div>
+          <input type="date" id="cp-date">
+        </div>
+      </div>
+      <div>
+        <div class="label mb8">Banca Organizadora</div>
+        <input type="text" id="cp-banca" placeholder="Ex: CESPE, FGV, VUNESP...">
+      </div>
+      <div>
+        <div class="label mb8">Cargo / Área</div>
+        <input type="text" id="cp-cargo" placeholder="Ex: Analista Judiciário — Área Administrativa">
+      </div>
+      <div>
+        <div class="label mb8">Cor do Perfil</div>
+        <div class="color-picker" id="cp-colors">
+          <div class="color-swatch selected" style="background:#4f8cff" data-color="#4f8cff" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#a855f7" data-color="#a855f7" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#22d3a5" data-color="#22d3a5" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#fbbf24" data-color="#fbbf24" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#f87171" data-color="#f87171" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#06b6d4" data-color="#06b6d4" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#84cc16" data-color="#84cc16" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#f97316" data-color="#f97316" onclick="selectContestColor(this)"></div>
+          <div class="color-swatch" style="background:#ec4899" data-color="#ec4899" onclick="selectContestColor(this)"></div>
+        </div>
+      </div>
+      <div>
+        <div class="label mb8">Meta de Horas Diárias</div>
+        <input type="number" id="cp-hours" placeholder="4" min="1" max="16" value="4">
+      </div>
+    </div>
+    <input type="hidden" id="cp-editing-id">
+    <div class="flex gap8 mt20">
+      <button class="btn btn-outline" style="flex:1" onclick="closePopup('contest-popup')">Cancelar</button>
+      <button class="btn btn-primary" style="flex:2" onclick="saveContest()">💾 Salvar Concurso</button>
+    </div>
+  </div>
+</div>
+
 <script>
-// ==================== STATE ====================
+// ==================== MULTI-CONTEST STATE ====================
+// Global state: list of contests, each with its own isolated data
+let globalState = {
+  contests: [],      // [{id, name, emoji, color, banca, cargo, examDate, dailyHours, createdAt}]
+  activeContestId: null,
+  globalStreak: 0,
+  lastStudyDate: null
+};
+
+// Per-contest state (isolated)
 let state = {
-  subjects: [], // {id, name, topics:[{id, name, subtopics:[], watched, exerciseDone, exerciseDate, reviews:[]}], difficulty:'medium', color}
-  sessions: [], // {date, subject, topic, duration, type}
+  subjects: [],
+  sessions: [],
   totalMinutes: 0,
   pomodoroCount: 0,
   streak: 0,
   lastStudyDate: null,
-  difficultyMap: {}, // subjectId: 'easy'|'medium'|'hard'
+  difficultyMap: {},
   aiTips: '',
   notes: {}
 };
 
-// Load from localStorage
-function loadState() {
-  const saved = localStorage.getItem('estudopro_state');
-  if (saved) {
-    try { state = {...state, ...JSON.parse(saved)}; } catch(e) {}
+function loadGlobalState() {
+  try {
+    const g = localStorage.getItem('ep_global');
+    if(g) globalState = {...globalState, ...JSON.parse(g)};
+  } catch(e){}
+}
+
+function saveGlobalState() {
+  localStorage.setItem('ep_global', JSON.stringify(globalState));
+}
+
+function loadContestState(contestId) {
+  if(!contestId) return;
+  try {
+    const saved = localStorage.getItem('ep_contest_' + contestId);
+    if(saved) {
+      state = {...getEmptyState(), ...JSON.parse(saved)};
+    } else {
+      state = getEmptyState();
+    }
+    state.subjects.forEach(s => s.topics.forEach(t => ensureChildren(t)));
+  } catch(e) { state = getEmptyState(); }
+}
+
+function saveState() {
+  if(!globalState.activeContestId) return;
+  localStorage.setItem('ep_contest_' + globalState.activeContestId, JSON.stringify(state));
+}
+
+function getEmptyState() {
+  return { subjects:[], sessions:[], totalMinutes:0, pomodoroCount:0, streak:0, lastStudyDate:null, difficultyMap:{}, aiTips:'', notes:{} };
+}
+
+function getActiveContest() {
+  return globalState.contests.find(c => c.id === globalState.activeContestId) || null;
+}
+
+function switchContest(contestId) {
+  if(contestId === globalState.activeContestId) { closeContestDropdown(); return; }
+  globalState.activeContestId = contestId;
+  saveGlobalState();
+  loadContestState(contestId);
+  updateSwitcherUI();
+  renderPage(getCurrentPage());
+  renderDropdownList();
+  closeContestDropdown();
+  const c = getActiveContest();
+  showNotif(`🏛️ Alternado para <b>${c?.name || ''}</b>`, 'blue');
+}
+
+function getCurrentPage() {
+  const active = document.querySelector('.page.active');
+  return active ? active.id.replace('page-','') : 'dashboard';
+}
+
+// Migrate old data if exists
+function migrateOldData() {
+  const old = localStorage.getItem('estudopro_state');
+  if(!old) return;
+  try {
+    const parsed = JSON.parse(old);
+    if(parsed.subjects && parsed.subjects.length && !globalState.contests.length) {
+      const id = 'contest_migrated_' + Date.now();
+      globalState.contests.push({ id, name:'Meu Concurso', emoji:'🏛️', color:'#4f8cff', banca:'', cargo:'', examDate:'', dailyHours:4, createdAt:new Date().toISOString() });
+      globalState.activeContestId = id;
+      localStorage.setItem('ep_contest_'+id, old);
+      saveGlobalState();
+      showNotif('📦 Seus dados anteriores foram importados!', 'green');
+    }
+    localStorage.removeItem('estudopro_state');
+  } catch(e){}
+}
+
+// ==================== CONTEST UI ====================
+function toggleContestDropdown() {
+  const sw = document.getElementById('contest-switcher');
+  const dd = document.getElementById('contest-dropdown');
+  const isOpen = dd.classList.contains('open');
+  if(isOpen) { closeContestDropdown(); return; }
+  // Position dropdown below switcher
+  const rect = sw.getBoundingClientRect();
+  dd.style.top = (rect.bottom + 6) + 'px';
+  dd.style.left = rect.left + 'px';
+  dd.style.width = Math.max(rect.width, 220) + 'px';
+  dd.classList.add('open');
+  sw.classList.add('open');
+  renderDropdownList();
+  // Close on outside click
+  setTimeout(() => document.addEventListener('click', outsideDropdownClick, {once:true}), 10);
+}
+
+function outsideDropdownClick(e) {
+  if(!document.getElementById('contest-dropdown').contains(e.target) && !document.getElementById('contest-switcher').contains(e.target)) {
+    closeContestDropdown();
   }
 }
-function saveState() {
-  localStorage.setItem('estudopro_state', JSON.stringify(state));
+
+function closeContestDropdown() {
+  document.getElementById('contest-dropdown').classList.remove('open');
+  document.getElementById('contest-switcher').classList.remove('open');
 }
-loadState();
+
+function renderDropdownList() {
+  const el = document.getElementById('contest-dropdown-list');
+  if(!globalState.contests.length) {
+    el.innerHTML = `<div class="text-muted font-sm text-center" style="padding:12px 0">Nenhum concurso ainda.<br>Crie o primeiro abaixo!</div>`;
+    return;
+  }
+  el.innerHTML = globalState.contests.map(c => {
+    const cs = getContestStats(c.id);
+    const isActive = c.id === globalState.activeContestId;
+    const daysLeft = c.examDate ? getDaysLeft(c.examDate) : null;
+    return `
+      <div class="contest-option ${isActive?'active':''}" onclick="switchContest('${c.id}')">
+        <span class="contest-option-emoji">${c.emoji||'🏛️'}</span>
+        <div class="contest-option-info">
+          <div class="contest-option-name">${c.name}</div>
+          <div class="contest-option-meta">
+            ${cs.subjects} mat. • ${cs.pct}% concluído
+            ${daysLeft !== null ? ` • ${daysLeft}d` : ''}
+          </div>
+        </div>
+        ${isActive ? '<span class="contest-option-check">✓</span>' : `<div class="cdot" style="background:${c.color}"></div>`}
+      </div>
+    `;
+  }).join('');
+}
+
+function getContestStats(contestId) {
+  try {
+    const saved = localStorage.getItem('ep_contest_' + contestId);
+    if(!saved) return {subjects:0, pct:0, hours:0};
+    const s = JSON.parse(saved);
+    const subjects = s.subjects || [];
+    let total=0, done=0;
+    subjects.forEach(sub => {
+      const allNodes = [];
+      const collect = (nodes) => nodes.forEach(n => { allNodes.push(n); collect(n.children||[]); });
+      collect(sub.topics||[]);
+      total += allNodes.length;
+      done += allNodes.filter(n=>n.watched).length;
+    });
+    return { subjects: subjects.length, pct: total ? Math.round(done/total*100) : 0, hours: Math.round((s.totalMinutes||0)/60*10)/10 };
+  } catch(e) { return {subjects:0, pct:0, hours:0}; }
+}
+
+function getDaysLeft(dateStr) {
+  if(!dateStr) return null;
+  const diff = new Date(dateStr) - new Date();
+  return Math.ceil(diff / 86400000);
+}
+
+function updateSwitcherUI() {
+  const c = getActiveContest();
+  document.getElementById('switcher-emoji').textContent = c?.emoji || '🏛️';
+  document.getElementById('switcher-name').textContent = c?.name || 'Nenhum selecionado';
+}
+
+// ==================== CONTEST CRUD ====================
+let selectedContestColor = '#4f8cff';
+
+function openNewContestPopup() {
+  closeContestDropdown();
+  document.getElementById('contest-popup-title').textContent = '🏛️ Novo Concurso';
+  document.getElementById('cp-name').value = '';
+  document.getElementById('cp-emoji').value = '🏛️';
+  document.getElementById('cp-date').value = '';
+  document.getElementById('cp-banca').value = '';
+  document.getElementById('cp-cargo').value = '';
+  document.getElementById('cp-hours').value = '4';
+  document.getElementById('cp-editing-id').value = '';
+  selectedContestColor = '#4f8cff';
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+  document.querySelector('.color-swatch[data-color="#4f8cff"]').classList.add('selected');
+  openPopup('contest-popup');
+  setTimeout(() => document.getElementById('cp-name').focus(), 100);
+}
+
+function openEditContestPopup(contestId) {
+  const c = globalState.contests.find(x=>x.id===contestId);
+  if(!c) return;
+  document.getElementById('contest-popup-title').textContent = '✏️ Editar Concurso';
+  document.getElementById('cp-name').value = c.name;
+  document.getElementById('cp-emoji').value = c.emoji||'🏛️';
+  document.getElementById('cp-date').value = c.examDate||'';
+  document.getElementById('cp-banca').value = c.banca||'';
+  document.getElementById('cp-cargo').value = c.cargo||'';
+  document.getElementById('cp-hours').value = c.dailyHours||4;
+  document.getElementById('cp-editing-id').value = contestId;
+  selectedContestColor = c.color||'#4f8cff';
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.toggle('selected', s.dataset.color===selectedContestColor));
+  openPopup('contest-popup');
+}
+
+function selectContestColor(el) {
+  document.querySelectorAll('.color-swatch').forEach(s=>s.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedContestColor = el.dataset.color;
+}
+
+function saveContest() {
+  const name = document.getElementById('cp-name').value.trim();
+  if(!name) { showNotif('⚠️ Nome é obrigatório!','yellow'); return; }
+  const editId = document.getElementById('cp-editing-id').value;
+  const contestData = {
+    name,
+    emoji: document.getElementById('cp-emoji').value.trim().substring(0,2) || '🏛️',
+    color: selectedContestColor,
+    examDate: document.getElementById('cp-date').value,
+    banca: document.getElementById('cp-banca').value.trim(),
+    cargo: document.getElementById('cp-cargo').value.trim(),
+    dailyHours: parseInt(document.getElementById('cp-hours').value)||4
+  };
+
+  if(editId) {
+    const c = globalState.contests.find(x=>x.id===editId);
+    if(c) Object.assign(c, contestData);
+    showNotif('✅ Concurso atualizado!','green');
+  } else {
+    const id = 'contest_' + Date.now();
+    globalState.contests.push({ id, ...contestData, createdAt: new Date().toISOString() });
+    // Auto-switch to new contest if none active
+    if(!globalState.activeContestId) {
+      globalState.activeContestId = id;
+      loadContestState(id);
+      updateSwitcherUI();
+    }
+    showNotif('✅ Concurso criado! Agora adicione matérias.','green');
+  }
+  saveGlobalState();
+  closePopup('contest-popup');
+  renderPage('concursos');
+  updateSwitcherUI();
+  renderDropdownList();
+}
+
+function deleteContest(contestId) {
+  const c = globalState.contests.find(x=>x.id===contestId);
+  if(!c) return;
+  if(!confirm(`Excluir "${c.name}" e todos os seus dados? Esta ação não pode ser desfeita.`)) return;
+  localStorage.removeItem('ep_contest_'+contestId);
+  globalState.contests = globalState.contests.filter(x=>x.id!==contestId);
+  if(globalState.activeContestId === contestId) {
+    globalState.activeContestId = globalState.contests[0]?.id || null;
+    if(globalState.activeContestId) loadContestState(globalState.activeContestId);
+    else state = getEmptyState();
+    updateSwitcherUI();
+  }
+  saveGlobalState();
+  renderPage('concursos');
+  renderDropdownList();
+  showNotif('🗑️ Concurso excluído.','red');
+}
+
+function renderContestsPage() {
+  const grid = document.getElementById('contests-grid');
+  const empty = document.getElementById('contests-empty');
+  if(!globalState.contests.length) {
+    grid.style.display='none'; empty.style.display='block';
+    return;
+  }
+  grid.style.display='grid'; empty.style.display='none';
+  grid.innerHTML = globalState.contests.map(c => {
+    const cs = getContestStats(c.id);
+    const daysLeft = c.examDate ? getDaysLeft(c.examDate) : null;
+    const isActive = c.id === globalState.activeContestId;
+    let countdownHtml = '';
+    if(daysLeft !== null) {
+      const cls = daysLeft < 30 ? 'countdown-urgent' : daysLeft < 90 ? 'countdown-warning' : 'countdown-ok';
+      const icon = daysLeft < 30 ? '🔴' : daysLeft < 90 ? '🟡' : '🟢';
+      countdownHtml = `<span class="countdown-badge ${cls}">${icon} ${daysLeft > 0 ? daysLeft+'d para prova' : 'Prova hoje!'}</span>`;
+    }
+    return `
+      <div class="contest-card ${isActive?'current':''}" style="--ccolor:${c.color}">
+        <div class="flex between" style="align-items:flex-start;margin-bottom:10px">
+          <div class="contest-card-emoji">${c.emoji||'🏛️'}</div>
+          <div class="flex gap8">
+            <button class="btn btn-ghost btn-sm" style="padding:4px 8px" onclick="openEditContestPopup('${c.id}')">✏️</button>
+            <button class="btn btn-ghost btn-sm" style="padding:4px 8px;color:var(--red)" onclick="deleteContest('${c.id}')">🗑</button>
+          </div>
+        </div>
+        <div class="contest-card-name">${c.name}</div>
+        <div class="contest-card-date">
+          ${c.banca ? `<span class="badge badge-blue" style="margin-right:6px;margin-bottom:6px">${c.banca}</span>` : ''}
+          ${c.cargo ? `<span class="tag">${c.cargo}</span>` : ''}
+        </div>
+        ${countdownHtml ? `<div style="margin-bottom:12px">${countdownHtml}</div>` : ''}
+        <div class="contest-card-stats">
+          <div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.subjects}</div><div class="contest-stat-label">Matérias</div></div>
+          <div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.pct}%</div><div class="contest-stat-label">Progresso</div></div>
+          <div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.hours}h</div><div class="contest-stat-label">Estudadas</div></div>
+        </div>
+        <div class="progress-bar mb16"><div class="progress-fill" style="width:${cs.pct}%;background:${c.color}"></div></div>
+        <div class="flex gap8">
+          ${isActive
+            ? `<button class="btn btn-sm btn-outline w100" disabled style="opacity:.5;cursor:default">✓ Ativo</button>`
+            : `<button class="btn btn-sm btn-primary w100" onclick="switchContest('${c.id}')">Selecionar</button>`
+          }
+          <button class="btn btn-sm btn-outline" onclick="switchContest('${c.id}');showPage('materias')" title="Ver matérias">📚</button>
+          <button class="btn btn-sm btn-outline" onclick="switchContest('${c.id}');showPage('ia-conteudo')" title="Adicionar conteúdo">🤖</button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// INIT: Load global state, migrate old data, load active contest
+loadGlobalState();
+migrateOldData();
+if(globalState.activeContestId) {
+  loadContestState(globalState.activeContestId);
+} else {
+  state = getEmptyState();
+}
+updateSwitcherUI();
+renderDropdownList();
+
+// ==================== TREE UTILS ====================
+function ensureChildren(node) {
+  if(!node.children) node.children = [];
+  node.children.forEach(c => ensureChildren(c));
+  return node;
+}
+
+function makeNode(name) {
+  return { id: 'n_' + Date.now() + '_' + Math.random().toString(36).slice(2), name, children: [], watched: false, exerciseDone: false, exerciseDate: null, reviews: [] };
+}
+
+function countAllNodes(nodes) {
+  let c = 0;
+  nodes.forEach(n => { c++; c += countAllNodes(n.children || []); });
+  return c;
+}
+
+function countWatchedNodes(nodes) {
+  let c = 0;
+  nodes.forEach(n => { if(n.watched) c++; c += countWatchedNodes(n.children || []); });
+  return c;
+}
+
+function collectAllNodes(nodes, arr=[]) {
+  nodes.forEach(n => { arr.push(n); collectAllNodes(n.children||[], arr); });
+  return arr;
+}
+
+function findNodeById(nodes, id) {
+  for(const n of nodes) {
+    if(n.id === id) return n;
+    const found = findNodeById(n.children||[], id);
+    if(found) return found;
+  }
+  return null;
+}
+
+function findParentArray(nodes, id) {
+  for(let i=0; i<nodes.length; i++) {
+    if(nodes[i].id === id) return nodes;
+    const found = findParentArray(nodes[i].children||[], id);
+    if(found) return found;
+  }
+  return null;
+}
 
 // ==================== NAVIGATION ====================
 function showPage(id) {
@@ -717,516 +1254,123 @@ function showPage(id) {
 }
 
 function renderPage(id) {
-  if(id === 'dashboard') renderDashboard();
-  if(id === 'materias') renderSubjects();
-  if(id === 'progresso') renderProgress();
-  if(id === 'revisoes') renderReviews();
-  if(id === 'timer') renderTimerSubjects();
-  if(id === 'quiz-dificuldade') renderQuizPage();
-  if(id === 'planner') renderPlanner();
+  if(id==='dashboard') renderDashboard();
+  if(id==='materias') renderSubjects();
+  if(id==='progresso') renderProgress();
+  if(id==='revisoes') renderReviews();
+  if(id==='timer') renderTimerSubjects();
+  if(id==='quiz-dificuldade') renderQuizPage();
+  if(id==='planner') renderPlanner();
+  if(id==='concursos') renderContestsPage();
 }
 
 function renderPlanner() {
   if(state.aiTips) document.getElementById('ai-study-tips').innerHTML = state.aiTips;
+  const c = getActiveContest();
+  const subEl = document.getElementById('ia-conteudo-sub');
+  if(subEl && c) subEl.innerHTML = `Adicionando matérias a <b style="color:${c.color}">${c.emoji} ${c.name}</b>`;
+  else if(subEl) subEl.innerHTML = `Selecione um concurso primeiro`;
 }
 
 // ==================== TIMER ====================
-let timerInterval = null;
-let timerRunning = false;
-let timerSeconds = 25*60;
-let timerTotal = 25*60;
-let timerMode = 'pomodoro';
-const timerModes = { pomodoro:25*60, short:5*60, long:15*60, free:0 };
-const timerLabels = { pomodoro:'Foco 🍅', short:'Pausa Curta ☕', long:'Pausa Longa 🛋️', free:'Livre ⏱' };
+let timerInterval=null, timerRunning=false, timerSeconds=25*60, timerTotal=25*60, timerMode='pomodoro';
+const timerModes={pomodoro:25*60,short:5*60,long:15*60,free:0};
+const timerLabels={pomodoro:'Foco 🍅',short:'Pausa Curta ☕',long:'Pausa Longa 🛋️',free:'Livre ⏱'};
 
-function setTimerMode(mode, el) {
-  timerMode = mode;
-  document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  stopTimer();
-  if(mode === 'free') { timerSeconds = 0; timerTotal = 0; }
-  else { timerSeconds = timerModes[mode]; timerTotal = timerSeconds; }
-  document.getElementById('pomoDuration').value = Math.round(timerSeconds/60);
-  updateTimerDisplay();
-}
+function setTimerMode(mode,el){timerMode=mode;document.querySelectorAll('.mode-tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');stopTimer();timerSeconds=mode==='free'?0:timerModes[mode];timerTotal=timerSeconds;document.getElementById('pomoDuration').value=Math.round(timerSeconds/60);updateTimerDisplay();}
+function updateDuration(){const v=parseInt(document.getElementById('pomoDuration').value)||25;timerModes.pomodoro=v*60;if(timerMode==='pomodoro'){timerSeconds=v*60;timerTotal=v*60;}updateTimerDisplay();}
+function toggleTimer(){timerRunning?stopTimer():startTimer();}
+function startTimer(){if(timerMode==='free'){timerSeconds=0;timerTotal=0;}timerRunning=true;document.getElementById('timerBtn').textContent='⏸ Pausar';timerInterval=setInterval(()=>{if(timerMode==='free'){timerSeconds++;timerTotal=Math.max(timerTotal,timerSeconds);}else{timerSeconds--;if(timerSeconds<=0){timerComplete();return;}}updateTimerDisplay();},1000);}
+function stopTimer(){timerRunning=false;clearInterval(timerInterval);document.getElementById('timerBtn').textContent='▶ Iniciar';}
+function resetTimer(){stopTimer();timerSeconds=timerMode==='free'?0:timerModes[timerMode];timerTotal=timerSeconds;updateTimerDisplay();}
+function skipTimer(){timerComplete();}
+function timerComplete(){stopTimer();if(timerMode==='pomodoro'){state.pomodoroCount++;const sub=document.getElementById('timerSubject').value;const top=document.getElementById('timerTopic').value;const dur=timerModes.pomodoro/60;state.totalMinutes+=dur;state.sessions.push({date:new Date().toISOString(),subject:sub,topic:top,duration:dur,type:'pomodoro'});updateStreak();saveState();document.getElementById('pomodoroCount').textContent=state.pomodoroCount;showNotif('🍅 Pomodoro completo!','green');renderTodaySessions();updateDashStats();}resetTimer();if(document.getElementById('soundToggle').classList.contains('on'))playBeep();}
+function playBeep(){try{const c=new(window.AudioContext||window.webkitAudioContext)();const o=c.createOscillator();const g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=800;g.gain.value=0.3;o.start();g.gain.exponentialRampToValueAtTime(0.001,c.currentTime+0.5);o.stop(c.currentTime+0.5);}catch(e){}}
+function updateTimerDisplay(){let s=timerSeconds;const min=Math.floor(Math.abs(s)/60).toString().padStart(2,'0');const sec=(Math.abs(s)%60).toString().padStart(2,'0');document.getElementById('timerDisplay').textContent=`${min}:${sec}`;document.getElementById('timerLabel').textContent=timerLabels[timerMode];const circle=document.getElementById('timerCircle');const total=timerTotal||1;const pct=timerMode==='free'?0:(timerSeconds/total);circle.style.strokeDashoffset=729*(1-pct);circle.style.stroke=(timerMode==='short'||timerMode==='long')?'var(--green)':'var(--accent)';}
+function updateTimerSubject(){const sub=state.subjects.find(s=>s.id===document.getElementById('timerSubject').value);const sel=document.getElementById('timerTopic');sel.innerHTML='<option value="">Selecione...</option>';if(sub){const allNodes=collectAllNodes(sub.topics);allNodes.forEach(n=>sel.add(new Option(n.name,n.id)));}}
+function renderTimerSubjects(){const sel=document.getElementById('timerSubject');sel.innerHTML='<option value="">Selecione...</option>';state.subjects.forEach(s=>sel.add(new Option(s.name,s.id)));renderTodaySessions();updateTimerDisplay();}
+function renderTodaySessions(){const today=new Date().toDateString();const todaySess=state.sessions.filter(s=>new Date(s.date).toDateString()===today);const el=document.getElementById('todaySessions');if(!todaySess.length){el.innerHTML='<div class="text-muted font-sm">Nenhuma sessão ainda hoje.</div>';return;}el.innerHTML=todaySess.slice(-5).reverse().map(s=>`<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:8px 12px;background:var(--surface2);border-radius:8px"><span>🍅</span><div style="flex:1"><div class="font-sm">${s.subject||'Livre'}</div><div style="font-size:11px;color:var(--muted)">${s.duration}min</div></div></div>`).join('');}
+function markWatched(){const subId=document.getElementById('timerSubject').value;const topId=document.getElementById('timerTopic').value;if(!subId||!topId){showNotif('⚠️ Selecione matéria e tópico!','yellow');return;}const sub=state.subjects.find(s=>s.id===subId);const top=findNodeById(sub?.topics||[],topId);if(top){top.watched=!top.watched;saveState();renderSubjects();}const btn=document.getElementById('btn-watched');btn.classList.toggle('on',top.watched);document.getElementById('status-watched').textContent=top.watched?'LIGADO':'DESLIGADO';showNotif(top.watched?'✅ Aula marcada!':'Desmarcado.','green');updateDashStats();}
+function markExercise(){const subId=document.getElementById('timerSubject').value;const topId=document.getElementById('timerTopic').value;if(!subId||!topId){showNotif('⚠️ Selecione matéria e tópico!','yellow');return;}const sub=state.subjects.find(s=>s.id===subId);const top=findNodeById(sub?.topics||[],topId);if(top){top.exerciseDone=!top.exerciseDone;const btn=document.getElementById('btn-exercise');btn.classList.toggle('on',top.exerciseDone);document.getElementById('status-exercise').textContent=top.exerciseDone?'LIGADO':'DESLIGADO';if(top.exerciseDone){top.exerciseDate=new Date().toISOString();top.reviews=[3,5,7,10,15].map(d=>({days:d,dueDate:new Date(Date.now()+d*86400000).toISOString(),done:false,triggered:false}));showNotif('✏️ Exercício marcado!','blue');}else{top.reviews=[];}saveState();updateDashStats();renderReviews();}}
+function markReview(){const btn=document.getElementById('btn-review');const on=btn.classList.toggle('on');document.getElementById('status-review').textContent=on?'LIGADO':'DESLIGADO';showNotif(on?'🔄 Revisão agendada!':'Desmarcado.','yellow');}
+function openNotes(){const topId=document.getElementById('timerTopic').value;document.getElementById('notes-textarea').value=state.notes[topId]||'';openPopup('notes-popup');}
+function saveNotes(){const topId=document.getElementById('timerTopic').value;if(topId)state.notes[topId]=document.getElementById('notes-textarea').value;saveState();closePopup('notes-popup');showNotif('📝 Anotações salvas!','green');}
 
-function updateDuration() {
-  const val = parseInt(document.getElementById('pomoDuration').value)||25;
-  timerModes.pomodoro = val*60;
-  if(timerMode === 'pomodoro') { timerSeconds = val*60; timerTotal = val*60; }
-  updateTimerDisplay();
-}
-
-function toggleTimer() {
-  if(timerRunning) { stopTimer(); }
-  else { startTimer(); }
-}
-
-function startTimer() {
-  if(timerMode === 'free') { timerSeconds = 0; timerTotal = 0; }
-  timerRunning = true;
-  document.getElementById('timerBtn').textContent = '⏸ Pausar';
-  timerInterval = setInterval(() => {
-    if(timerMode === 'free') {
-      timerSeconds++;
-      timerTotal = Math.max(timerTotal, timerSeconds);
-    } else {
-      timerSeconds--;
-      if(timerSeconds <= 0) { timerComplete(); return; }
-    }
-    updateTimerDisplay();
-  }, 1000);
-}
-
-function stopTimer() {
-  timerRunning = false;
-  clearInterval(timerInterval);
-  document.getElementById('timerBtn').textContent = '▶ Iniciar';
-}
-
-function resetTimer() {
-  stopTimer();
-  if(timerMode === 'free') { timerSeconds = 0; timerTotal = 0; }
-  else { timerSeconds = timerModes[timerMode]; timerTotal = timerSeconds; }
-  updateTimerDisplay();
-}
-
-function skipTimer() { timerComplete(); }
-
-function timerComplete() {
-  stopTimer();
-  if(timerMode === 'pomodoro') {
-    state.pomodoroCount++;
-    // Record session
-    const sub = document.getElementById('timerSubject').value;
-    const top = document.getElementById('timerTopic').value;
-    const dur = timerModes.pomodoro/60;
-    state.totalMinutes += dur;
-    state.sessions.push({date: new Date().toISOString(), subject: sub, topic: top, duration: dur, type:'pomodoro'});
-    // Streak
-    updateStreak();
-    saveState();
-    document.getElementById('pomodoroCount').textContent = state.pomodoroCount;
-    showNotif('🍅 Pomodoro completo! Descanse um pouco.', 'green');
-    renderTodaySessions();
-    updateDashStats();
-  }
-  resetTimer();
-  if(document.getElementById('soundToggle').classList.contains('on')) playBeep();
-}
-
-function playBeep() {
-  try {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.connect(gain); gain.connect(ctx.destination);
-    osc.frequency.value = 800; gain.gain.value = 0.3;
-    osc.start(); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.5);
-    osc.stop(ctx.currentTime+0.5);
-  } catch(e){}
-}
-
-function updateTimerDisplay() {
-  let s = timerSeconds;
-  const min = Math.floor(Math.abs(s)/60).toString().padStart(2,'0');
-  const sec = (Math.abs(s)%60).toString().padStart(2,'0');
-  document.getElementById('timerDisplay').textContent = `${min}:${sec}`;
-  document.getElementById('timerLabel').textContent = timerLabels[timerMode];
-  // Ring
-  const circle = document.getElementById('timerCircle');
-  const total = timerTotal || 1;
-  const pct = timerMode === 'free' ? 0 : (timerSeconds / total);
-  const circumference = 729;
-  circle.style.strokeDashoffset = circumference * (1 - pct);
-  // Color
-  if(timerMode === 'short' || timerMode === 'long') circle.style.stroke = 'var(--green)';
-  else circle.style.stroke = 'var(--accent)';
-}
-
-function updateTimerSubject() {
-  const sub = state.subjects.find(s=>s.id===document.getElementById('timerSubject').value);
-  const sel = document.getElementById('timerTopic');
-  sel.innerHTML = '<option value="">Selecione um tópico...</option>';
-  if(sub) sub.topics.forEach(t => sel.add(new Option(t.name, t.id)));
-}
-
-function renderTimerSubjects() {
-  const sel = document.getElementById('timerSubject');
-  sel.innerHTML = '<option value="">Selecione uma matéria...</option>';
-  state.subjects.forEach(s => sel.add(new Option(s.name, s.id)));
-  renderTodaySessions();
-  updateTimerDisplay();
-}
-
-function renderTodaySessions() {
-  const today = new Date().toDateString();
-  const todaySess = state.sessions.filter(s => new Date(s.date).toDateString() === today);
-  const el = document.getElementById('todaySessions');
-  if(!todaySess.length) { el.innerHTML = '<div class="text-muted font-sm">Nenhuma sessão ainda hoje.</div>'; return; }
-  el.innerHTML = todaySess.slice(-5).reverse().map(s => `
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;padding:8px 12px;background:var(--surface2);border-radius:8px">
-      <span>🍅</span>
-      <div style="flex:1">
-        <div class="font-sm">${s.subject || 'Livre'}</div>
-        <div style="font-size:11px;color:var(--muted)">${s.duration}min • ${new Date(s.date).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}</div>
-      </div>
-    </div>
-  `).join('');
-}
-
-// Study action buttons
-function markWatched() {
-  const subId = document.getElementById('timerSubject').value;
-  const topId = document.getElementById('timerTopic').value;
-  if(!subId || !topId) { showNotif('⚠️ Selecione uma matéria e tópico primeiro!', 'yellow'); return; }
-  const sub = state.subjects.find(s=>s.id===subId);
-  const top = sub?.topics.find(t=>t.id===topId);
-  if(top) { top.watched = !top.watched; saveState(); renderSubjects(); }
-  const btn = document.getElementById('btn-watched');
-  const status = document.getElementById('status-watched');
-  btn.classList.toggle('on', top.watched);
-  status.textContent = top.watched ? 'LIGADO' : 'DESLIGADO';
-  showNotif(top.watched ? '✅ Aula marcada como assistida!' : 'Aula desmarcada.', top.watched ? 'green' : 'blue');
-  updateDashStats();
-}
-
-function markExercise() {
-  const subId = document.getElementById('timerSubject').value;
-  const topId = document.getElementById('timerTopic').value;
-  if(!subId || !topId) { showNotif('⚠️ Selecione uma matéria e tópico primeiro!', 'yellow'); return; }
-  const sub = state.subjects.find(s=>s.id===subId);
-  const top = sub?.topics.find(t=>t.id===topId);
-  if(top) {
-    top.exerciseDone = !top.exerciseDone;
-    const btn = document.getElementById('btn-exercise');
-    const status = document.getElementById('status-exercise');
-    btn.classList.toggle('on', top.exerciseDone);
-    status.textContent = top.exerciseDone ? 'LIGADO' : 'DESLIGADO';
-    if(top.exerciseDone) {
-      top.exerciseDate = new Date().toISOString();
-      top.reviews = [3,5,7,10,15].map(d => ({
-        days: d,
-        dueDate: new Date(Date.now()+d*86400000).toISOString(),
-        done: false,
-        triggered: false
-      }));
-      showNotif(`✏️ Exercício marcado! Revisões em 3, 5, 7, 10 e 15 dias.`, 'blue');
-    } else {
-      top.reviews = [];
-      showNotif('Exercício desmarcado.', 'blue');
-    }
-    saveState(); updateDashStats(); renderReviews();
-  }
-}
-
-function markReview() {
-  const btn = document.getElementById('btn-review');
-  const status = document.getElementById('status-review');
-  const isOn = btn.classList.toggle('on');
-  status.textContent = isOn ? 'LIGADO' : 'DESLIGADO';
-  if(isOn) showNotif('🔄 Revisão agendada!', 'yellow');
-  else showNotif('Revisão desmarcada.', 'blue');
-}
-
-function openNotes() {
-  const topId = document.getElementById('timerTopic').value;
-  document.getElementById('notes-textarea').value = state.notes[topId] || '';
-  openPopup('notes-popup');
-}
-
-function saveNotes() {
-  const topId = document.getElementById('timerTopic').value;
-  if(topId) state.notes[topId] = document.getElementById('notes-textarea').value;
-  saveState();
-  closePopup('notes-popup');
-  showNotif('📝 Anotações salvas!', 'green');
-}
-
-// ==================== AI CONTENT PROCESSING ====================
+// ==================== AI CONTENT ====================
 async function processContentWithAI() {
-  const name = document.getElementById('contestName').value.trim();
-  const content = document.getElementById('contestContent').value.trim();
-  if(!name || !content) { showNotif('⚠️ Preencha o nome do concurso e o conteúdo!', 'yellow'); return; }
-
-  const resultEl = document.getElementById('ai-result');
-  resultEl.innerHTML = `<div class="loading" style="justify-content:center;padding:40px"><div class="spinner"></div>Processando com IA...</div>`;
-
+  if(!globalState.activeContestId) {
+    showNotif('⚠️ Selecione ou crie um concurso primeiro!','yellow');
+    setTimeout(()=>showPage('concursos'),1000);
+    return;
+  }
+  const name=document.getElementById('contestName').value.trim();
+  const content=document.getElementById('contestContent').value.trim();
+  if(!name||!content){showNotif('⚠️ Preencha nome e conteúdo!','yellow');return;}
+  const resultEl=document.getElementById('ai-result');
+  resultEl.innerHTML=`<div class="loading" style="justify-content:center;padding:40px"><div class="spinner"></div>Processando com IA...</div>`;
   try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 2000,
-        messages: [{
-          role: "user",
-          content: `Analise este conteúdo programático de concurso e organize em matérias e tópicos estruturados.
-
+    const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:2000,messages:[{role:"user",content:`Analise este conteúdo programático e organize em matérias e tópicos.
 Concurso: ${name}
-Conteúdo:
-${content}
-
-Retorne APENAS um JSON válido neste formato exato (sem markdown, sem explicação):
-{
-  "subjects": [
-    {
-      "name": "Nome da Matéria",
-      "emoji": "📖",
-      "estimatedHours": 20,
-      "priority": "alta",
-      "topics": [
-        {
-          "name": "Nome do Tópico",
-          "subtopics": ["subtópico 1", "subtópico 2"]
-        }
-      ]
-    }
-  ]
-}`
-        }]
-      })
-    });
-    const data = await response.json();
-    let text = data.content.map(b=>b.text||'').join('');
-    text = text.replace(/```json|```/g,'').trim();
-    const parsed = JSON.parse(text);
-
-    // Save subjects
-    const colors = ['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];
-    parsed.subjects.forEach((s, i) => {
-      const existing = state.subjects.find(x=>x.name===s.name);
-      if(!existing) {
+Conteúdo: ${content}
+Retorne APENAS JSON (sem markdown):
+{"subjects":[{"name":"Matéria","emoji":"📖","estimatedHours":20,"priority":"alta","topics":[{"name":"Tópico","subtopics":["sub1","sub2"]}]}]}`}]})});
+    const data=await response.json();
+    let text=data.content.map(b=>b.text||'').join('').replace(/```json|```/g,'').trim();
+    const parsed=JSON.parse(text);
+    const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];
+    parsed.subjects.forEach((s,i)=>{
+      if(!state.subjects.find(x=>x.name===s.name)){
         state.subjects.push({
-          id: 'sub_'+ Date.now() + '_' + i,
-          name: s.name,
-          emoji: s.emoji || '📚',
-          estimatedHours: s.estimatedHours || 10,
-          priority: s.priority || 'media',
-          color: colors[i % colors.length],
-          topics: (s.topics||[]).map((t,j)=>({
-            id:'top_'+Date.now()+'_'+i+'_'+j,
-            name: t.name,
-            subtopics: t.subtopics||[],
-            watched: false, exerciseDone: false, exerciseDate: null, reviews: []
-          })),
-          difficulty: 'medium'
+          id:'sub_'+Date.now()+'_'+i,name:s.name,emoji:s.emoji||'📚',estimatedHours:s.estimatedHours||10,
+          priority:s.priority||'media',color:colors[i%colors.length],
+          topics:(s.topics||[]).map((t,j)=>{
+            const node=makeNode(t.name);
+            // Convert flat subtopics to children
+            if(t.subtopics&&t.subtopics.length){node.children=t.subtopics.map(st=>makeNode(typeof st==='string'?st:st.name));}
+            return node;
+          }),
+          difficulty:'medium'
         });
       }
     });
-    saveState();
-    renderAIResult(parsed.subjects);
-    showNotif('✅ Conteúdo organizado com sucesso!', 'green');
-    updateDashStats();
+    saveState();renderAIResult(parsed.subjects);showNotif('✅ Conteúdo organizado!','green');updateDashStats();
   } catch(e) {
-    // Fallback: parse manually
-    const lines = content.split('\n').filter(l=>l.trim());
-    const subjects = [];
-    let current = null;
-    const colors = ['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171'];
-    lines.forEach(line => {
-      const trimmed = line.trim();
-      if(!trimmed.startsWith('-') && !trimmed.startsWith('•') && !trimmed.match(/^\d+\./)) {
-        current = { name: trimmed, emoji: '📚', estimatedHours: 15, priority: 'media', topics: [] };
-        subjects.push(current);
-      } else if(current) {
-        const tname = trimmed.replace(/^[-•\d\.]\s*/,'').trim();
-        if(tname) current.topics.push({ name: tname, subtopics: [] });
-      }
-    });
-
-    state.subjects = subjects.map((s,i)=>({
-      id:'sub_'+Date.now()+'_'+i, name:s.name, emoji:s.emoji,
-      estimatedHours:s.estimatedHours, priority:s.priority,
-      color:colors[i%colors.length],
-      topics:s.topics.map((t,j)=>({
-        id:'top_'+Date.now()+'_'+i+'_'+j, name:t.name, subtopics:t.subtopics,
-        watched:false, exerciseDone:false, exerciseDate:null, reviews:[]
-      })),
-      difficulty:'medium'
-    }));
-    saveState();
-    renderAIResult(subjects);
-    showNotif('✅ Conteúdo processado!', 'green');
-    updateDashStats();
+    // Fallback
+    const lines=document.getElementById('contestContent').value.split('\n').filter(l=>l.trim());
+    const subjects=[];let current=null;
+    const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171'];
+    lines.forEach(line=>{const t=line.trim();if(!t.startsWith('-')&&!t.startsWith('•')&&!t.match(/^\d+\./)){current={name:t,emoji:'📚',estimatedHours:15,priority:'media',topics:[]};subjects.push(current);}else if(current){const n=t.replace(/^[-•\d\.]\s*/,'').trim();if(n)current.topics.push(makeNode(n));}});
+    state.subjects=subjects.map((s,i)=>({id:'sub_'+Date.now()+'_'+i,name:s.name,emoji:s.emoji,estimatedHours:s.estimatedHours,priority:s.priority,color:colors[i%colors.length],topics:s.topics,difficulty:'medium'}));
+    saveState();renderAIResult(subjects);showNotif('✅ Processado!','green');updateDashStats();
   }
 }
-
-function renderAIResult(subjects) {
-  const el = document.getElementById('ai-result');
-  if(!subjects || !subjects.length) { el.innerHTML = '<div class="text-muted text-center">Nenhuma matéria encontrada.</div>'; return; }
-  el.innerHTML = `
-    <div class="flex between mb16">
-      <div class="text-muted font-sm">${subjects.length} matérias identificadas</div>
-      <span class="badge badge-green">✅ Importado</span>
-    </div>
-    ${subjects.map(s => `
-      <div class="topic-item" onclick="this.querySelector('.subtopic-list').classList.toggle('open'); this.classList.toggle('expanded')">
-        <div class="flex between">
-          <div class="flex gap8">
-            <span>${s.emoji||'📚'}</span>
-            <span class="font-bold font-sm">${s.name}</span>
-          </div>
-          <div class="flex gap8">
-            <span class="badge ${s.priority==='alta'?'badge-red':s.priority==='media'?'badge-yellow':'badge-green'}">${s.priority||'média'}</span>
-            <span class="text-muted font-sm">${s.topics?.length||0} tópicos ▾</span>
-          </div>
-        </div>
-        <div class="subtopic-list">
-          ${(s.topics||[]).map(t=>`<div class="subtopic-item">• ${t.name}</div>`).join('')}
-        </div>
-      </div>
-    `).join('')}
-    <div class="ai-bubble mt16" style="padding:14px">
-      <div class="font-sm text-muted">✏️ Para editar nomes, adicionar ou remover tópicos, acesse <b style="color:var(--accent);cursor:pointer" onclick="showPage('materias')">Matérias</b>.</div>
-    </div>
-    <div class="mt12 flex gap8">
-      <button class="btn btn-primary w100" onclick="showPage('materias')">📚 Editar Matérias</button>
-      <button class="btn btn-outline w100" onclick="showPage('quiz-dificuldade')">🎯 Fazer Quiz</button>
-    </div>
-  `;
+function renderAIResult(subjects){
+  const el=document.getElementById('ai-result');
+  if(!subjects||!subjects.length){el.innerHTML='<div class="text-muted text-center">Nenhuma matéria encontrada.</div>';return;}
+  el.innerHTML=`<div class="flex between mb16"><div class="text-muted font-sm">${subjects.length} matérias</div><span class="badge badge-green">✅ Importado</span></div>
+  ${subjects.map(s=>`<div class="topic-item" onclick="this.querySelector('.subtopic-list').classList.toggle('open');this.classList.toggle('expanded')"><div class="flex between"><div class="flex gap8"><span>${s.emoji||'📚'}</span><span class="font-bold font-sm">${s.name}</span></div><div class="flex gap8"><span class="badge ${s.priority==='alta'?'badge-red':'badge-yellow'}">${s.priority||'média'}</span><span class="text-muted font-sm">${s.topics?.length||0} tópicos ▾</span></div></div><div class="subtopic-list">${(s.topics||[]).map(t=>`<div class="subtopic-item">• ${t.name}${t.children&&t.children.length?' ('+t.children.length+' subtópicos)':''}</div>`).join('')}</div></div>`).join('')}
+  <div class="mt12 flex gap8"><button class="btn btn-primary w100" onclick="showPage('materias')">📚 Editar Matérias</button><button class="btn btn-outline w100" onclick="showPage('quiz-dificuldade')">🎯 Fazer Quiz</button></div>`;
 }
 
-// ==================== DIFFICULTY QUIZ ====================
-let quizIndex = 0;
-let quizAnswers = {};
+// ==================== QUIZ ====================
+let quizIndex=0,quizAnswers={};
+function renderQuizPage(){const el=document.getElementById('quiz-container');if(!state.subjects.length)el.innerHTML=`<div class="text-center" style="padding:40px"><div style="font-size:48px;margin-bottom:16px">🎯</div><div class="font-bold mb8">Nenhuma matéria cadastrada</div><div class="text-muted font-sm mb24">Adicione um concurso primeiro.</div><button class="btn btn-primary" onclick="showPage('ia-conteudo')">+ Adicionar</button></div>`;}
+function startDifficultyQuiz(){quizIndex=0;quizAnswers={};renderQuizQuestion();}
+function renderQuizQuestion(){const subjects=state.subjects;if(quizIndex>=subjects.length){finishQuiz();return;}const sub=subjects[quizIndex];const pct=Math.round((quizIndex/subjects.length)*100);document.getElementById('quiz-container').innerHTML=`<div class="quiz-progress-bar mb24"><div class="quiz-progress-fill" style="width:${pct}%"></div></div><div class="text-muted font-sm mb8">Matéria ${quizIndex+1} de ${subjects.length}</div><div class="font-bold mb16" style="font-size:18px">${sub.emoji} ${sub.name}</div><div class="text-muted font-sm mb24">Como você se sente?</div><div onclick="selectDiff(this,'easy')" class="quiz-option">😊 <b>Fácil</b></div><div onclick="selectDiff(this,'medium')" class="quiz-option">😐 <b>Médio</b></div><div onclick="selectDiff(this,'hard')" class="quiz-option">😰 <b>Difícil</b></div><div class="flex gap8 mt24">${quizIndex>0?'<button class="btn btn-outline" onclick="quizIndex--;renderQuizQuestion()">← Anterior</button>':''}<button class="btn btn-primary" style="margin-left:auto" id="quiz-next-btn" disabled onclick="nextQuizQuestion()">Próximo →</button></div>`;}
+function selectDiff(el,diff){document.querySelectorAll('.quiz-option').forEach(o=>{o.classList.remove('selected-easy','selected-hard');});el.classList.add(diff==='easy'?'selected-easy':'selected-hard');quizAnswers[state.subjects[quizIndex].id]=diff;document.getElementById('quiz-next-btn').disabled=false;}
+function nextQuizQuestion(){if(!quizAnswers[state.subjects[quizIndex].id]){showNotif('⚠️ Selecione!','yellow');return;}quizIndex++;renderQuizQuestion();}
+async function finishQuiz(){Object.keys(quizAnswers).forEach(id=>{const sub=state.subjects.find(s=>s.id===id);if(sub)sub.difficulty=quizAnswers[id];state.difficultyMap[id]=quizAnswers[id];});saveState();document.getElementById('quiz-container').innerHTML=`<div class="loading" style="justify-content:center;padding:40px"><div class="spinner"></div>Gerando dicas...</div>`;try{const hard=state.subjects.filter(s=>s.difficulty==='hard').map(s=>s.name);const easy=state.subjects.filter(s=>s.difficulty==='easy').map(s=>s.name);const medium=state.subjects.filter(s=>s.difficulty==='medium').map(s=>s.name);const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:800,messages:[{role:"user",content:`Estudante para concurso. Dê 4-5 dicas práticas em português:\nDifíceis: ${hard.join(', ')||'nenhuma'}\nMédias: ${medium.join(', ')||'nenhuma'}\nFáceis: ${easy.join(', ')||'nenhuma'}`}]})});const data=await response.json();state.aiTips=data.content.map(b=>b.text||'').join('');saveState();}catch(e){state.aiTips=`Foque nas matérias difíceis primeiro. Revise as fáceis nos dias de menor energia.`;}
+document.getElementById('quiz-container').innerHTML=`<div class="text-center" style="padding:20px"><div style="font-size:48px;margin-bottom:12px">🎉</div><div class="font-bold mb8" style="font-size:20px">Concluído!</div></div>`;
+document.getElementById('quiz-results').style.display='block';
+const hard=state.subjects.filter(s=>s.difficulty==='hard');const medium2=state.subjects.filter(s=>s.difficulty==='medium');const easy=state.subjects.filter(s=>s.difficulty==='easy');
+document.getElementById('quiz-result-content').innerHTML=`<div class="mb16">${hard.length?`<div class="mb8"><span class="badge badge-red mb8">😰 Difícil</span><br>${hard.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''} ${medium2.length?`<div class="mb8"><span class="badge badge-yellow mb8">😐 Médio</span><br>${medium2.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''} ${easy.length?`<div class="mb8"><span class="badge badge-green mb8">😊 Fácil</span><br>${easy.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''}</div><div class="ai-bubble"><div class="font-bold mb8">🤖 Dicas</div><div class="font-sm" style="line-height:1.7;white-space:pre-line">${state.aiTips}</div></div><div class="mt16 flex gap8"><button class="btn btn-primary w100" onclick="generateSchedule();showPage('planner')">📅 Gerar Plano</button></div>`;
+showNotif('✅ Quiz concluído!','green');}
 
-function renderQuizPage() {
-  const el = document.getElementById('quiz-container');
-  if(!state.subjects.length) {
-    el.innerHTML = `<div class="text-center" style="padding:40px">
-      <div style="font-size:48px; margin-bottom:16px">🎯</div>
-      <div class="font-bold mb8" style="font-size:18px">Nenhuma matéria cadastrada</div>
-      <div class="text-muted font-sm mb24">Adicione um concurso primeiro.</div>
-      <button class="btn btn-primary" onclick="showPage('ia-conteudo')">+ Adicionar Conteúdo</button>
-    </div>`;
-  }
-}
-
-function startDifficultyQuiz() {
-  quizIndex = 0;
-  quizAnswers = {};
-  renderQuizQuestion();
-}
-
-function renderQuizQuestion() {
-  const subjects = state.subjects;
-  if(quizIndex >= subjects.length) { finishQuiz(); return; }
-  const sub = subjects[quizIndex];
-  const pct = Math.round((quizIndex/subjects.length)*100);
-  document.getElementById('quiz-container').innerHTML = `
-    <div class="quiz-progress-bar mb24"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
-    <div class="text-muted font-sm mb8">Matéria ${quizIndex+1} de ${subjects.length}</div>
-    <div class="font-bold mb16" style="font-size:18px">${sub.emoji} ${sub.name}</div>
-    <div class="text-muted font-sm mb24">Como você se sente em relação a esta matéria?</div>
-    <div onclick="selectDiff(this,'easy')" class="quiz-option">😊 <b>Fácil</b> — Tenho boa base e me sinto confiante</div>
-    <div onclick="selectDiff(this,'medium')" class="quiz-option">😐 <b>Médio</b> — Sei um pouco, mas posso melhorar</div>
-    <div onclick="selectDiff(this,'hard')" class="quiz-option">😰 <b>Difícil</b> — Tenho dificuldade e preciso de mais atenção</div>
-    <div class="flex gap8 mt24">
-      ${quizIndex>0?'<button class="btn btn-outline" onclick="quizIndex--;renderQuizQuestion()">← Anterior</button>':''}
-      <button class="btn btn-primary" style="margin-left:auto" id="quiz-next-btn" disabled onclick="nextQuizQuestion()">Próximo →</button>
-    </div>
-  `;
-}
-
-function selectDiff(el, diff) {
-  document.querySelectorAll('.quiz-option').forEach(o=>{o.classList.remove('selected-easy','selected-hard'); o.style.borderColor='';});
-  el.classList.add(diff==='easy'?'selected-easy':'selected-hard');
-  quizAnswers[state.subjects[quizIndex].id] = diff;
-  document.getElementById('quiz-next-btn').disabled = false;
-}
-
-function nextQuizQuestion() {
-  if(!quizAnswers[state.subjects[quizIndex].id]) { showNotif('⚠️ Selecione uma opção!', 'yellow'); return; }
-  quizIndex++;
-  renderQuizQuestion();
-}
-
-async function finishQuiz() {
-  // Save difficulty
-  Object.keys(quizAnswers).forEach(id => {
-    const sub = state.subjects.find(s=>s.id===id);
-    if(sub) sub.difficulty = quizAnswers[id];
-    state.difficultyMap[id] = quizAnswers[id];
-  });
-  saveState();
-
-  document.getElementById('quiz-container').innerHTML = `<div class="loading" style="justify-content:center;padding:40px"><div class="spinner"></div>Gerando dicas personalizadas...</div>`;
-
-  // Generate AI tips
-  try {
-    const hard = state.subjects.filter(s=>s.difficulty==='hard').map(s=>s.name);
-    const easy = state.subjects.filter(s=>s.difficulty==='easy').map(s=>s.name);
-    const medium = state.subjects.filter(s=>s.difficulty==='medium').map(s=>s.name);
-
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model:"claude-sonnet-4-20250514",
-        max_tokens:800,
-        messages:[{role:"user",content:`Sou um estudante preparando para concurso público. Baseado no meu perfil de dificuldade, dê dicas PERSONALIZADAS e objetivas em português:
-
-Matérias DIFÍCEIS (preciso de mais foco): ${hard.join(', ')||'nenhuma'}
-Matérias MÉDIAS: ${medium.join(', ')||'nenhuma'}  
-Matérias FÁCEIS (tenho boa base): ${easy.join(', ')||'nenhuma'}
-
-Dê 4-5 dicas práticas curtas de como dividir o tempo de estudos, qual ordem estudar, e como lidar com as dificuldades. Seja direto e motivador. Máximo 200 palavras.`}]
-      })
-    });
-    const data = await response.json();
-    state.aiTips = data.content.map(b=>b.text||'').join('');
-    saveState();
-  } catch(e) {
-    const hard = state.subjects.filter(s=>s.difficulty==='hard');
-    const easy = state.subjects.filter(s=>s.difficulty==='easy');
-    state.aiTips = `✨ Dicas baseadas no seu perfil: Dedique ${hard.length>0?'50% do tempo às matérias difíceis':'mais tempo às matérias médias'}. Estude as matérias difíceis (${hard.map(s=>s.name).join(', ')||'nenhuma'}) no início do dia quando a energia está alta. Use as matérias fáceis (${easy.map(s=>s.name).join(', ')||'nenhuma'}) para dias mais cansativos.`;
-  }
-
-  // Show results
-  document.getElementById('quiz-container').innerHTML = `
-    <div class="text-center" style="padding:20px">
-      <div style="font-size:48px; margin-bottom:12px">🎉</div>
-      <div class="font-bold mb8" style="font-size:20px">Avaliação Concluída!</div>
-      <div class="text-muted font-sm">Suas dicas personalizadas foram geradas.</div>
-    </div>
-  `;
-
-  document.getElementById('quiz-results').style.display = 'block';
-  const hard = state.subjects.filter(s=>s.difficulty==='hard');
-  const medium2 = state.subjects.filter(s=>s.difficulty==='medium');
-  const easy = state.subjects.filter(s=>s.difficulty==='easy');
-  document.getElementById('quiz-result-content').innerHTML = `
-    <div class="mb16">
-      ${hard.length?`<div class="mb8"><span class="badge badge-red mb8">😰 Difícil</span><br>${hard.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''}
-      ${medium2.length?`<div class="mb8"><span class="badge badge-yellow mb8">😐 Médio</span><br>${medium2.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''}
-      ${easy.length?`<div class="mb8"><span class="badge badge-green mb8">😊 Fácil</span><br>${easy.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''}
-    </div>
-    <div class="ai-bubble">
-      <div class="font-bold mb8">🤖 Dicas Personalizadas</div>
-      <div class="font-sm" style="line-height:1.7; white-space:pre-line">${state.aiTips}</div>
-    </div>
-    <div class="mt16 flex gap8">
-      <button class="btn btn-primary w100" onclick="generateSchedule();showPage('planner')">📅 Gerar Plano de Estudos</button>
-    </div>
-  `;
-  document.getElementById('ai-study-tips').innerHTML = state.aiTips.substring(0,200)+'...';
-  showNotif('✅ Quiz concluído! Dicas geradas.', 'green');
-}
-
-// ==================== SUBJECTS PAGE (EDITABLE) ====================
+// ==================== SUBJECTS PAGE — INFINITE TREE ====================
 function renderSubjects() {
   const el = document.getElementById('subjects-container');
   if(!state.subjects.length) {
-    el.innerHTML = `<div class="text-center" style="padding:60px">
-      <div style="font-size:48px;margin-bottom:16px">📚</div>
-      <div class="font-bold mb8">Nenhuma matéria adicionada</div>
-      <div class="text-muted font-sm mb24">Use a IA para processar seu conteúdo programático</div>
-      <div class="flex gap8" style="justify-content:center">
-        <button class="btn btn-primary" onclick="showPage('ia-conteudo')">🤖 Adicionar com IA</button>
-        <button class="btn btn-outline" onclick="addSubjectManual()">✏️ Adicionar Manualmente</button>
-      </div>
-    </div>`;
+    el.innerHTML = `<div class="text-center" style="padding:60px"><div style="font-size:48px;margin-bottom:16px">📚</div><div class="font-bold mb8">Nenhuma matéria adicionada</div><div class="text-muted font-sm mb24">Use a IA para processar</div><div class="flex gap8" style="justify-content:center"><button class="btn btn-primary" onclick="showPage('ia-conteudo')">🤖 Adicionar com IA</button><button class="btn btn-outline" onclick="addSubjectManual()">✏️ Manual</button></div></div>`;
     return;
   }
   el.innerHTML = `
@@ -1242,22 +1386,23 @@ function renderSubjects() {
 }
 
 function renderSubjectCard(sub) {
-  const done = sub.topics.filter(t=>t.watched).length;
-  const total = sub.topics.length;
-  const pct = total ? Math.round(done/total*100) : 0;
+  const totalNodes = countAllNodes(sub.topics);
+  const doneNodes = countWatchedNodes(sub.topics);
+  const pct = totalNodes ? Math.round(doneNodes/totalNodes*100) : 0;
   return `
     <div class="card mb16" id="subcard-${sub.id}">
       <div class="flex between mb12">
-        <div class="flex gap8" style="flex:1;min-width:0">
-          <button class="btn btn-ghost btn-sm" onclick="editEmoji('${sub.id}')" title="Editar emoji" style="font-size:22px;padding:4px 8px">${sub.emoji}</button>
+        <div class="flex gap8" style="flex:1;min-width:0;align-items:flex-start">
+          <button class="btn btn-ghost btn-sm" onclick="editEmoji('${sub.id}')" style="font-size:22px;padding:4px 8px;flex-shrink:0">${sub.emoji}</button>
           <div style="flex:1;min-width:0">
-            <div class="flex gap8" style="align-items:center">
+            <div class="flex gap8" style="align-items:center;flex-wrap:wrap">
               <span id="subname-${sub.id}" class="font-bold" style="font-size:17px;cursor:pointer" ondblclick="startEditSubjectName('${sub.id}')">${sub.name}</span>
-              <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px" onclick="startEditSubjectName('${sub.id}')" title="Renomear">✏️</button>
+              <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px" onclick="startEditSubjectName('${sub.id}')">✏️</button>
             </div>
-            <div class="flex gap8 mt8" style="flex-wrap:wrap">
+            <div class="flex gap8 mt8" style="flex-wrap:wrap;align-items:center">
               <span class="badge ${sub.difficulty==='easy'?'badge-green':sub.difficulty==='hard'?'badge-red':'badge-yellow'}">${sub.difficulty==='easy'?'😊 Fácil':sub.difficulty==='hard'?'😰 Difícil':'😐 Médio'}</span>
               <span class="badge badge-blue">⏱ ~${sub.estimatedHours||10}h</span>
+              <span class="badge badge-purple">🌿 ${totalNodes} nós</span>
               <select onchange="changeSubjectPriority('${sub.id}',this.value)" style="padding:2px 8px;font-size:12px;width:auto;height:26px;border-radius:20px;background:rgba(168,85,247,.15);border-color:rgba(168,85,247,.3);color:var(--accent2)">
                 <option value="alta" ${sub.priority==='alta'?'selected':''}>🔴 Alta</option>
                 <option value="media" ${sub.priority==='media'||!sub.priority?'selected':''}>🟡 Média</option>
@@ -1268,527 +1413,272 @@ function renderSubjectCard(sub) {
         </div>
         <div style="text-align:right;flex-shrink:0;margin-left:12px">
           <div style="font-size:22px;font-weight:800;color:${sub.color}">${pct}%</div>
-          <div class="text-muted font-sm">${done}/${total} tópicos</div>
+          <div class="text-muted font-sm">${doneNodes}/${totalNodes} vistos</div>
         </div>
       </div>
 
       <div class="progress-bar mb16"><div class="progress-fill" style="width:${pct}%;background:${sub.color}"></div></div>
 
-      <!-- Topics list -->
-      <div id="topics-${sub.id}">
-        ${sub.topics.map(t => renderTopicRow(sub.id, t)).join('')}
+      <!-- TREE -->
+      <div id="tree-${sub.id}">
+        ${renderTreeLevel(sub.id, sub.topics, 0)}
       </div>
 
-      <!-- Add topic row -->
-      <div class="flex gap8 mt12">
-        <input type="text" id="newtopic-${sub.id}" placeholder="+ Novo tópico..." style="flex:1;height:36px;font-size:13px;padding:6px 12px"
-          onkeydown="if(event.key==='Enter')addTopicManual('${sub.id}')">
-        <button class="btn btn-sm btn-primary" onclick="addTopicManual('${sub.id}')">+ Adicionar</button>
+      <!-- Add root topic -->
+      <div class="tree-add-row mt16">
+        <span style="color:var(--accent);font-size:14px;flex-shrink:0">+</span>
+        <input type="text" class="tree-add-input" id="newtopic-${sub.id}" placeholder="Novo tópico raiz...">
+        <button class="tree-add-btn" onclick="addRootTopic('${sub.id}')">Adicionar</button>
       </div>
+      <div style="font-size:11px;color:var(--muted);margin-top:6px;padding-left:4px">💡 Clique em <b>+</b> em qualquer nó para adicionar subtópico dentro dele</div>
 
-      <!-- Subject actions -->
+      <!-- Subject footer -->
       <div class="flex gap8 mt12" style="border-top:1px solid var(--border);padding-top:12px">
         <button class="btn btn-sm btn-outline" onclick="openYouTube('${sub.name}','')">▶ Vídeos</button>
         <button class="btn btn-sm btn-outline" onclick="editSubjectHours('${sub.id}')">⏱ Horas</button>
-        <button class="btn btn-sm btn-danger" style="margin-left:auto" onclick="removeSubject('${sub.id}')">🗑 Remover Matéria</button>
+        <button class="btn btn-sm btn-outline" onclick="expandAll('${sub.id}')">⊞ Expandir Tudo</button>
+        <button class="btn btn-sm btn-outline" onclick="collapseAll('${sub.id}')">⊟ Recolher</button>
+        <button class="btn btn-sm btn-danger" style="margin-left:auto" onclick="removeSubject('${sub.id}')">🗑</button>
       </div>
     </div>
   `;
 }
 
-function renderTopicRow(subId, t) {
-  return `
-    <div class="flex between mb6" id="toprow-${t.id}" style="padding:8px 10px;background:var(--surface2);border-radius:10px;border:1px solid var(--border);gap:8px">
-      <div class="flex gap8" style="flex:1;min-width:0">
-        <span style="cursor:pointer;font-size:16px" onclick="toggleWatched('${subId}','${t.id}')" title="Marcar como assistida">${t.watched?'✅':'⬜'}</span>
-        <span id="topname-${t.id}" class="font-sm" style="cursor:pointer;flex:1" ondblclick="startEditTopicName('${subId}','${t.id}')">${t.name}</span>
+function renderTreeLevel(subId, nodes, depth) {
+  if(!nodes || !nodes.length) return '';
+  const depthColors = ['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171'];
+  const color = depthColors[Math.min(depth, depthColors.length-1)];
+  const depthRowClass = `depth-row-${Math.min(depth, 4)}`;
+  return nodes.map(node => {
+    const hasChildren = node.children && node.children.length > 0;
+    const childHtml = hasChildren ? renderTreeLevel(subId, node.children, depth+1) : '';
+    const nodeId = `tn-${node.id}`;
+    const childrenId = `tc-${node.id}`;
+    const addRowId = `ta-${node.id}`;
+    const indentPx = depth * 0; // Indent handled by border-left
+    const sizeAdjust = Math.max(12, 14 - depth * 0.5);
+    return `
+      <div class="tree-node" id="${nodeId}">
+        <div class="tree-row ${depthRowClass}" style="padding-left:${8 + depth*2}px">
+          <!-- Depth bar -->
+          <div class="tree-depth-indicator depth-${Math.min(depth,4)}" style="background:${color};opacity:${0.5 + depth*0.1};width:3px"></div>
+          <!-- Expand toggle -->
+          <div class="tree-toggle ${hasChildren?'':'leaf'} ${hasChildren?'':'leaf'}" id="tg-${node.id}" onclick="toggleTreeNode('${node.id}','${childrenId}')" style="flex-shrink:0">▶</div>
+          <!-- Watch checkbox -->
+          <div class="tree-checkbox ${node.watched?'checked':''}" onclick="toggleNodeWatched('${subId}','${node.id}')" title="Marcar aula assistida">
+            ${node.watched?'✓':''}
+          </div>
+          <!-- Name -->
+          <span class="tree-name" style="font-size:${sizeAdjust}px" ondblclick="startEditNodeName('${subId}','${node.id}')">${node.name}</span>
+          <!-- Exercise badge -->
+          ${node.exerciseDone ? `<span class="tree-badge-exercise">✏️</span>` : ''}
+          <!-- Actions (visible on hover) -->
+          <div class="tree-actions">
+            <button class="tree-action-btn" onclick="startEditNodeName('${subId}','${node.id}')" title="Renomear">✏️</button>
+            <button class="tree-action-btn" onclick="toggleNodeExercise('${subId}','${node.id}')" title="${node.exerciseDone?'Desmarcar exercício':'Marcar exercício'}">📝</button>
+            <button class="tree-action-btn" onclick="openYouTube('${node.name.replace(/'/g,"\\'")}','')" title="Vídeos">▶</button>
+            <button class="tree-action-btn" onclick="showAddChild('${node.id}','${addRowId}')" title="Adicionar subtópico" style="color:var(--accent);font-size:15px;font-weight:700">+</button>
+            <button class="tree-action-btn danger" onclick="removeNode('${subId}','${node.id}')" title="Remover">✕</button>
+          </div>
+        </div>
+        <!-- Add child row (hidden by default) -->
+        <div class="tree-children" id="${addRowId}-wrap" style="margin-left:${16+depth*4}px;display:none;margin-top:4px">
+          <div class="tree-add-row">
+            <span style="color:${color};font-size:14px;flex-shrink:0">↳</span>
+            <input type="text" class="tree-add-input" id="${addRowId}" placeholder="Novo subtópico dentro de '${node.name.substring(0,20)}...'">
+            <button class="tree-add-btn" onclick="addChildNode('${subId}','${node.id}','${addRowId}')">+ Adicionar</button>
+            <button class="tree-action-btn" onclick="document.getElementById('${addRowId}-wrap').style.display='none'" style="opacity:.5">✕</button>
+          </div>
+        </div>
+        <!-- Children -->
+        ${hasChildren ? `<div class="tree-children" id="${childrenId}" style="margin-left:${16+depth*4}px">${childHtml}</div>` : `<div class="tree-children" id="${childrenId}" style="margin-left:${16+depth*4}px"></div>`}
       </div>
-      <div class="flex gap8" style="flex-shrink:0">
-        ${t.exerciseDone?'<span class="badge badge-blue" style="font-size:10px">✏️ Feito</span>':''}
-        <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px" onclick="startEditTopicName('${subId}','${t.id}')" title="Renomear">✏️</button>
-        <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px" onclick="openYouTube('${t.name}','${t.id}')" title="Buscar vídeos">▶</button>
-        <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px;color:var(--accent)" onclick="toggleWatched('${subId}','${t.id}')" title="Aula assistida">🎓</button>
-        <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px;color:var(--accent2)" onclick="toggleExercise('${subId}','${t.id}')" title="Exercício feito">✏️</button>
-        <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px;color:var(--red)" onclick="removeTopic('${subId}','${t.id}')" title="Remover">✕</button>
-      </div>
-    </div>
-  `;
+    `;
+  }).join('');
+}
+
+function toggleTreeNode(nodeId, childrenId) {
+  const tg = document.getElementById('tg-'+nodeId);
+  const ch = document.getElementById(childrenId);
+  if(!tg || !ch) return;
+  const isOpen = ch.classList.contains('open');
+  if(isOpen) { ch.classList.remove('open'); tg.classList.remove('open'); }
+  else { ch.classList.add('open'); tg.classList.add('open'); }
+}
+
+function showAddChild(nodeId, addRowId) {
+  const wrap = document.getElementById(addRowId+'-wrap');
+  if(!wrap) return;
+  const isVisible = wrap.style.display !== 'none';
+  wrap.style.display = isVisible ? 'none' : 'block';
+  if(!isVisible) {
+    const inp = document.getElementById(addRowId);
+    if(inp) { inp.focus(); inp.addEventListener('keydown', e => { if(e.key==='Enter') e.target.closest('.tree-children').querySelector('.tree-add-btn').click(); }); }
+  }
+}
+
+function addChildNode(subId, parentId, addRowId) {
+  const inp = document.getElementById(addRowId);
+  if(!inp) return;
+  const name = inp.value.trim();
+  if(!name) { showNotif('⚠️ Digite o nome!','yellow'); return; }
+  const sub = state.subjects.find(s=>s.id===subId);
+  if(!sub) return;
+  const parent = findNodeById(sub.topics, parentId);
+  if(!parent) return;
+  if(!parent.children) parent.children = [];
+  parent.children.push(makeNode(name));
+  saveState();
+  renderSubjects();
+  showNotif('✅ Subtópico adicionado!','green');
+  // Re-open the parent's children
+  setTimeout(() => {
+    const childrenId = 'tc-'+parentId;
+    const tg = document.getElementById('tg-'+parentId);
+    const ch = document.getElementById(childrenId);
+    if(ch && !ch.classList.contains('open')) { ch.classList.add('open'); if(tg) tg.classList.add('open'); }
+  }, 50);
+}
+
+function addRootTopic(subId) {
+  const inp = document.getElementById('newtopic-'+subId);
+  if(!inp) return;
+  const name = inp.value.trim();
+  if(!name) { showNotif('⚠️ Digite o nome!','yellow'); return; }
+  const sub = state.subjects.find(s=>s.id===subId);
+  if(sub) { sub.topics.push(makeNode(name)); saveState(); renderSubjects(); showNotif('✅ Tópico adicionado!','green'); updateDashStats(); }
+}
+
+function startEditNodeName(subId, nodeId) {
+  const sub = state.subjects.find(s=>s.id===subId);
+  const node = findNodeById(sub?.topics||[], nodeId);
+  if(!node) return;
+  const name = node.name;
+  const newName = prompt('Renomear:', name);
+  if(newName && newName.trim()) { node.name = newName.trim(); saveState(); renderSubjects(); showNotif('✅ Renomeado!','green'); }
 }
 
 function startEditSubjectName(subId) {
   const span = document.getElementById('subname-'+subId);
   const current = span.textContent;
-  span.innerHTML = `<input type="text" value="${current}" style="width:220px;font-size:16px;font-weight:700;padding:2px 8px;height:30px"
-    onblur="finishEditSubjectName('${subId}',this.value)"
-    onkeydown="if(event.key==='Enter')this.blur();if(event.key==='Escape'){this.value='${current}';this.blur()}"
-    onclick="event.stopPropagation()">`;
-  span.querySelector('input').focus();
-  span.querySelector('input').select();
+  span.innerHTML = `<input type="text" value="${current}" style="width:220px;font-size:16px;font-weight:700;padding:2px 8px;height:30px" onblur="finishEditSubjectName('${subId}',this.value)" onkeydown="if(event.key==='Enter')this.blur();if(event.key==='Escape'){this.value='${current}';this.blur()}" onclick="event.stopPropagation()">`;
+  span.querySelector('input').focus(); span.querySelector('input').select();
 }
 
 function finishEditSubjectName(subId, newName) {
   newName = newName.trim();
   if(!newName) { renderSubjects(); return; }
   const sub = state.subjects.find(s=>s.id===subId);
-  if(sub) { sub.name = newName; saveState(); renderSubjects(); showNotif('✅ Nome atualizado!', 'green'); }
+  if(sub) { sub.name = newName; saveState(); renderSubjects(); showNotif('✅ Nome atualizado!','green'); }
 }
 
-function startEditTopicName(subId, topId) {
-  const span = document.getElementById('topname-'+topId);
-  const current = span.textContent;
-  span.innerHTML = `<input type="text" value="${current}" style="width:100%;font-size:13px;padding:2px 8px;height:28px"
-    onblur="finishEditTopicName('${subId}','${topId}',this.value)"
-    onkeydown="if(event.key==='Enter')this.blur();if(event.key==='Escape'){this.value='${current}';this.blur()}"
-    onclick="event.stopPropagation()">`;
-  span.querySelector('input').focus();
-  span.querySelector('input').select();
-}
-
-function finishEditTopicName(subId, topId, newName) {
-  newName = newName.trim();
-  if(!newName) { renderSubjects(); return; }
+function toggleNodeWatched(subId, nodeId) {
   const sub = state.subjects.find(s=>s.id===subId);
-  const top = sub?.topics.find(t=>t.id===topId);
-  if(top) { top.name = newName; saveState(); renderSubjects(); showNotif('✅ Tópico atualizado!', 'green'); }
+  const node = findNodeById(sub?.topics||[], nodeId);
+  if(node) { node.watched = !node.watched; saveState(); renderSubjects(); updateDashStats(); }
 }
 
-function addTopicManual(subId) {
-  const inp = document.getElementById('newtopic-'+subId);
-  const name = inp.value.trim();
-  if(!name) { showNotif('⚠️ Digite o nome do tópico!', 'yellow'); return; }
+function toggleNodeExercise(subId, nodeId) {
   const sub = state.subjects.find(s=>s.id===subId);
-  if(sub) {
-    sub.topics.push({id:'top_'+Date.now(), name, subtopics:[], watched:false, exerciseDone:false, exerciseDate:null, reviews:[]});
-    saveState(); renderSubjects(); showNotif('✅ Tópico adicionado!', 'green');
+  const node = findNodeById(sub?.topics||[], nodeId);
+  if(!node) return;
+  node.exerciseDone = !node.exerciseDone;
+  if(node.exerciseDone) {
+    node.exerciseDate = new Date().toISOString();
+    node.reviews = [3,5,7,10,15].map(d=>({days:d,dueDate:new Date(Date.now()+d*86400000).toISOString(),done:false,triggered:false}));
+    showNotif('✏️ Exercício marcado! Revisões programadas.','blue');
+  } else { node.reviews = []; }
+  saveState(); renderSubjects(); updateDashStats(); renderReviews();
+}
+
+function removeNode(subId, nodeId) {
+  const sub = state.subjects.find(s=>s.id===subId);
+  if(!sub) return;
+  const parentArr = findParentArray(sub.topics, nodeId);
+  if(parentArr) {
+    const idx = parentArr.findIndex(n=>n.id===nodeId);
+    if(idx !== -1) parentArr.splice(idx, 1);
+    saveState(); renderSubjects(); updateDashStats();
   }
 }
 
-function removeTopic(subId, topId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(sub) { sub.topics = sub.topics.filter(t=>t.id!==topId); saveState(); renderSubjects(); updateDashStats(); }
+function expandAll(subId) {
+  document.querySelectorAll(`#subcard-${subId} .tree-children`).forEach(c => c.classList.add('open'));
+  document.querySelectorAll(`#subcard-${subId} .tree-toggle`).forEach(t => { if(!t.classList.contains('leaf')) t.classList.add('open'); });
+}
+
+function collapseAll(subId) {
+  document.querySelectorAll(`#subcard-${subId} .tree-children`).forEach(c => c.classList.remove('open'));
+  document.querySelectorAll(`#subcard-${subId} .tree-toggle`).forEach(t => t.classList.remove('open'));
 }
 
 function addSubjectManual() {
   const name = prompt('Nome da nova matéria:');
-  if(!name || !name.trim()) return;
-  const colors = ['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];
-  state.subjects.push({
-    id:'sub_'+Date.now(), name:name.trim(), emoji:'📚',
-    estimatedHours:10, priority:'media',
-    color:colors[state.subjects.length % colors.length],
-    topics:[], difficulty:'medium'
-  });
-  saveState(); renderSubjects(); showNotif('✅ Matéria adicionada!', 'green'); updateDashStats();
+  if(!name||!name.trim()) return;
+  const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];
+  state.subjects.push({id:'sub_'+Date.now(),name:name.trim(),emoji:'📚',estimatedHours:10,priority:'media',color:colors[state.subjects.length%colors.length],topics:[],difficulty:'medium'});
+  saveState(); renderSubjects(); showNotif('✅ Matéria adicionada!','green'); updateDashStats();
 }
 
-function editEmoji(subId) {
-  const emoji = prompt('Digite um emoji para a matéria:');
-  if(!emoji) return;
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(sub) { sub.emoji = emoji.trim().substring(0,2); saveState(); renderSubjects(); }
-}
-
-function changeSubjectPriority(subId, val) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(sub) { sub.priority = val; saveState(); }
-}
-
-function editSubjectHours(subId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(!sub) return;
-  const h = prompt('Horas estimadas para esta matéria:', sub.estimatedHours||10);
-  if(h && !isNaN(h)) { sub.estimatedHours = parseInt(h); saveState(); renderSubjects(); }
-}
-
-function toggleWatched(subId, topId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  const top = sub?.topics.find(t=>t.id===topId);
-  if(top) { top.watched = !top.watched; saveState(); renderSubjects(); updateDashStats(); }
-}
-
-function toggleExercise(subId, topId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  const top = sub?.topics.find(t=>t.id===topId);
-  if(!top) return;
-  top.exerciseDone = !top.exerciseDone;
-  if(top.exerciseDone) {
-    top.exerciseDate = new Date().toISOString();
-    top.reviews = [3,5,7,10,15].map(d=>({
-      days:d, dueDate:new Date(Date.now()+d*86400000).toISOString(), done:false, triggered:false
-    }));
-    showNotif('✏️ Exercício marcado! Revisões programadas.', 'blue');
-  } else {
-    top.reviews = [];
-  }
-  saveState(); renderSubjects(); updateDashStats(); renderReviews();
-}
-
-function removeSubject(id) {
-  state.subjects = state.subjects.filter(s=>s.id!==id);
-  saveState(); renderSubjects(); updateDashStats();
-}
+function editEmoji(subId){const e=prompt('Emoji:');if(!e)return;const sub=state.subjects.find(s=>s.id===subId);if(sub){sub.emoji=e.trim().substring(0,2);saveState();renderSubjects();}}
+function changeSubjectPriority(subId,val){const sub=state.subjects.find(s=>s.id===subId);if(sub){sub.priority=val;saveState();}}
+function editSubjectHours(subId){const sub=state.subjects.find(s=>s.id===subId);if(!sub)return;const h=prompt('Horas estimadas:',sub.estimatedHours||10);if(h&&!isNaN(h)){sub.estimatedHours=parseInt(h);saveState();renderSubjects();}}
+function removeSubject(id){state.subjects=state.subjects.filter(s=>s.id!==id);saveState();renderSubjects();updateDashStats();}
 
 // ==================== YOUTUBE ====================
-function openYouTube(query, topicId) {
-  const popup = document.getElementById('youtube-popup');
-  document.getElementById('yt-popup-title').textContent = '▶ ' + query;
-  document.getElementById('yt-search-input').value = query;
-  document.getElementById('yt-direct-link').href = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
-  openPopup('youtube-popup');
-  searchYouTubeQuery(query);
-}
+function openYouTube(query,topicId){document.getElementById('yt-popup-title').textContent='▶ '+query;document.getElementById('yt-search-input').value=query;document.getElementById('yt-direct-link').href=`https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;openPopup('youtube-popup');searchYouTubeQuery(query);}
+function searchYouTube(){const q=document.getElementById('yt-search-input').value;document.getElementById('yt-direct-link').href=`https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`;searchYouTubeQuery(q);}
+async function searchYouTubeQuery(query){const el=document.getElementById('yt-results');el.innerHTML=`<div class="loading" style="justify-content:center;padding:20px;grid-column:1/-1"><div class="spinner"></div>Buscando...</div>`;try{const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:600,messages:[{role:"user",content:`Sugira 6 vídeos do YouTube para "${query}" concurso. JSON apenas:\n{"videos":[{"title":"...","channel":"...","searchQuery":"...","duration":"~30min","level":"Iniciante|Intermediário|Avançado"}]}`}]})});const data=await response.json();let text=data.content.map(b=>b.text||'').join('').replace(/```json|```/g,'').trim();const parsed=JSON.parse(text);renderYTResults(parsed.videos,query);}catch(e){const videos=[{title:`${query} para Concursos`,channel:'Prof. Concursos',searchQuery:query+' concurso',duration:'~45min',level:'Iniciante'},{title:`${query} - Teoria e Exercícios`,channel:'Estratégia Concursos',searchQuery:query+' exercícios',duration:'~30min',level:'Intermediário'},{title:`Questões de ${query}`,channel:'QConcursos',searchQuery:query+' questões',duration:'~1h',level:'Avançado'}];renderYTResults(videos,query);}}
+function renderYTResults(videos,query){const el=document.getElementById('yt-results');if(!videos?.length){el.innerHTML='<div class="text-muted text-center" style="grid-column:1/-1">Nenhum resultado.</div>';return;}const lc={'Iniciante':'badge-green','Intermediário':'badge-yellow','Avançado':'badge-red','Todos':'badge-blue'};el.innerHTML=videos.map(v=>`<div class="yt-card" onclick="window.open('https://www.youtube.com/results?search_query='+encodeURIComponent('${v.searchQuery||query}'),'_blank')"><div class="yt-thumb"><span style="font-size:32px">▶</span></div><div class="yt-info"><div class="yt-title">${v.title}</div><div class="yt-channel">${v.channel} • ${v.duration}</div><div class="mt8"><span class="badge ${lc[v.level]||'badge-blue'}">${v.level}</span></div></div></div>`).join('');}
 
-function searchYouTube() {
-  const q = document.getElementById('yt-search-input').value;
-  document.getElementById('yt-direct-link').href = `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`;
-  searchYouTubeQuery(q);
-}
-
-async function searchYouTubeQuery(query) {
-  const el = document.getElementById('yt-results');
-  el.innerHTML = `<div class="loading" style="justify-content:center;padding:20px;grid-column:1/-1"><div class="spinner"></div>Buscando vídeos...</div>`;
-
-  // Use AI to suggest video searches
-  try {
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model:"claude-sonnet-4-20250514",
-        max_tokens:600,
-        messages:[{role:"user",content:`Sugira 6 vídeos do YouTube para estudar "${query}" para concurso público.
-Retorne APENAS JSON válido (sem markdown):
-{"videos":[{"title":"Título do vídeo","channel":"Nome do Canal","searchQuery":"query para buscar","duration":"~30min","level":"Iniciante|Intermediário|Avançado"}]}`}]
-      })
-    });
-    const data = await response.json();
-    let text = data.content.map(b=>b.text||'').join('').replace(/```json|```/g,'').trim();
-    const parsed = JSON.parse(text);
-    renderYTResults(parsed.videos, query);
-  } catch(e) {
-    // Fallback suggestions
-    const videos = [
-      {title:`${query} para Concursos - Aula Completa`,channel:'Prof. Concursos',searchQuery:query+' concurso aula completa',duration:'~45min',level:'Iniciante'},
-      {title:`${query} - Teoria e Exercícios`,channel:'Estratégia Concursos',searchQuery:query+' teoria exercícios',duration:'~30min',level:'Intermediário'},
-      {title:`Resumo de ${query} - Concursos Públicos`,channel:'Gran Cursos',searchQuery:query+' resumo concurso',duration:'~20min',level:'Iniciante'},
-      {title:`${query} - Questões Comentadas`,channel:'QConcursos',searchQuery:query+' questões comentadas',duration:'~1h',level:'Avançado'},
-      {title:`Mapas Mentais: ${query}`,channel:'Aprova Concursos',searchQuery:query+' mapa mental',duration:'~15min',level:'Todos'},
-      {title:`${query} - Dicas e Macetes`,channel:'Concursos Brasil',searchQuery:query+' dicas macetes',duration:'~25min',level:'Intermediário'},
-    ];
-    renderYTResults(videos, query);
-  }
-}
-
-function renderYTResults(videos, query) {
-  const el = document.getElementById('yt-results');
-  if(!videos?.length) { el.innerHTML = '<div class="text-muted text-center" style="grid-column:1/-1;padding:20px">Nenhum resultado.</div>'; return; }
-  const levelColors = {'Iniciante':'badge-green','Intermediário':'badge-yellow','Avançado':'badge-red','Todos':'badge-blue'};
-  el.innerHTML = videos.map(v => `
-    <div class="yt-card" onclick="window.open('https://www.youtube.com/results?search_query='+encodeURIComponent('${v.searchQuery||query}'),'_blank')">
-      <div class="yt-thumb"><span style="font-size:32px">▶</span></div>
-      <div class="yt-info">
-        <div class="yt-title">${v.title}</div>
-        <div class="yt-channel">${v.channel} • ${v.duration}</div>
-        <div class="mt8"><span class="badge ${levelColors[v.level]||'badge-blue'}">${v.level}</span></div>
-      </div>
-    </div>
-  `).join('');
-}
-
-// ==================== SCHEDULE / PLANNER ====================
-async function generateSchedule() {
-  const el = document.getElementById('weekly-schedule');
-  el.innerHTML = `<div class="loading" style="justify-content:center;padding:40px;grid-column:1/-1"><div class="spinner"></div>Gerando plano...</div>`;
-
-  const hard = state.subjects.filter(s=>s.difficulty==='hard');
-  const medium = state.subjects.filter(s=>s.difficulty==='medium');
-  const easy = state.subjects.filter(s=>s.difficulty==='easy');
-
-  const days = ['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'];
-  // Simple schedule logic
-  const schedule = days.map((day, i) => {
-    const items = [];
-    if(i<5) { // Weekdays
-      if(hard.length) items.push({title:hard[i%hard.length].name, time:'07:00 - 09:00', type:'hard'});
-      if(medium.length) items.push({title:medium[i%medium.length].name, time:'19:00 - 21:00', type:'medium'});
-      if(easy.length && i%2===0) items.push({title:easy[i%easy.length]?.name||'Revisão', time:'21:00 - 22:00', type:'easy'});
-    } else {
-      items.push({title:'Revisão Geral', time:'08:00 - 10:00', type:'review'});
-      if(i===5) items.push({title:'Exercícios / Simulados', time:'10:00 - 12:00', type:'exercise'});
-    }
-    return {day, items};
-  });
-
-  el.innerHTML = schedule.map(d=>`
-    <div class="schedule-day">
-      <div class="schedule-day-title">${d.day}</div>
-      ${d.items.map(item=>`
-        <div class="schedule-item" style="border-left-color:${item.type==='hard'?'var(--red)':item.type==='easy'?'var(--green)':item.type==='review'?'var(--yellow)':'var(--accent)'}">
-          <div class="schedule-item-title">${item.title}</div>
-          <div class="schedule-item-time">⏰ ${item.time}</div>
-        </div>
-      `).join('')}
-      ${!d.items.length?'<div class="text-muted font-sm">Descanso</div>':''}
-    </div>
-  `).join('');
-
-  if(state.aiTips) {
-    document.getElementById('ai-study-tips').innerHTML = state.aiTips;
-  }
-}
+// ==================== SCHEDULE ====================
+async function generateSchedule(){const el=document.getElementById('weekly-schedule');el.innerHTML=`<div class="loading" style="justify-content:center;padding:40px;grid-column:1/-1"><div class="spinner"></div>Gerando...</div>`;const hard=state.subjects.filter(s=>s.difficulty==='hard');const medium=state.subjects.filter(s=>s.difficulty==='medium');const easy=state.subjects.filter(s=>s.difficulty==='easy');const days=['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'];const schedule=days.map((day,i)=>{const items=[];if(i<5){if(hard.length)items.push({title:hard[i%hard.length].name,time:'07:00-09:00',type:'hard'});if(medium.length)items.push({title:medium[i%medium.length].name,time:'19:00-21:00',type:'medium'});if(easy.length&&i%2===0)items.push({title:easy[i%easy.length]?.name||'Revisão',time:'21:00-22:00',type:'easy'});}else{items.push({title:'Revisão Geral',time:'08:00-10:00',type:'review'});if(i===5)items.push({title:'Simulados',time:'10:00-12:00',type:'exercise'});}return{day,items};});el.innerHTML=schedule.map(d=>`<div class="schedule-day"><div class="schedule-day-title">${d.day}</div>${d.items.map(item=>`<div class="schedule-item" style="border-left-color:${item.type==='hard'?'var(--red)':item.type==='easy'?'var(--green)':item.type==='review'?'var(--yellow)':'var(--accent)'}"><div class="schedule-item-title">${item.title}</div><div class="schedule-item-time">⏰ ${item.time}</div></div>`).join('')}${!d.items.length?'<div class="text-muted font-sm">Descanso</div>':''}</div>`).join('');if(state.aiTips)document.getElementById('ai-study-tips').innerHTML=state.aiTips;}
 
 // ==================== DASHBOARD ====================
-function renderDashboard() {
-  updateDashStats();
-  renderTodaySchedule();
-  renderReviewNow();
-  renderDashSubjects();
-  renderWeekChart();
+function renderDashboard(){
+  // Update greeting with contest name
+  const c = getActiveContest();
+  const titleEl = document.querySelector('#page-dashboard .page-title');
+  const subEl = document.querySelector('#page-dashboard .page-sub');
+  if(titleEl) titleEl.textContent = 'Bom dia! 👋';
+  if(subEl && c) {
+    const total = state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);
+    const daysLeft = c.examDate ? getDaysLeft(c.examDate) : null;
+    subEl.innerHTML = `<span style="color:${c.color};font-weight:600">${c.emoji} ${c.name}</span> — ${total} tópicos${daysLeft!==null?` • <span style="color:var(--yellow)">⏰ ${daysLeft} dias para prova</span>`:''}`;
+  } else if(subEl) {
+    subEl.innerHTML = `Sem concurso ativo. <span style="color:var(--accent);cursor:pointer" onclick="showPage('concursos')">Selecione um →</span>`;
+  }
+  updateDashStats();renderTodaySchedule();renderReviewNow();renderDashSubjects();renderWeekChart();
 }
-
-function updateDashStats() {
-  const hours = Math.round(state.totalMinutes/60*10)/10;
-  document.getElementById('dash-total-hours').textContent = hours + 'h';
-  const done = state.subjects.reduce((a,s)=>a+s.topics.filter(t=>t.watched).length, 0);
-  document.getElementById('dash-done-topics').textContent = done;
-  document.getElementById('dash-streak').textContent = state.streak || 0;
-  const pending = countPendingReviews();
-  document.getElementById('dash-pending-reviews').textContent = pending;
-  document.getElementById('today-topics').textContent = (state.subjects.length * 2) + ' tópicos';
-}
-
-function countPendingReviews() {
-  let count = 0;
-  const now = new Date();
-  state.subjects.forEach(sub => {
-    sub.topics.forEach(top => {
-      if(top.reviews) top.reviews.forEach(r => {
-        if(!r.done && new Date(r.dueDate) <= now) count++;
-      });
-    });
-  });
-  return count;
-}
-
-function renderTodaySchedule() {
-  const el = document.getElementById('today-schedule-list');
-  if(!state.subjects.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:24px 0">Sem matérias planejadas.</div>'; return; }
-  el.innerHTML = state.subjects.slice(0,4).map(s => `
-    <div class="schedule-item mb8" style="border-left-color:${s.color}">
-      <div class="schedule-item-title">${s.emoji} ${s.name}</div>
-      <div class="schedule-item-time">${s.topics.filter(t=>t.watched).length}/${s.topics.length} tópicos</div>
-    </div>
-  `).join('');
-}
-
-function renderReviewNow() {
-  const el = document.getElementById('review-now-list');
-  const now = new Date();
-  const due = [];
-  state.subjects.forEach(sub => {
-    sub.topics.forEach(top => {
-      if(top.reviews) top.reviews.forEach(r => {
-        if(!r.done && new Date(r.dueDate) <= now) due.push({sub, top, r});
-      });
-    });
-  });
-  if(!due.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:24px 0">Nenhuma revisão pendente. ✅</div>'; return; }
-  el.innerHTML = due.slice(0,4).map(d => `
-    <div class="schedule-item mb8" style="border-left-color:var(--yellow)">
-      <div class="schedule-item-title">🔄 ${d.top.name}</div>
-      <div class="schedule-item-time">${d.sub.name} • Revisão de ${d.r.days} dias</div>
-    </div>
-  `).join('');
-}
-
-function renderDashSubjects() {
-  const el = document.getElementById('dash-subjects-list');
-  if(!state.subjects.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:16px">Adicione um concurso para ver suas matérias.</div>'; return; }
-  el.innerHTML = state.subjects.map(s => {
-    const done = s.topics.filter(t=>t.watched).length;
-    const pct = s.topics.length ? Math.round(done/s.topics.length*100) : 0;
-    return `
-      <div class="flex between mb16" style="align-items:center">
-        <div style="flex:1">
-          <div class="flex between mb8"><span class="font-sm">${s.emoji} ${s.name}</span><span class="font-sm" style="color:${s.color}">${pct}%</span></div>
-          <div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div>
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
-function renderWeekChart() {
-  const canvas = document.getElementById('weekChart');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const w = canvas.offsetWidth || 600; canvas.width = w; canvas.height = 80;
-  const days = ['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];
-  const data = days.map(()=>Math.floor(Math.random()*120));
-  const max = Math.max(...data, 1);
-  const barW = (w-40)/7-8;
-  ctx.clearRect(0,0,w,80);
-  days.forEach((d,i) => {
-    const h = (data[i]/max)*60;
-    const x = 20+i*(barW+8);
-    const y = 70-h;
-    ctx.fillStyle = 'rgba(79,140,255,0.3)';
-    ctx.beginPath(); ctx.roundRect(x,y,barW,h,4); ctx.fill();
-    ctx.fillStyle = '#6b7a99'; ctx.font = '11px DM Sans'; ctx.textAlign='center';
-    ctx.fillText(d,x+barW/2,78);
-  });
-}
+function updateDashStats(){const hours=Math.round(state.totalMinutes/60*10)/10;document.getElementById('dash-total-hours').textContent=hours+'h';const done=state.subjects.reduce((a,s)=>a+countWatchedNodes(s.topics),0);document.getElementById('dash-done-topics').textContent=done;document.getElementById('dash-streak').textContent=state.streak||0;document.getElementById('dash-pending-reviews').textContent=countPendingReviews();const total=state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);document.getElementById('today-topics').textContent=total+' tópicos';}
+function countPendingReviews(){let count=0;const now=new Date();state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews)n.reviews.forEach(r=>{if(!r.done&&new Date(r.dueDate)<=now)count++;});});});return count;}
+function renderTodaySchedule(){const el=document.getElementById('today-schedule-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px 0">Sem matérias.</div>';return;}el.innerHTML=state.subjects.slice(0,4).map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);return`<div class="schedule-item mb8" style="border-left-color:${s.color}"><div class="schedule-item-title">${s.emoji} ${s.name}</div><div class="schedule-item-time">${done}/${total} nós</div></div>`}).join('');}
+function renderReviewNow(){const el=document.getElementById('review-now-list');const now=new Date();const due=[];state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews)n.reviews.forEach(r=>{if(!r.done&&new Date(r.dueDate)<=now)due.push({sub,n,r});});});});if(!due.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px 0">Nenhuma revisão. ✅</div>';return;}el.innerHTML=due.slice(0,4).map(d=>`<div class="schedule-item mb8" style="border-left-color:var(--yellow)"><div class="schedule-item-title">🔄 ${d.n.name}</div><div class="schedule-item-time">${d.sub.name} • ${d.r.days} dias</div></div>`).join('');}
+function renderDashSubjects(){const el=document.getElementById('dash-subjects-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:16px">Adicione um concurso.</div>';return;}el.innerHTML=state.subjects.map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);const pct=total?Math.round(done/total*100):0;return`<div class="flex between mb16" style="align-items:center"><div style="flex:1"><div class="flex between mb8"><span class="font-sm">${s.emoji} ${s.name}</span><span class="font-sm" style="color:${s.color}">${pct}%</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div></div></div>`}).join('');}
+function renderWeekChart(){const canvas=document.getElementById('weekChart');if(!canvas)return;const ctx=canvas.getContext('2d');const w=canvas.offsetWidth||600;canvas.width=w;canvas.height=80;const days=['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];const data=days.map(()=>Math.floor(Math.random()*120));const max=Math.max(...data,1);const barW=(w-40)/7-8;ctx.clearRect(0,0,w,80);days.forEach((d,i)=>{const h=(data[i]/max)*60;const x=20+i*(barW+8);const y=70-h;ctx.fillStyle='rgba(79,140,255,0.3)';ctx.beginPath();ctx.roundRect(x,y,barW,h,4);ctx.fill();ctx.fillStyle='#6b7a99';ctx.font='11px DM Sans';ctx.textAlign='center';ctx.fillText(d,x+barW/2,78);});}
 
 // ==================== PROGRESS ====================
-function renderProgress() {
-  const hours = Math.round(state.totalMinutes/60*10)/10;
-  document.getElementById('prog-total-time').textContent = hours+'h';
-  const done = state.subjects.reduce((a,s)=>a+s.topics.filter(t=>t.watched).length, 0);
-  document.getElementById('prog-done').textContent = done;
-  const exercises = state.subjects.reduce((a,s)=>a+s.topics.filter(t=>t.exerciseDone).length, 0);
-  document.getElementById('prog-exercises').textContent = exercises;
-  document.getElementById('prog-streak').textContent = state.streak || 0;
-  renderHeatmap();
-  renderSubjectProgress();
-}
-
-function renderHeatmap() {
-  const el = document.getElementById('activity-heatmap');
-  const cells = [];
-  for(let i=0;i<91;i++) {
-    const r = Math.random();
-    const cls = r>.8?'heat-4':r>.6?'heat-3':r>.4?'heat-2':r>.2?'heat-1':'';
-    cells.push(`<div class="heat-cell ${cls}" title="Dia ${91-i}"></div>`);
-  }
-  el.innerHTML = cells.join('');
-}
-
-function renderSubjectProgress() {
-  const el = document.getElementById('subject-progress-list');
-  if(!state.subjects.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:24px">Nenhuma matéria registrada.</div>'; return; }
-  el.innerHTML = state.subjects.map(s => {
-    const done = s.topics.filter(t=>t.watched).length;
-    const exercises = s.topics.filter(t=>t.exerciseDone).length;
-    const pct = s.topics.length?Math.round(done/s.topics.length*100):0;
-    return `
-      <div class="flex between mb16" style="align-items:center;gap:16px">
-        <div style="min-width:180px"><span class="font-sm font-bold">${s.emoji} ${s.name}</span></div>
-        <div style="flex:1">
-          <div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div>
-        </div>
-        <div style="min-width:60px;text-align:right;font-weight:700;color:${s.color}">${pct}%</div>
-        <div style="min-width:100px">
-          <span class="badge badge-blue">✏️ ${exercises}</span>
-          <span class="badge badge-green">✅ ${done}</span>
-        </div>
-      </div>
-    `;
-  }).join('');
-}
+function renderProgress(){document.getElementById('prog-total-time').textContent=Math.round(state.totalMinutes/60*10)/10+'h';const done=state.subjects.reduce((a,s)=>a+countWatchedNodes(s.topics),0);document.getElementById('prog-done').textContent=done;const exercises=state.subjects.reduce((a,s)=>a+collectAllNodes(s.topics).filter(n=>n.exerciseDone).length,0);document.getElementById('prog-exercises').textContent=exercises;document.getElementById('prog-streak').textContent=state.streak||0;renderHeatmap();renderSubjectProgress();}
+function renderHeatmap(){const el=document.getElementById('activity-heatmap');const cells=[];for(let i=0;i<91;i++){const r=Math.random();const cls=r>.8?'heat-4':r>.6?'heat-3':r>.4?'heat-2':r>.2?'heat-1':'';cells.push(`<div class="heat-cell ${cls}"></div>`);}el.innerHTML=cells.join('');}
+function renderSubjectProgress(){const el=document.getElementById('subject-progress-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px">Nenhuma matéria.</div>';return;}el.innerHTML=state.subjects.map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);const exercises=collectAllNodes(s.topics).filter(n=>n.exerciseDone).length;const pct=total?Math.round(done/total*100):0;return`<div class="flex between mb16" style="align-items:center;gap:16px"><div style="min-width:180px"><span class="font-sm font-bold">${s.emoji} ${s.name}</span></div><div style="flex:1"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div></div><div style="min-width:60px;text-align:right;font-weight:700;color:${s.color}">${pct}%</div><div style="min-width:100px"><span class="badge badge-blue">✏️ ${exercises}</span> <span class="badge badge-green">✅ ${done}</span></div></div>`}).join('');}
 
 // ==================== REVIEWS ====================
-function renderReviews() {
-  const el = document.getElementById('all-reviews-list');
-  const now = new Date();
-  const allReviews = [];
-  state.subjects.forEach(sub => {
-    sub.topics.forEach(top => {
-      if(top.reviews && top.reviews.length) {
-        top.reviews.forEach(r => {
-          allReviews.push({sub, top, r, due: new Date(r.dueDate)});
-        });
-      }
-    });
-  });
-  if(!allReviews.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:32px">Nenhuma revisão programada.</div>'; return; }
-  allReviews.sort((a,b)=>a.due-b.due);
-  el.innerHTML = allReviews.map(({sub,top,r,due}) => {
-    const overdue = due < now && !r.done;
-    const upcoming = due >= now && !r.done;
-    const daysLeft = Math.ceil((due-now)/86400000);
-    return `
-      <div class="flex between mb8" style="padding:12px 16px;background:${overdue?'rgba(248,113,113,.05)':upcoming?'rgba(251,191,36,.05)':'rgba(34,211,165,.05)'};border:1px solid ${overdue?'rgba(248,113,113,.2)':upcoming?'rgba(251,191,36,.2)':'rgba(34,211,165,.2)'};border-radius:10px">
-        <div>
-          <div class="font-sm font-bold">${top.name}</div>
-          <div style="font-size:11px;color:var(--muted)">${sub.name} • Revisão de ${r.days} dias</div>
-        </div>
-        <div style="text-align:right">
-          ${r.done?'<span class="badge badge-green">✅ Feita</span>':overdue?`<span class="badge badge-red">🔴 Atrasada ${Math.abs(daysLeft)} dias</span>`:upcoming?`<span class="badge badge-yellow">⏳ ${daysLeft} dia${daysLeft!==1?'s':''}</span>`:''}
-          ${!r.done?`<div class="mt8"><button class="btn btn-sm btn-green" onclick="markReviewDone('${sub.id}','${top.id}','${r.days}')">Marcar Feita</button></div>`:''}
-        </div>
-      </div>
-    `;
-  }).join('');
-}
+function renderReviews(){const el=document.getElementById('all-reviews-list');const now=new Date();const allReviews=[];state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews&&n.reviews.length){n.reviews.forEach(r=>{allReviews.push({sub,n,r,due:new Date(r.dueDate)});});}});});if(!allReviews.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:32px">Nenhuma revisão.</div>';return;}allReviews.sort((a,b)=>a.due-b.due);el.innerHTML=allReviews.map(({sub,n,r,due})=>{const overdue=due<now&&!r.done;const daysLeft=Math.ceil((due-now)/86400000);return`<div class="flex between mb8" style="padding:12px 16px;background:${overdue?'rgba(248,113,113,.05)':'rgba(251,191,36,.05)'};border:1px solid ${overdue?'rgba(248,113,113,.2)':'rgba(251,191,36,.2)'};border-radius:10px"><div><div class="font-sm font-bold">${n.name}</div><div style="font-size:11px;color:var(--muted)">${sub.name} • ${r.days} dias</div></div><div style="text-align:right">${r.done?'<span class="badge badge-green">✅</span>':overdue?`<span class="badge badge-red">🔴 ${Math.abs(daysLeft)}d atraso</span>`:`<span class="badge badge-yellow">⏳ ${daysLeft}d</span>`}${!r.done?`<div class="mt8"><button class="btn btn-sm btn-green" onclick="markReviewDone('${sub.id}','${n.id}','${r.days}')">Feita</button></div>`:''}</div></div>`}).join('');}
+function markReviewDone(subId,nodeId,days){const sub=state.subjects.find(s=>s.id===subId);const n=findNodeById(sub?.topics||[],nodeId);const r=n?.reviews?.find(r=>r.days==days);if(r){r.done=true;saveState();renderReviews();showNotif('✅ Revisão feita!','green');}}
 
-function markReviewDone(subId, topId, days) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  const top = sub?.topics.find(t=>t.id===topId);
-  const r = top?.reviews?.find(r=>r.days==days);
-  if(r) { r.done = true; saveState(); renderReviews(); showNotif('✅ Revisão marcada como feita!', 'green'); }
-}
+// ==================== FORGETTING CURVE ====================
+function checkForgettingCurve(){const now=new Date();let triggered=false,popupSub='',popupTop='';state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews)n.reviews.forEach(r=>{if(!r.done&&!r.triggered&&new Date(r.dueDate)<=now){r.triggered=true;n.exerciseDone=false;triggered=true;popupSub=sub.name;popupTop=n.name;}});});});if(triggered){saveState();document.getElementById('review-popup-text').innerHTML=`<b>${popupTop}</b> em <b>${popupSub}</b> foi desmarcado. Hora de revisar!`;openPopup('review-popup');renderSubjects();updateDashStats();}}
+function goToReview(){closePopup('review-popup');showPage('revisoes');}
+function updateStreak(){const today=new Date().toDateString();if(state.lastStudyDate===today)return;const yesterday=new Date(Date.now()-86400000).toDateString();if(state.lastStudyDate===yesterday){state.streak=(state.streak||0)+1;}else if(state.lastStudyDate!==today){state.streak=1;}state.lastStudyDate=today;}
 
-// ==================== FORGETTING CURVE CHECK ====================
-function checkForgettingCurve() {
-  const now = new Date();
-  let triggered = false;
-  let popupSub = '', popupTop = '';
-  state.subjects.forEach(sub => {
-    sub.topics.forEach(top => {
-      if(top.reviews) top.reviews.forEach(r => {
-        if(!r.done && !r.triggered && new Date(r.dueDate) <= now) {
-          r.triggered = true;
-          top.exerciseDone = false;
-          triggered = true;
-          popupSub = sub.name;
-          popupTop = top.name;
-        }
-      });
-    });
-  });
-  if(triggered) {
-    saveState();
-    document.getElementById('review-popup-text').innerHTML = `<b>${popupTop}</b> de <b>${popupSub}</b> foi desmarcado automaticamente. É hora de rever este conteúdo para fixar na memória!<br><br><span style="color:var(--yellow)">💡 A curva de Ebbinghaus mostra que revisar no momento certo aumenta sua retenção em até 80%!</span>`;
-    openPopup('review-popup');
-    renderSubjects();
-    updateDashStats();
-  }
-}
-
-function goToReview() {
-  closePopup('review-popup');
-  showPage('revisoes');
-}
-
-// ==================== STREAK ====================
-function updateStreak() {
-  const today = new Date().toDateString();
-  if(state.lastStudyDate === today) return;
-  const yesterday = new Date(Date.now()-86400000).toDateString();
-  if(state.lastStudyDate === yesterday) { state.streak = (state.streak||0)+1; }
-  else if(state.lastStudyDate !== today) { state.streak = 1; }
-  state.lastStudyDate = today;
-}
-
-// ==================== POPUP UTILS ====================
-function openPopup(id) { document.getElementById(id).classList.add('open'); }
-function closePopup(id) { document.getElementById(id).classList.remove('open'); }
-
-// ==================== NOTIFICATIONS ====================
-function showNotif(msg, type='blue') {
-  const colors = {blue:'var(--accent)',green:'var(--green)',yellow:'var(--yellow)',red:'var(--red)'};
-  const n = document.createElement('div');
-  n.className = 'notif';
-  n.style.borderLeftColor = colors[type]||colors.blue;
-  n.style.borderLeft = `3px solid ${colors[type]||colors.blue}`;
-  n.innerHTML = msg;
-  document.body.appendChild(n);
-  setTimeout(()=>{ n.style.opacity='0'; n.style.transition='opacity .4s'; setTimeout(()=>n.remove(),400); }, 3500);
-}
+// ==================== UTILS ====================
+function openPopup(id){document.getElementById(id).classList.add('open');}
+function closePopup(id){document.getElementById(id).classList.remove('open');}
+function showNotif(msg,type='blue'){const colors={blue:'var(--accent)',green:'var(--green)',yellow:'var(--yellow)',red:'var(--red)'};const n=document.createElement('div');n.className='notif';n.style.borderLeft=`3px solid ${colors[type]||colors.blue}`;n.innerHTML=msg;document.body.appendChild(n);setTimeout(()=>{n.style.opacity='0';n.style.transition='opacity .4s';setTimeout(()=>n.remove(),400);},3500);}
 
 // ==================== INIT ====================
 checkForgettingCurve();
-setInterval(checkForgettingCurve, 60000); // Check every minute
+setInterval(checkForgettingCurve, 60000);
 renderDashboard();
 updateTimerDisplay();
 document.getElementById('pomodoroCount').textContent = state.pomodoroCount;
