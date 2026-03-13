@@ -186,14 +186,12 @@
   @keyframes slideIn { from { transform:translateX(120%); } to { transform:translateX(0); } }
 
   /* ========= MOBILE ========= */
-  /* Elementos móveis ficam escondidos no desktop por padrão */
   .mobile-header { display: none; }
   .bottom-nav { display: none; }
   .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 1099; backdrop-filter: blur(2px); }
   .mobile-overlay.open { display: block; }
 
   @media(max-width:768px) {
-    /* --- HEADER FIXO NO TOPO --- */
     .mobile-header {
       display: flex; align-items: center;
       position: fixed; top: 0; left: 0; right: 0; height: 56px;
@@ -220,8 +218,6 @@
       color: var(--text); font-size: 18px; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
     }
-
-    /* --- SIDEBAR DRAWER --- */
     .sidebar {
       position: fixed;
       top: 56px; left: 0;
@@ -233,8 +229,6 @@
       overflow-y: auto;
     }
     .sidebar.mobile-open { transform: translateX(0); }
-
-    /* --- BOTTOM NAV --- */
     .bottom-nav {
       display: flex; position: fixed; bottom: 0; left: 0; right: 0; height: 62px;
       background: var(--surface); border-top: 1px solid var(--border);
@@ -249,55 +243,28 @@
     .bottom-nav-item .bnav-label { font-size: 10px; font-weight: 600; }
     .bottom-nav-item.active { color: var(--accent); }
     .bottom-nav-item.active .bnav-icon { transform: scale(1.15); }
-
-    /* --- LAYOUT PRINCIPAL --- */
-    .main {
-      margin-left: 0 !important;
-      padding: 72px 14px 80px !important;
-    }
-
-    /* --- GRIDS --- */
+    .main { margin-left: 0 !important; padding: 72px 14px 80px !important; }
     .grid2 { grid-template-columns: 1fr !important; }
     .grid3 { grid-template-columns: 1fr !important; }
     .grid4 { grid-template-columns: 1fr 1fr !important; }
-
-    /* --- TIPOGRAFIA --- */
     .page-title { font-size: 22px; }
     .stat-value { font-size: 26px; }
     .timer-display { font-size: 36px; }
     .timer-ring { width: 200px; height: 200px; }
-
-    /* --- FLEX HEADERS DE PÁGINA --- */
     .flex.between.mb24 { flex-direction: column; align-items: flex-start; gap: 12px; }
     .flex.between.mb24 > button,
     .flex.between.mb24 > .btn { width: 100%; justify-content: center; }
-
-    /* --- CARDS --- */
     .card { padding: 16px; }
     .stat-card { padding: 14px; }
-
-    /* --- SYNC INDICATOR --- */
     .sync-indicator { bottom: 72px; right: 12px; font-size: 11px; padding: 6px 10px; }
-
-    /* --- NOTIFICAÇÕES --- */
     .notif { top: 64px; right: 12px; left: 12px; max-width: 100%; }
-
-    /* --- TIMER --- */
     .timer-controls { flex-wrap: wrap; gap: 8px; }
     .timer-controls .btn { flex: 1; min-width: 90px; justify-content: center; }
     .mode-tabs { margin-bottom: 16px; }
     .mode-tab { font-size: 11px; padding: 7px 3px; }
-
-    /* --- POPUP --- */
     .popup-box { padding: 22px 18px; border-radius: 16px; max-height: 90vh; overflow-y: auto; }
-
-    /* --- CONTEST DROPDOWN --- */
     .contest-dropdown { left: 12px !important; right: 12px !important; min-width: unset !important; top: 62px !important; }
-
-    /* --- TREE ACTIONS --- */
     .tree-actions { opacity: 1 !important; }
-
-    /* --- HEATMAP --- */
     .heatmap { gap: 2px; }
   }
 
@@ -422,13 +389,77 @@
   .depth-row-4 { background:rgba(248,113,113,.05); }
   .tree-badge-exercise { display:inline-flex; align-items:center; padding:1px 6px; border-radius:10px; font-size:10px; font-weight:600; background:rgba(79,140,255,.15); color:var(--accent); margin-left:4px; }
 
-  /* Sync indicator */
   .sync-indicator { position:fixed; bottom:16px; right:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px 14px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; z-index:500; transition:all .3s; }
   .sync-dot { width:8px; height:8px; border-radius:50%; background:var(--muted); transition:background .3s; }
   .sync-dot.syncing { background:var(--yellow); animation:pulse .8s infinite; }
   .sync-dot.synced { background:var(--green); }
   .sync-dot.error { background:var(--red); }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+  /* ========= FICHEIRO ========= */
+  .ficheiro-btn { width:24px; height:24px; border-radius:6px; border:none; background:transparent; color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:13px; transition:background .15s, color .15s; position:relative; }
+  .ficheiro-btn:hover { background:rgba(168,85,247,.15); color:var(--accent2); }
+  .ficheiro-btn.has-files { color:var(--accent2); }
+  .ficheiro-btn.has-files::after { content:''; position:absolute; top:3px; right:3px; width:6px; height:6px; border-radius:50%; background:var(--accent2); }
+
+  .fich-popup { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:0; max-width:520px; width:95%; max-height:85vh; display:flex; flex-direction:column; animation:popIn .3s cubic-bezier(.34,1.56,.64,1); overflow:hidden; }
+  .fich-header { padding:20px 24px 0; display:flex; align-items:center; justify-content:space-between; }
+  .fich-title { font-size:16px; font-weight:700; font-family:'Syne',sans-serif; }
+  .fich-node-name { font-size:12px; color:var(--accent2); margin-top:2px; }
+
+  .fich-tabs { display:flex; gap:4px; padding:16px 24px 0; border-bottom:1px solid var(--border); }
+  .fich-tab { padding:8px 16px; border-radius:8px 8px 0 0; font-size:13px; font-weight:600; cursor:pointer; color:var(--muted); border:1px solid transparent; border-bottom:none; transition:all .15s; margin-bottom:-1px; }
+  .fich-tab.active { color:var(--text); background:var(--surface2); border-color:var(--border); }
+  .fich-tab-icon { margin-right:5px; }
+
+  .fich-body { flex:1; overflow-y:auto; padding:20px 24px; }
+  .fich-panel { display:none; }
+  .fich-panel.active { display:block; }
+
+  /* Links */
+  .fich-link-item { display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--surface2); border:1px solid var(--border); border-radius:10px; margin-bottom:8px; transition:border-color .15s; }
+  .fich-link-item:hover { border-color:var(--accent); }
+  .fich-link-icon { font-size:18px; flex-shrink:0; }
+  .fich-link-info { flex:1; min-width:0; }
+  .fich-link-title { font-size:13px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; cursor:pointer; }
+  .fich-link-title:hover { color:var(--accent); text-decoration:underline; }
+  .fich-link-url { font-size:11px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .fich-link-del { width:24px; height:24px; border:none; background:transparent; color:var(--muted); cursor:pointer; border-radius:6px; font-size:13px; flex-shrink:0; transition:all .15s; }
+  .fich-link-del:hover { background:rgba(248,113,113,.15); color:var(--red); }
+
+  .fich-add-link { display:flex; flex-direction:column; gap:8px; padding:14px; background:rgba(79,140,255,.04); border:1px dashed rgba(79,140,255,.25); border-radius:10px; margin-top:12px; }
+  .fich-add-link input { font-size:13px; padding:9px 12px; }
+
+  /* Notas */
+  .fich-note-item { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:8px; cursor:pointer; transition:border-color .15s; }
+  .fich-note-item:hover { border-color:var(--accent2); }
+  .fich-note-title { font-size:13px; font-weight:600; margin-bottom:4px; display:flex; justify-content:space-between; }
+  .fich-note-preview { font-size:12px; color:var(--muted); line-height:1.5; white-space:pre-wrap; max-height:60px; overflow:hidden; }
+  .fich-note-date { font-size:10px; color:var(--muted); margin-top:6px; }
+
+  .fich-note-editor { display:none; }
+  .fich-note-editor.open { display:block; }
+  .fich-note-editor textarea { min-height:140px; font-size:13px; margin-bottom:8px; }
+  .fich-note-editor input { font-size:13px; padding:9px 12px; margin-bottom:8px; }
+
+  /* Arquivos */
+  .fich-file-item { display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--surface2); border:1px solid var(--border); border-radius:10px; margin-bottom:8px; }
+  .fich-file-icon { font-size:22px; flex-shrink:0; }
+  .fich-file-info { flex:1; min-width:0; }
+  .fich-file-name { font-size:13px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .fich-file-meta { font-size:11px; color:var(--muted); margin-top:2px; }
+  .fich-file-actions { display:flex; gap:4px; flex-shrink:0; }
+  .fich-file-btn { width:28px; height:28px; border:none; background:transparent; color:var(--muted); cursor:pointer; border-radius:6px; font-size:14px; transition:all .15s; }
+  .fich-file-btn:hover { background:rgba(79,140,255,.15); color:var(--accent); }
+  .fich-file-btn.del:hover { background:rgba(248,113,113,.15); color:var(--red); }
+
+  .fich-upload-area { border:2px dashed rgba(79,140,255,.3); border-radius:12px; padding:28px; text-align:center; cursor:pointer; transition:all .2s; margin-top:8px; }
+  .fich-upload-area:hover, .fich-upload-area.drag { border-color:var(--accent); background:rgba(79,140,255,.05); }
+  .fich-upload-icon { font-size:32px; margin-bottom:8px; }
+  .fich-upload-text { font-size:13px; color:var(--muted); }
+  .fich-upload-text b { color:var(--accent); }
+  .fich-upload-input { display:none; }
+  .fich-file-count { display:inline-flex; align-items:center; padding:1px 7px; border-radius:10px; font-size:10px; font-weight:700; background:rgba(168,85,247,.15); color:var(--accent2); margin-left:5px; }
 </style>
 </head>
 <body>
@@ -436,7 +467,7 @@
 <!-- SYNC INDICATOR -->
 <div class="sync-indicator" id="sync-indicator">
   <div class="sync-dot" id="sync-dot"></div>
-  <span id="sync-text">Offline</span>
+  <span id="sync-text">Carregando...</span>
 </div>
 
 <!-- MOBILE HEADER -->
@@ -499,6 +530,11 @@
   <div class="nav-section">Progresso</div>
   <div class="nav-item" onclick="showPage('progresso')"><span class="nav-icon">📊</span> Progresso</div>
   <div class="nav-item" onclick="showPage('revisoes')"><span class="nav-icon">🔄</span> Revisões</div>
+
+  <!-- BOTÃO SYNC MANUAL -->
+  <div style="margin-top:auto;padding:16px 10px 0">
+    <button class="btn btn-outline w100" style="font-size:12px;justify-content:center" onclick="forcePullAndReload()">🔄 Sincronizar Agora</button>
+  </div>
 </div>
 
 <div class="contest-dropdown" id="contest-dropdown">
@@ -852,9 +888,62 @@
   </div>
 </div>
 
-<!-- ============================================================
-     ÚNICO BLOCO DE SCRIPTS — tudo aqui dentro, na ordem certa
-     ============================================================ -->
+<!-- FICHEIRO POPUP -->
+<div class="popup-overlay" id="ficheiro-popup">
+  <div class="fich-popup">
+    <div class="fich-header">
+      <div>
+        <div class="fich-title">📎 Ficheiro</div>
+        <div class="fich-node-name" id="fich-node-label"></div>
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="closePopup('ficheiro-popup')">✕</button>
+    </div>
+    <div class="fich-tabs">
+      <div class="fich-tab active" id="fich-tab-links" onclick="switchFichTab('links')"><span class="fich-tab-icon">🔗</span>Links<span class="fich-file-count" id="fich-count-links">0</span></div>
+      <div class="fich-tab" id="fich-tab-notas" onclick="switchFichTab('notas')"><span class="fich-tab-icon">📝</span>Notas<span class="fich-file-count" id="fich-count-notas">0</span></div>
+      <div class="fich-tab" id="fich-tab-arquivos" onclick="switchFichTab('arquivos')"><span class="fich-tab-icon">📁</span>Arquivos<span class="fich-file-count" id="fich-count-arquivos">0</span></div>
+    </div>
+    <div class="fich-body">
+
+      <!-- LINKS -->
+      <div class="fich-panel active" id="fich-panel-links">
+        <div id="fich-links-list"></div>
+        <div class="fich-add-link" id="fich-add-link-form">
+          <input type="text" id="fich-link-title-inp" placeholder="Título (ex: Aula CESPE, Artigo...)">
+          <input type="url" id="fich-link-url-inp" placeholder="https://...">
+          <button class="btn btn-primary btn-sm" onclick="addFichLink()">+ Adicionar Link</button>
+        </div>
+      </div>
+
+      <!-- NOTAS -->
+      <div class="fich-panel" id="fich-panel-notas">
+        <div id="fich-notas-list"></div>
+        <div class="fich-note-editor" id="fich-note-editor">
+          <input type="text" id="fich-note-title-inp" placeholder="Título da nota...">
+          <textarea id="fich-note-body-inp" placeholder="Escreva sua nota aqui..."></textarea>
+          <div class="flex gap8">
+            <button class="btn btn-outline btn-sm" onclick="cancelNoteEdit()">Cancelar</button>
+            <button class="btn btn-primary btn-sm" onclick="saveFichNote()">💾 Salvar Nota</button>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm w100 mt16" id="fich-new-note-btn" onclick="openNoteEditor()" style="justify-content:center">+ Nova Nota</button>
+      </div>
+
+      <!-- ARQUIVOS -->
+      <div class="fich-panel" id="fich-panel-arquivos">
+        <div id="fich-arquivos-list"></div>
+        <div class="fich-upload-area" id="fich-upload-area" onclick="document.getElementById('fich-file-input').click()" ondragover="fichDragOver(event)" ondragleave="fichDragLeave(event)" ondrop="fichDrop(event)">
+          <div class="fich-upload-icon">📂</div>
+          <div class="fich-upload-text">Clique ou arraste arquivos aqui<br><b>PDF, imagens, Word, etc.</b></div>
+        </div>
+        <input type="file" class="fich-upload-input" id="fich-file-input" multiple accept="*/*" onchange="handleFichFileUpload(event)">
+        <div class="text-muted font-sm mt16" style="font-size:11px;text-align:center">Arquivos são armazenados localmente e sincronizados na nuvem.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 
@@ -880,21 +969,13 @@ async function pushSync() {
       const k = localStorage.key(i);
       data[k] = localStorage.getItem(k);
     }
-    const result = await db.from("sync").upsert({
-      id: 1,
-      data: data,
-      updated_at: new Date().toISOString()
-    });
-    const errMsg = result && result.error && result.error.message;
-    if(errMsg) { console.warn("pushSync error:", errMsg); setSyncStatus('error'); }
-    else setSyncStatus('synced');
+    // Salva timestamp para resolver conflitos
+    data['_sync_ts'] = Date.now().toString();
+    await db.from("sync").upsert({ id: 1, data: data, updated_at: new Date().toISOString() });
+    setSyncStatus('synced');
   } catch(e) {
-    if(e && e.name === 'DataCloneError') {
-      setSyncStatus('synced'); // ruido interno do Supabase, nao e falha real
-    } else {
-      console.warn("pushSync falhou:", e && e.message);
-      setSyncStatus('error');
-    }
+    if(e && e.name === 'DataCloneError') setSyncStatus('synced');
+    else { console.warn("pushSync falhou:", e && e.message); setSyncStatus('error'); }
   }
 }
 
@@ -910,21 +991,49 @@ async function pullSync() {
     if(error && error.code !== 'PGRST116') {
       console.warn("pullSync error:", error.message);
       setSyncStatus('error');
-      return;
+      return false;
     }
+
     if(data && data.data) {
-      Object.entries(data.data).forEach(([k, v]) => localStorage.setItem(k, v));
-      console.log("✅ Dados carregados da nuvem!");
+      const remoteTs = parseInt(data.data['_sync_ts'] || '0');
+      const localTs  = parseInt(localStorage.getItem('_sync_ts') || '0');
+
+      if(remoteTs >= localTs) {
+        // Nuvem tem dados mais novos (ou iguais) — limpa e sobrescreve
+        localStorage.clear();
+        Object.entries(data.data).forEach(([k, v]) => localStorage.setItem(k, v));
+        console.log("✅ Dados carregados da nuvem! ts remoto:", remoteTs, "local era:", localTs);
+      } else {
+        console.log("⚡ Local mais recente, mantendo. ts local:", localTs, "remoto:", remoteTs);
+      }
     }
     setSyncStatus('synced');
+    return true;
   } catch(e) {
-    // DataCloneError é ruído interno do Supabase (postMessage), não é falha real
-    if(e && e.name === 'DataCloneError') {
-      setSyncStatus('synced');
-    } else {
-      console.warn("pullSync falhou:", e);
-      setSyncStatus('error');
+    if(e && e.name === 'DataCloneError') { setSyncStatus('synced'); return true; }
+    console.warn("pullSync falhou:", e);
+    setSyncStatus('error');
+    return false;
+  }
+}
+
+// Força pull da nuvem e reinicializa toda a UI — botão manual de sync
+async function forcePullAndReload() {
+  setSyncStatus('syncing');
+  showNotif('🔄 Buscando dados da nuvem...', 'blue');
+  try {
+    const { data, error } = await db.from("sync").select("*").eq("id", 1).single();
+    if(error && error.code !== 'PGRST116') { setSyncStatus('error'); showNotif('❌ Erro ao sincronizar!', 'red'); return; }
+    if(data && data.data) {
+      localStorage.clear();
+      Object.entries(data.data).forEach(([k, v]) => localStorage.setItem(k, v));
     }
+    setSyncStatus('synced');
+    showNotif('✅ Sincronizado! Recarregando...', 'green');
+    setTimeout(() => location.reload(), 800);
+  } catch(e) {
+    setSyncStatus('error');
+    showNotif('❌ Falha na sincronização!', 'red');
   }
 }
 
@@ -1030,28 +1139,18 @@ function toggleContestDropdown() {
   if(isOpen) { closeContestDropdown(); return; }
   const isMobile = window.innerWidth <= 768;
   if(isMobile) {
-    // No mobile, fixa o dropdown logo abaixo do header
-    dd.style.top = '62px';
-    dd.style.left = '12px';
-    dd.style.right = '12px';
-    dd.style.width = 'auto';
+    dd.style.top = '62px'; dd.style.left = '12px'; dd.style.right = '12px'; dd.style.width = 'auto';
   } else {
     const rect = sw.getBoundingClientRect();
-    dd.style.top = (rect.bottom + 6) + 'px';
-    dd.style.left = rect.left + 'px';
-    dd.style.right = 'auto';
-    dd.style.width = Math.max(rect.width, 220) + 'px';
+    dd.style.top = (rect.bottom + 6) + 'px'; dd.style.left = rect.left + 'px'; dd.style.right = 'auto'; dd.style.width = Math.max(rect.width, 220) + 'px';
   }
-  dd.classList.add('open');
-  sw.classList.add('open');
+  dd.classList.add('open'); sw.classList.add('open');
   renderDropdownList();
   setTimeout(() => document.addEventListener('click', outsideDropdownClick, {once:true}), 10);
 }
 
 function outsideDropdownClick(e) {
-  if(!document.getElementById('contest-dropdown').contains(e.target) && !document.getElementById('contest-switcher').contains(e.target)) {
-    closeContestDropdown();
-  }
+  if(!document.getElementById('contest-dropdown').contains(e.target) && !document.getElementById('contest-switcher').contains(e.target)) closeContestDropdown();
 }
 
 function closeContestDropdown() {
@@ -1061,24 +1160,16 @@ function closeContestDropdown() {
 
 function renderDropdownList() {
   const el = document.getElementById('contest-dropdown-list');
-  if(!globalState.contests.length) {
-    el.innerHTML = `<div class="text-muted font-sm text-center" style="padding:12px 0">Nenhum concurso ainda.<br>Crie o primeiro abaixo!</div>`;
-    return;
-  }
+  if(!globalState.contests.length) { el.innerHTML = `<div class="text-muted font-sm text-center" style="padding:12px 0">Nenhum concurso ainda.<br>Crie o primeiro abaixo!</div>`; return; }
   el.innerHTML = globalState.contests.map(c => {
     const cs = getContestStats(c.id);
     const isActive = c.id === globalState.activeContestId;
     const daysLeft = c.examDate ? getDaysLeft(c.examDate) : null;
-    return `
-      <div class="contest-option ${isActive?'active':''}" onclick="switchContest('${c.id}')">
-        <span class="contest-option-emoji">${c.emoji||'🏛️'}</span>
-        <div class="contest-option-info">
-          <div class="contest-option-name">${c.name}</div>
-          <div class="contest-option-meta">${cs.subjects} mat. • ${cs.pct}% concluído${daysLeft !== null ? ` • ${daysLeft}d` : ''}</div>
-        </div>
-        ${isActive ? '<span class="contest-option-check">✓</span>' : `<div class="cdot" style="background:${c.color}"></div>`}
-      </div>
-    `;
+    return `<div class="contest-option ${isActive?'active':''}" onclick="switchContest('${c.id}')">
+      <span class="contest-option-emoji">${c.emoji||'🏛️'}</span>
+      <div class="contest-option-info"><div class="contest-option-name">${c.name}</div><div class="contest-option-meta">${cs.subjects} mat. • ${cs.pct}% concluído${daysLeft !== null ? ` • ${daysLeft}d` : ''}</div></div>
+      ${isActive ? '<span class="contest-option-check">✓</span>' : `<div class="cdot" style="background:${c.color}"></div>`}
+    </div>`;
   }).join('');
 }
 
@@ -1089,22 +1180,12 @@ function getContestStats(contestId) {
     const s = JSON.parse(saved);
     const subjects = s.subjects || [];
     let total=0, done=0;
-    subjects.forEach(sub => {
-      const allNodes = [];
-      const collect = (nodes) => nodes.forEach(n => { allNodes.push(n); collect(n.children||[]); });
-      collect(sub.topics||[]);
-      total += allNodes.length;
-      done += allNodes.filter(n=>n.watched).length;
-    });
+    subjects.forEach(sub => { const allNodes=[]; const collect=(nodes)=>nodes.forEach(n=>{allNodes.push(n);collect(n.children||[]);}); collect(sub.topics||[]); total+=allNodes.length; done+=allNodes.filter(n=>n.watched).length; });
     return { subjects: subjects.length, pct: total ? Math.round(done/total*100) : 0, hours: Math.round((s.totalMinutes||0)/60*10)/10 };
   } catch(e) { return {subjects:0, pct:0, hours:0}; }
 }
 
-function getDaysLeft(dateStr) {
-  if(!dateStr) return null;
-  const diff = new Date(dateStr) - new Date();
-  return Math.ceil(diff / 86400000);
-}
+function getDaysLeft(dateStr) { if(!dateStr) return null; return Math.ceil((new Date(dateStr) - new Date()) / 86400000); }
 
 function updateSwitcherUI() {
   const c = getActiveContest();
@@ -1112,7 +1193,6 @@ function updateSwitcherUI() {
   const name = c?.name || 'Nenhum selecionado';
   document.getElementById('switcher-emoji').textContent = emoji;
   document.getElementById('switcher-name').textContent = name;
-  // Atualiza pill mobile
   const me = document.getElementById('mobile-switcher-emoji');
   const mn = document.getElementById('mobile-switcher-name');
   if(me) me.textContent = emoji;
@@ -1155,25 +1235,13 @@ function openEditContestPopup(contestId) {
   openPopup('contest-popup');
 }
 
-function selectContestColor(el) {
-  document.querySelectorAll('.color-swatch').forEach(s=>s.classList.remove('selected'));
-  el.classList.add('selected');
-  selectedContestColor = el.dataset.color;
-}
+function selectContestColor(el) { document.querySelectorAll('.color-swatch').forEach(s=>s.classList.remove('selected')); el.classList.add('selected'); selectedContestColor = el.dataset.color; }
 
 function saveContest() {
   const name = document.getElementById('cp-name').value.trim();
   if(!name) { showNotif('⚠️ Nome é obrigatório!','yellow'); return; }
   const editId = document.getElementById('cp-editing-id').value;
-  const contestData = {
-    name,
-    emoji: document.getElementById('cp-emoji').value.trim().substring(0,2) || '🏛️',
-    color: selectedContestColor,
-    examDate: document.getElementById('cp-date').value,
-    banca: document.getElementById('cp-banca').value.trim(),
-    cargo: document.getElementById('cp-cargo').value.trim(),
-    dailyHours: parseInt(document.getElementById('cp-hours').value)||4
-  };
+  const contestData = { name, emoji: document.getElementById('cp-emoji').value.trim().substring(0,2)||'🏛️', color: selectedContestColor, examDate: document.getElementById('cp-date').value, banca: document.getElementById('cp-banca').value.trim(), cargo: document.getElementById('cp-cargo').value.trim(), dailyHours: parseInt(document.getElementById('cp-hours').value)||4 };
   if(editId) {
     const c = globalState.contests.find(x=>x.id===editId);
     if(c) Object.assign(c, contestData);
@@ -1181,98 +1249,48 @@ function saveContest() {
   } else {
     const id = 'contest_' + Date.now();
     globalState.contests.push({ id, ...contestData, createdAt: new Date().toISOString() });
-    if(!globalState.activeContestId) {
-      globalState.activeContestId = id;
-      loadContestState(id);
-      updateSwitcherUI();
-    }
+    if(!globalState.activeContestId) { globalState.activeContestId = id; loadContestState(id); updateSwitcherUI(); }
     showNotif('✅ Concurso criado! Agora adicione matérias.','green');
   }
-  saveGlobalState();
-  closePopup('contest-popup');
-  renderPage('concursos');
-  updateSwitcherUI();
-  renderDropdownList();
+  saveGlobalState(); closePopup('contest-popup'); renderPage('concursos'); updateSwitcherUI(); renderDropdownList();
 }
 
 function deleteContest(contestId) {
   const c = globalState.contests.find(x=>x.id===contestId);
   if(!c) return;
-  if(!confirm(`Excluir "${c.name}" e todos os seus dados? Esta ação não pode ser desfeita.`)) return;
+  if(!confirm(`Excluir "${c.name}" e todos os seus dados?`)) return;
   localStorage.removeItem('ep_contest_'+contestId);
   globalState.contests = globalState.contests.filter(x=>x.id!==contestId);
-  if(globalState.activeContestId === contestId) {
-    globalState.activeContestId = globalState.contests[0]?.id || null;
-    if(globalState.activeContestId) loadContestState(globalState.activeContestId);
-    else state = getEmptyState();
-    updateSwitcherUI();
-  }
-  saveGlobalState();
-  renderPage('concursos');
-  renderDropdownList();
-  showNotif('🗑️ Concurso excluído.','red');
+  if(globalState.activeContestId === contestId) { globalState.activeContestId = globalState.contests[0]?.id || null; if(globalState.activeContestId) loadContestState(globalState.activeContestId); else state = getEmptyState(); updateSwitcherUI(); }
+  saveGlobalState(); renderPage('concursos'); renderDropdownList(); showNotif('🗑️ Concurso excluído.','red');
 }
 
 function renderContestsPage() {
   const grid = document.getElementById('contests-grid');
   const empty = document.getElementById('contests-empty');
-  if(!globalState.contests.length) {
-    grid.style.display='none'; empty.style.display='block'; return;
-  }
+  if(!globalState.contests.length) { grid.style.display='none'; empty.style.display='block'; return; }
   grid.style.display='grid'; empty.style.display='none';
   grid.innerHTML = globalState.contests.map(c => {
     const cs = getContestStats(c.id);
     const daysLeft = c.examDate ? getDaysLeft(c.examDate) : null;
     const isActive = c.id === globalState.activeContestId;
     let countdownHtml = '';
-    if(daysLeft !== null) {
-      const cls = daysLeft < 30 ? 'countdown-urgent' : daysLeft < 90 ? 'countdown-warning' : 'countdown-ok';
-      const icon = daysLeft < 30 ? '🔴' : daysLeft < 90 ? '🟡' : '🟢';
-      countdownHtml = `<span class="countdown-badge ${cls}">${icon} ${daysLeft > 0 ? daysLeft+'d para prova' : 'Prova hoje!'}</span>`;
-    }
-    return `
-      <div class="contest-card ${isActive?'current':''}" style="--ccolor:${c.color}">
-        <div class="flex between" style="align-items:flex-start;margin-bottom:10px">
-          <div class="contest-card-emoji">${c.emoji||'🏛️'}</div>
-          <div class="flex gap8">
-            <button class="btn btn-ghost btn-sm" style="padding:4px 8px" onclick="openEditContestPopup('${c.id}')">✏️</button>
-            <button class="btn btn-ghost btn-sm" style="padding:4px 8px;color:var(--red)" onclick="deleteContest('${c.id}')">🗑</button>
-          </div>
-        </div>
-        <div class="contest-card-name">${c.name}</div>
-        <div class="contest-card-date">
-          ${c.banca ? `<span class="badge badge-blue" style="margin-right:6px;margin-bottom:6px">${c.banca}</span>` : ''}
-          ${c.cargo ? `<span class="tag">${c.cargo}</span>` : ''}
-        </div>
-        ${countdownHtml ? `<div style="margin-bottom:12px">${countdownHtml}</div>` : ''}
-        <div class="contest-card-stats">
-          <div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.subjects}</div><div class="contest-stat-label">Matérias</div></div>
-          <div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.pct}%</div><div class="contest-stat-label">Progresso</div></div>
-          <div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.hours}h</div><div class="contest-stat-label">Estudadas</div></div>
-        </div>
-        <div class="progress-bar mb16"><div class="progress-fill" style="width:${cs.pct}%;background:${c.color}"></div></div>
-        <div class="flex gap8">
-          ${isActive
-            ? `<button class="btn btn-sm btn-outline w100" disabled style="opacity:.5;cursor:default">✓ Ativo</button>`
-            : `<button class="btn btn-sm btn-primary w100" onclick="switchContest('${c.id}')">Selecionar</button>`
-          }
-          <button class="btn btn-sm btn-outline" onclick="switchContest('${c.id}');showPage('materias')" title="Ver matérias">📚</button>
-          <button class="btn btn-sm btn-outline" onclick="switchContest('${c.id}');showPage('ia-conteudo')" title="Adicionar conteúdo">🤖</button>
-        </div>
-      </div>
-    `;
+    if(daysLeft !== null) { const cls = daysLeft<30?'countdown-urgent':daysLeft<90?'countdown-warning':'countdown-ok'; const icon = daysLeft<30?'🔴':daysLeft<90?'🟡':'🟢'; countdownHtml=`<span class="countdown-badge ${cls}">${icon} ${daysLeft>0?daysLeft+'d para prova':'Prova hoje!'}</span>`; }
+    return `<div class="contest-card ${isActive?'current':''}" style="--ccolor:${c.color}">
+      <div class="flex between" style="align-items:flex-start;margin-bottom:10px"><div class="contest-card-emoji">${c.emoji||'🏛️'}</div><div class="flex gap8"><button class="btn btn-ghost btn-sm" style="padding:4px 8px" onclick="openEditContestPopup('${c.id}')">✏️</button><button class="btn btn-ghost btn-sm" style="padding:4px 8px;color:var(--red)" onclick="deleteContest('${c.id}')">🗑</button></div></div>
+      <div class="contest-card-name">${c.name}</div>
+      <div class="contest-card-date">${c.banca?`<span class="badge badge-blue" style="margin-right:6px;margin-bottom:6px">${c.banca}</span>`:''} ${c.cargo?`<span class="tag">${c.cargo}</span>`:''}</div>
+      ${countdownHtml?`<div style="margin-bottom:12px">${countdownHtml}</div>`:''}
+      <div class="contest-card-stats"><div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.subjects}</div><div class="contest-stat-label">Matérias</div></div><div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.pct}%</div><div class="contest-stat-label">Progresso</div></div><div class="contest-stat"><div class="contest-stat-val" style="color:${c.color}">${cs.hours}h</div><div class="contest-stat-label">Estudadas</div></div></div>
+      <div class="progress-bar mb16"><div class="progress-fill" style="width:${cs.pct}%;background:${c.color}"></div></div>
+      <div class="flex gap8">${isActive?`<button class="btn btn-sm btn-outline w100" disabled style="opacity:.5;cursor:default">✓ Ativo</button>`:`<button class="btn btn-sm btn-primary w100" onclick="switchContest('${c.id}')">Selecionar</button>`}<button class="btn btn-sm btn-outline" onclick="switchContest('${c.id}');showPage('materias')" title="Ver matérias">📚</button><button class="btn btn-sm btn-outline" onclick="switchContest('${c.id}');showPage('ia-conteudo')" title="Adicionar conteúdo">🤖</button></div>
+    </div>`;
   }).join('');
 }
 
 // ==================== TREE UTILS ====================
-function ensureChildren(node) {
-  if(!node.children) node.children = [];
-  node.children.forEach(c => ensureChildren(c));
-  return node;
-}
-function makeNode(name) {
-  return { id:'n_'+Date.now()+'_'+Math.random().toString(36).slice(2), name, children:[], watched:false, exerciseDone:false, exerciseDate:null, reviews:[] };
-}
+function ensureChildren(node) { if(!node.children) node.children=[]; node.children.forEach(c=>ensureChildren(c)); return node; }
+function makeNode(name) { return { id:'n_'+Date.now()+'_'+Math.random().toString(36).slice(2), name, children:[], watched:false, exerciseDone:false, exerciseDate:null, reviews:[] }; }
 function countAllNodes(nodes) { let c=0; nodes.forEach(n=>{c++;c+=countAllNodes(n.children||[]);}); return c; }
 function countWatchedNodes(nodes) { let c=0; nodes.forEach(n=>{if(n.watched)c++;c+=countWatchedNodes(n.children||[]);}); return c; }
 function collectAllNodes(nodes, arr=[]) { nodes.forEach(n=>{arr.push(n);collectAllNodes(n.children||[],arr);}); return arr; }
@@ -1284,9 +1302,7 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(n=>{
-    if(n.getAttribute('onclick')&&n.getAttribute('onclick').includes(id)) n.classList.add('active');
-  });
+  document.querySelectorAll('.nav-item').forEach(n=>{ if(n.getAttribute('onclick')&&n.getAttribute('onclick').includes(id)) n.classList.add('active'); });
   renderPage(id);
 }
 function renderPage(id) {
@@ -1345,11 +1361,7 @@ async function processContentWithAI() {
     let text=data.content.map(b=>b.text||'').join('').replace(/```json|```/g,'').trim();
     const parsed=JSON.parse(text);
     const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];
-    parsed.subjects.forEach((s,i)=>{
-      if(!state.subjects.find(x=>x.name===s.name)){
-        state.subjects.push({id:'sub_'+Date.now()+'_'+i,name:s.name,emoji:s.emoji||'📚',estimatedHours:s.estimatedHours||10,priority:s.priority||'media',color:colors[i%colors.length],topics:(s.topics||[]).map(t=>{const node=makeNode(t.name);if(t.subtopics&&t.subtopics.length){node.children=t.subtopics.map(st=>makeNode(typeof st==='string'?st:st.name));}return node;}),difficulty:'medium'});
-      }
-    });
+    parsed.subjects.forEach((s,i)=>{if(!state.subjects.find(x=>x.name===s.name)){state.subjects.push({id:'sub_'+Date.now()+'_'+i,name:s.name,emoji:s.emoji||'📚',estimatedHours:s.estimatedHours||10,priority:s.priority||'media',color:colors[i%colors.length],topics:(s.topics||[]).map(t=>{const node=makeNode(t.name);if(t.subtopics&&t.subtopics.length){node.children=t.subtopics.map(st=>makeNode(typeof st==='string'?st:st.name));}return node;}),difficulty:'medium'});}});
     saveState();renderAIResult(parsed.subjects);showNotif('✅ Conteúdo organizado!','green');updateDashStats();
   } catch(e) {
     const lines=document.getElementById('contestContent').value.split('\n').filter(l=>l.trim());
@@ -1409,50 +1421,48 @@ function renderSubjectCard(sub) {
   const totalNodes=countAllNodes(sub.topics);
   const doneNodes=countWatchedNodes(sub.topics);
   const pct=totalNodes?Math.round(doneNodes/totalNodes*100):0;
-  return `
-    <div class="card mb16" id="subcard-${sub.id}">
-      <div class="flex between mb12">
-        <div class="flex gap8" style="flex:1;min-width:0;align-items:flex-start">
-          <button class="btn btn-ghost btn-sm" onclick="editEmoji('${sub.id}')" style="font-size:22px;padding:4px 8px;flex-shrink:0">${sub.emoji}</button>
-          <div style="flex:1;min-width:0">
-            <div class="flex gap8" style="align-items:center;flex-wrap:wrap">
-              <span id="subname-${sub.id}" class="font-bold" style="font-size:17px;cursor:pointer" ondblclick="startEditSubjectName('${sub.id}')">${sub.name}</span>
-              <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px" onclick="startEditSubjectName('${sub.id}')">✏️</button>
-            </div>
-            <div class="flex gap8 mt8" style="flex-wrap:wrap;align-items:center">
-              <span class="badge ${sub.difficulty==='easy'?'badge-green':sub.difficulty==='hard'?'badge-red':'badge-yellow'}">${sub.difficulty==='easy'?'😊 Fácil':sub.difficulty==='hard'?'😰 Difícil':'😐 Médio'}</span>
-              <span class="badge badge-blue">⏱ ~${sub.estimatedHours||10}h</span>
-              <span class="badge badge-purple">🌿 ${totalNodes} nós</span>
-              <select onchange="changeSubjectPriority('${sub.id}',this.value)" style="padding:2px 8px;font-size:12px;width:auto;height:26px;border-radius:20px;background:rgba(168,85,247,.15);border-color:rgba(168,85,247,.3);color:var(--accent2)">
-                <option value="alta" ${sub.priority==='alta'?'selected':''}>🔴 Alta</option>
-                <option value="media" ${sub.priority==='media'||!sub.priority?'selected':''}>🟡 Média</option>
-                <option value="baixa" ${sub.priority==='baixa'?'selected':''}>🟢 Baixa</option>
-              </select>
-            </div>
+  return `<div class="card mb16" id="subcard-${sub.id}">
+    <div class="flex between mb12">
+      <div class="flex gap8" style="flex:1;min-width:0;align-items:flex-start">
+        <button class="btn btn-ghost btn-sm" onclick="editEmoji('${sub.id}')" style="font-size:22px;padding:4px 8px;flex-shrink:0">${sub.emoji}</button>
+        <div style="flex:1;min-width:0">
+          <div class="flex gap8" style="align-items:center;flex-wrap:wrap">
+            <span id="subname-${sub.id}" class="font-bold" style="font-size:17px;cursor:pointer" ondblclick="startEditSubjectName('${sub.id}')">${sub.name}</span>
+            <button class="btn btn-ghost btn-sm" style="padding:2px 6px;font-size:12px" onclick="startEditSubjectName('${sub.id}')">✏️</button>
+          </div>
+          <div class="flex gap8 mt8" style="flex-wrap:wrap;align-items:center">
+            <span class="badge ${sub.difficulty==='easy'?'badge-green':sub.difficulty==='hard'?'badge-red':'badge-yellow'}">${sub.difficulty==='easy'?'😊 Fácil':sub.difficulty==='hard'?'😰 Difícil':'😐 Médio'}</span>
+            <span class="badge badge-blue">⏱ ~${sub.estimatedHours||10}h</span>
+            <span class="badge badge-purple">🌿 ${totalNodes} nós</span>
+            <select onchange="changeSubjectPriority('${sub.id}',this.value)" style="padding:2px 8px;font-size:12px;width:auto;height:26px;border-radius:20px;background:rgba(168,85,247,.15);border-color:rgba(168,85,247,.3);color:var(--accent2)">
+              <option value="alta" ${sub.priority==='alta'?'selected':''}>🔴 Alta</option>
+              <option value="media" ${sub.priority==='media'||!sub.priority?'selected':''}>🟡 Média</option>
+              <option value="baixa" ${sub.priority==='baixa'?'selected':''}>🟢 Baixa</option>
+            </select>
           </div>
         </div>
-        <div style="text-align:right;flex-shrink:0;margin-left:12px">
-          <div style="font-size:22px;font-weight:800;color:${sub.color}">${pct}%</div>
-          <div class="text-muted font-sm">${doneNodes}/${totalNodes} vistos</div>
-        </div>
       </div>
-      <div class="progress-bar mb16"><div class="progress-fill" style="width:${pct}%;background:${sub.color}"></div></div>
-      <div id="tree-${sub.id}">${renderTreeLevel(sub.id,sub.topics,0)}</div>
-      <div class="tree-add-row mt16">
-        <span style="color:var(--accent);font-size:14px;flex-shrink:0">+</span>
-        <input type="text" class="tree-add-input" id="newtopic-${sub.id}" placeholder="Novo tópico raiz...">
-        <button class="tree-add-btn" onclick="addRootTopic('${sub.id}')">Adicionar</button>
-      </div>
-      <div style="font-size:11px;color:var(--muted);margin-top:6px;padding-left:4px">💡 Clique em <b>+</b> em qualquer nó para adicionar subtópico dentro dele</div>
-      <div class="flex gap8 mt12" style="border-top:1px solid var(--border);padding-top:12px">
-        <button class="btn btn-sm btn-outline" onclick="openYouTube('${sub.name}','')">▶ Vídeos</button>
-        <button class="btn btn-sm btn-outline" onclick="editSubjectHours('${sub.id}')">⏱ Horas</button>
-        <button class="btn btn-sm btn-outline" onclick="expandAll('${sub.id}')">⊞ Expandir Tudo</button>
-        <button class="btn btn-sm btn-outline" onclick="collapseAll('${sub.id}')">⊟ Recolher</button>
-        <button class="btn btn-sm btn-danger" style="margin-left:auto" onclick="removeSubject('${sub.id}')">🗑</button>
+      <div style="text-align:right;flex-shrink:0;margin-left:12px">
+        <div style="font-size:22px;font-weight:800;color:${sub.color}">${pct}%</div>
+        <div class="text-muted font-sm">${doneNodes}/${totalNodes} vistos</div>
       </div>
     </div>
-  `;
+    <div class="progress-bar mb16"><div class="progress-fill" style="width:${pct}%;background:${sub.color}"></div></div>
+    <div id="tree-${sub.id}">${renderTreeLevel(sub.id,sub.topics,0)}</div>
+    <div class="tree-add-row mt16">
+      <span style="color:var(--accent);font-size:14px;flex-shrink:0">+</span>
+      <input type="text" class="tree-add-input" id="newtopic-${sub.id}" placeholder="Novo tópico raiz...">
+      <button class="tree-add-btn" onclick="addRootTopic('${sub.id}')">Adicionar</button>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:6px;padding-left:4px">💡 Clique em <b>+</b> em qualquer nó para adicionar subtópico dentro dele</div>
+    <div class="flex gap8 mt12" style="border-top:1px solid var(--border);padding-top:12px">
+      <button class="btn btn-sm btn-outline" onclick="openYouTube('${sub.name}','')">▶ Vídeos</button>
+      <button class="btn btn-sm btn-outline" onclick="editSubjectHours('${sub.id}')">⏱ Horas</button>
+      <button class="btn btn-sm btn-outline" onclick="expandAll('${sub.id}')">⊞ Expandir Tudo</button>
+      <button class="btn btn-sm btn-outline" onclick="collapseAll('${sub.id}')">⊟ Recolher</button>
+      <button class="btn btn-sm btn-danger" style="margin-left:auto" onclick="removeSubject('${sub.id}')">🗑</button>
+    </div>
+  </div>`;
 }
 
 function renderTreeLevel(subId, nodes, depth) {
@@ -1466,33 +1476,32 @@ function renderTreeLevel(subId, nodes, depth) {
     const childrenId=`tc-${node.id}`;
     const addRowId=`ta-${node.id}`;
     const sizeAdjust=Math.max(12,14-depth*0.5);
-    return `
-      <div class="tree-node" id="tn-${node.id}">
-        <div class="tree-row ${depthRowClass}" style="padding-left:${8+depth*2}px">
-          <div class="tree-depth-indicator" style="background:${color};opacity:${0.5+depth*0.1};width:3px;border-radius:2px;align-self:stretch;min-height:16px;flex-shrink:0"></div>
-          <div class="tree-toggle ${hasChildren?'':'leaf'}" id="tg-${node.id}" onclick="toggleTreeNode('${node.id}','${childrenId}')" style="flex-shrink:0">▶</div>
-          <div class="tree-checkbox ${node.watched?'checked':''}" onclick="toggleNodeWatched('${subId}','${node.id}')" title="Marcar aula assistida">${node.watched?'✓':''}</div>
-          <span class="tree-name" style="font-size:${sizeAdjust}px" ondblclick="startEditNodeName('${subId}','${node.id}')">${node.name}</span>
-          ${node.exerciseDone?`<span class="tree-badge-exercise">✏️</span>`:''}
-          <div class="tree-actions">
-            <button class="tree-action-btn" onclick="startEditNodeName('${subId}','${node.id}')" title="Renomear">✏️</button>
-            <button class="tree-action-btn" onclick="toggleNodeExercise('${subId}','${node.id}')" title="${node.exerciseDone?'Desmarcar exercício':'Marcar exercício'}">📝</button>
-            <button class="tree-action-btn" onclick="openYouTube('${node.name.replace(/'/g,"\\'")}','')" title="Vídeos">▶</button>
-            <button class="tree-action-btn" onclick="showAddChild('${node.id}','${addRowId}')" title="Adicionar subtópico" style="color:var(--accent);font-size:15px;font-weight:700">+</button>
-            <button class="tree-action-btn danger" onclick="removeNode('${subId}','${node.id}')" title="Remover">✕</button>
-          </div>
+    return `<div class="tree-node" id="tn-${node.id}">
+      <div class="tree-row ${depthRowClass}" style="padding-left:${8+depth*2}px">
+        <div class="tree-depth-indicator" style="background:${color};opacity:${0.5+depth*0.1};width:3px;border-radius:2px;align-self:stretch;min-height:16px;flex-shrink:0"></div>
+        <div class="tree-toggle ${hasChildren?'':'leaf'}" id="tg-${node.id}" onclick="toggleTreeNode('${node.id}','${childrenId}')" style="flex-shrink:0">▶</div>
+        <div class="tree-checkbox ${node.watched?'checked':''}" onclick="toggleNodeWatched('${subId}','${node.id}')" title="Marcar aula assistida">${node.watched?'✓':''}</div>
+        <span class="tree-name" style="font-size:${sizeAdjust}px" ondblclick="startEditNodeName('${subId}','${node.id}')">${node.name}</span>
+        ${node.exerciseDone?`<span class="tree-badge-exercise">✏️</span>`:''}
+        <div class="tree-actions">
+          <button class="tree-action-btn" onclick="startEditNodeName('${subId}','${node.id}')" title="Renomear">✏️</button>
+          <button class="tree-action-btn" onclick="toggleNodeExercise('${subId}','${node.id}')" title="${node.exerciseDone?'Desmarcar exercício':'Marcar exercício'}">📝</button>
+          <button class="tree-action-btn" onclick="openYouTube('${node.name.replace(/'/g,"\\'")}','')" title="Vídeos">▶</button>
+          <button class="tree-action-btn" onclick="showAddChild('${node.id}','${addRowId}')" title="Adicionar subtópico" style="color:var(--accent);font-size:15px;font-weight:700">+</button>
+          <button class="ficheiro-btn ${(node.ficheiro&&(node.ficheiro.links?.length||node.ficheiro.notas?.length||node.ficheiro.arquivos?.length))?'has-files':''}" onclick="openFicheiro('${subId}','${node.id}')" title="Ficheiro do tópico">📎</button>
+          <button class="tree-action-btn danger" onclick="removeNode('${subId}','${node.id}')" title="Remover">✕</button>
         </div>
-        <div class="tree-children" id="${addRowId}-wrap" style="margin-left:${16+depth*4}px;display:none;margin-top:4px">
-          <div class="tree-add-row">
-            <span style="color:${color};font-size:14px;flex-shrink:0">↳</span>
-            <input type="text" class="tree-add-input" id="${addRowId}" placeholder="Novo subtópico dentro de '${node.name.substring(0,20)}...'">
-            <button class="tree-add-btn" onclick="addChildNode('${subId}','${node.id}','${addRowId}')">+ Adicionar</button>
-            <button class="tree-action-btn" onclick="document.getElementById('${addRowId}-wrap').style.display='none'" style="opacity:.5">✕</button>
-          </div>
-        </div>
-        <div class="tree-children" id="${childrenId}" style="margin-left:${16+depth*4}px">${childHtml}</div>
       </div>
-    `;
+      <div class="tree-children" id="${addRowId}-wrap" style="margin-left:${16+depth*4}px;display:none;margin-top:4px">
+        <div class="tree-add-row">
+          <span style="color:${color};font-size:14px;flex-shrink:0">↳</span>
+          <input type="text" class="tree-add-input" id="${addRowId}" placeholder="Novo subtópico dentro de '${node.name.substring(0,20)}...'">
+          <button class="tree-add-btn" onclick="addChildNode('${subId}','${node.id}','${addRowId}')">+ Adicionar</button>
+          <button class="tree-action-btn" onclick="document.getElementById('${addRowId}-wrap').style.display='none'" style="opacity:.5">✕</button>
+        </div>
+      </div>
+      <div class="tree-children" id="${childrenId}" style="margin-left:${16+depth*4}px">${childHtml}</div>
+    </div>`;
   }).join('');
 }
 
@@ -1529,8 +1538,8 @@ function renderDashboard(){
   const titleEl=document.querySelector('#page-dashboard .page-title');
   const subEl=document.querySelector('#page-dashboard .page-sub');
   if(titleEl)titleEl.textContent='Bom dia! 👋';
-  if(subEl&&c){const total=state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);const daysLeft=c.examDate?getDaysLeft(c.examDate):null;subEl.innerHTML=`<span style="color:${c.color};font-weight:600">${c.emoji} ${c.name}</span> — ${total} tópicos${daysLeft!==null?` • <span style="color:var(--yellow)">⏰ ${daysLeft} dias para prova</span>`:''}`;
-  }else if(subEl){subEl.innerHTML=`Sem concurso ativo. <span style="color:var(--accent);cursor:pointer" onclick="showPage('concursos')">Selecione um →</span>`;}
+  if(subEl&&c){const total=state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);const daysLeft=c.examDate?getDaysLeft(c.examDate):null;subEl.innerHTML=`<span style="color:${c.color};font-weight:600">${c.emoji} ${c.name}</span> — ${total} tópicos${daysLeft!==null?` • <span style="color:var(--yellow)">⏰ ${daysLeft} dias para prova</span>`:''}`;}
+  else if(subEl){subEl.innerHTML=`Sem concurso ativo. <span style="color:var(--accent);cursor:pointer" onclick="showPage('concursos')">Selecione um →</span>`;}
   updateDashStats();renderTodaySchedule();renderReviewNow();renderDashSubjects();renderWeekChart();
 }
 function updateDashStats(){
@@ -1569,39 +1578,253 @@ function openPopup(id){document.getElementById(id).classList.add('open');}
 function closePopup(id){document.getElementById(id).classList.remove('open');}
 function showNotif(msg,type='blue'){const colors={blue:'var(--accent)',green:'var(--green)',yellow:'var(--yellow)',red:'var(--red)'};const n=document.createElement('div');n.className='notif';n.style.borderLeft=`3px solid ${colors[type]||colors.blue}`;n.innerHTML=msg;document.body.appendChild(n);setTimeout(()=>{n.style.opacity='0';n.style.transition='opacity .4s';setTimeout(()=>n.remove(),400);},3500);}
 
-// ==================== INIT ÚNICO ====================
-// Puxa dados da nuvem primeiro, depois inicializa tudo
 // ==================== MOBILE UI ====================
-function toggleMobileMenu() {
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('mobile-overlay');
-  const isOpen = sidebar.classList.contains('mobile-open');
-  sidebar.classList.toggle('mobile-open', !isOpen);
-  overlay.classList.toggle('open', !isOpen);
-}
-function closeMobileMenu() {
-  document.getElementById('sidebar').classList.remove('mobile-open');
-  document.getElementById('mobile-overlay').classList.remove('open');
-}
-function setBottomNav(page) {
-  document.querySelectorAll('.bottom-nav-item').forEach(el => el.classList.remove('active'));
-  const el = document.getElementById('bnav-' + page);
-  if(el) el.classList.add('active');
-  // se a página não está no bottom nav, mantém Mais ativo
-  const bottomPages = ['dashboard','timer','materias','revisoes'];
-  if(!bottomPages.includes(page)) {
-    const more = document.getElementById('bnav-more');
-    if(more) more.classList.add('active');
-  }
-}
-// Patch showPage: fecha menu, atualiza bottom nav
-const _origShowPage = showPage;
-showPage = function(page) {
-  _origShowPage(page);
-  closeMobileMenu();
-  setBottomNav(page);
-};
+function toggleMobileMenu(){const sidebar=document.getElementById('sidebar');const overlay=document.getElementById('mobile-overlay');const isOpen=sidebar.classList.contains('mobile-open');sidebar.classList.toggle('mobile-open',!isOpen);overlay.classList.toggle('open',!isOpen);}
+function closeMobileMenu(){document.getElementById('sidebar').classList.remove('mobile-open');document.getElementById('mobile-overlay').classList.remove('open');}
+function setBottomNav(page){document.querySelectorAll('.bottom-nav-item').forEach(el=>el.classList.remove('active'));const el=document.getElementById('bnav-'+page);if(el)el.classList.add('active');const bottomPages=['dashboard','timer','materias','revisoes'];if(!bottomPages.includes(page)){const more=document.getElementById('bnav-more');if(more)more.classList.add('active');}}
 
+const _origShowPage = showPage;
+showPage = function(page) { _origShowPage(page); closeMobileMenu(); setBottomNav(page); };
+
+// ==================== FICHEIRO ====================
+let fichCurrentSubId = null;
+let fichCurrentNodeId = null;
+let fichEditingNoteId = null;
+
+function getNodeFicheiro(subId, nodeId) {
+  const sub = state.subjects.find(s => s.id === subId);
+  const node = findNodeById(sub?.topics || [], nodeId);
+  if(!node) return null;
+  if(!node.ficheiro) node.ficheiro = { links:[], notas:[], arquivos:[] };
+  if(!node.ficheiro.links) node.ficheiro.links = [];
+  if(!node.ficheiro.notas) node.ficheiro.notas = [];
+  if(!node.ficheiro.arquivos) node.ficheiro.arquivos = [];
+  return node;
+}
+
+function openFicheiro(subId, nodeId) {
+  fichCurrentSubId = subId;
+  fichCurrentNodeId = nodeId;
+  fichEditingNoteId = null;
+  const node = getNodeFicheiro(subId, nodeId);
+  if(!node) return;
+  document.getElementById('fich-node-label').textContent = node.name;
+  document.getElementById('fich-link-title-inp').value = '';
+  document.getElementById('fich-link-url-inp').value = '';
+  cancelNoteEdit();
+  switchFichTab('links');
+  openPopup('ficheiro-popup');
+}
+
+function switchFichTab(tab) {
+  document.querySelectorAll('.fich-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.fich-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('fich-tab-' + tab).classList.add('active');
+  document.getElementById('fich-panel-' + tab).classList.add('active');
+  renderFichPanel(tab);
+}
+
+function renderFichPanel(tab) {
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  if(!node) return;
+  const f = node.ficheiro;
+
+  // Update counts
+  document.getElementById('fich-count-links').textContent = f.links.length;
+  document.getElementById('fich-count-notas').textContent = f.notas.length;
+  document.getElementById('fich-count-arquivos').textContent = f.arquivos.length;
+
+  if(tab === 'links') renderFichLinks(f.links);
+  if(tab === 'notas') renderFichNotas(f.notas);
+  if(tab === 'arquivos') renderFichArquivos(f.arquivos);
+}
+
+// ---- LINKS ----
+function getLinkIcon(url) {
+  if(!url) return '🔗';
+  if(url.includes('youtube.com') || url.includes('youtu.be')) return '▶️';
+  if(url.includes('drive.google.com')) return '📁';
+  if(url.includes('docs.google.com')) return '📄';
+  if(url.includes('.pdf')) return '📕';
+  if(url.includes('github.com')) return '💻';
+  return '🔗';
+}
+
+function renderFichLinks(links) {
+  const el = document.getElementById('fich-links-list');
+  if(!links.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:16px 0">Nenhum link ainda. Adicione abaixo!</div>'; return; }
+  el.innerHTML = links.map((l, i) => `
+    <div class="fich-link-item">
+      <span class="fich-link-icon">${getLinkIcon(l.url)}</span>
+      <div class="fich-link-info">
+        <div class="fich-link-title" onclick="window.open('${l.url}','_blank')">${l.title || l.url}</div>
+        <div class="fich-link-url">${l.url}</div>
+      </div>
+      <button class="fich-link-del" onclick="deleteFichLink(${i})" title="Remover">✕</button>
+    </div>
+  `).join('');
+}
+
+function addFichLink() {
+  const title = document.getElementById('fich-link-title-inp').value.trim();
+  const url = document.getElementById('fich-link-url-inp').value.trim();
+  if(!url) { showNotif('⚠️ Cole a URL!', 'yellow'); return; }
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  node.ficheiro.links.push({ title: title || url, url, addedAt: new Date().toISOString() });
+  document.getElementById('fich-link-title-inp').value = '';
+  document.getElementById('fich-link-url-inp').value = '';
+  saveState();
+  renderFichPanel('links');
+  renderSubjects();
+  showNotif('🔗 Link adicionado!', 'blue');
+}
+
+function deleteFichLink(idx) {
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  node.ficheiro.links.splice(idx, 1);
+  saveState(); renderFichPanel('links'); renderSubjects();
+}
+
+// ---- NOTAS ----
+function renderFichNotas(notas) {
+  const el = document.getElementById('fich-notas-list');
+  if(!notas.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:16px 0">Nenhuma nota ainda.</div>'; return; }
+  el.innerHTML = notas.map((n, i) => `
+    <div class="fich-note-item">
+      <div class="fich-note-title">
+        <span>${n.title || 'Nota sem título'}</span>
+        <div class="flex gap8">
+          <button class="fich-link-del" onclick="editFichNote(${i})" title="Editar" style="font-size:11px">✏️</button>
+          <button class="fich-link-del" onclick="deleteFichNote(${i})" title="Remover">✕</button>
+        </div>
+      </div>
+      <div class="fich-note-preview">${n.body || ''}</div>
+      <div class="fich-note-date">${new Date(n.updatedAt||n.createdAt).toLocaleDateString('pt-BR')}</div>
+    </div>
+  `).join('');
+}
+
+function openNoteEditor(noteIdx) {
+  fichEditingNoteId = noteIdx !== undefined ? noteIdx : null;
+  const editor = document.getElementById('fich-note-editor');
+  const newBtn = document.getElementById('fich-new-note-btn');
+  editor.classList.add('open');
+  newBtn.style.display = 'none';
+  if(noteIdx !== undefined) {
+    const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+    const n = node.ficheiro.notas[noteIdx];
+    document.getElementById('fich-note-title-inp').value = n.title || '';
+    document.getElementById('fich-note-body-inp').value = n.body || '';
+  } else {
+    document.getElementById('fich-note-title-inp').value = '';
+    document.getElementById('fich-note-body-inp').value = '';
+  }
+  setTimeout(() => document.getElementById('fich-note-body-inp').focus(), 50);
+}
+
+function cancelNoteEdit() {
+  fichEditingNoteId = null;
+  const editor = document.getElementById('fich-note-editor');
+  const newBtn = document.getElementById('fich-new-note-btn');
+  if(editor) editor.classList.remove('open');
+  if(newBtn) newBtn.style.display = '';
+}
+
+function saveFichNote() {
+  const title = document.getElementById('fich-note-title-inp').value.trim();
+  const body = document.getElementById('fich-note-body-inp').value.trim();
+  if(!body) { showNotif('⚠️ Escreva algo na nota!', 'yellow'); return; }
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  const now = new Date().toISOString();
+  if(fichEditingNoteId !== null) {
+    node.ficheiro.notas[fichEditingNoteId] = { ...node.ficheiro.notas[fichEditingNoteId], title, body, updatedAt: now };
+  } else {
+    node.ficheiro.notas.push({ id: 'note_'+Date.now(), title, body, createdAt: now, updatedAt: now });
+  }
+  saveState(); cancelNoteEdit(); renderFichPanel('notas'); renderSubjects();
+  showNotif('📝 Nota salva!', 'green');
+}
+
+function editFichNote(idx) { openNoteEditor(idx); }
+
+function deleteFichNote(idx) {
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  node.ficheiro.notas.splice(idx, 1);
+  saveState(); renderFichPanel('notas'); renderSubjects();
+}
+
+// ---- ARQUIVOS ----
+function renderFichArquivos(arquivos) {
+  const el = document.getElementById('fich-arquivos-list');
+  if(!arquivos.length) { el.innerHTML = '<div class="text-muted font-sm text-center" style="padding:8px 0 16px">Nenhum arquivo ainda.</div>'; return; }
+  const icons = { pdf:'📕', image:'🖼️', word:'📘', excel:'📗', ppt:'📙', text:'📄', default:'📎' };
+  el.innerHTML = arquivos.map((f, i) => {
+    const ext = f.name.split('.').pop().toLowerCase();
+    const icon = ext==='pdf'?icons.pdf:['jpg','jpeg','png','gif','webp'].includes(ext)?icons.image:['doc','docx'].includes(ext)?icons.word:['xls','xlsx'].includes(ext)?icons.excel:['ppt','pptx'].includes(ext)?icons.ppt:['txt','md'].includes(ext)?icons.text:icons.default;
+    const size = f.size ? (f.size > 1048576 ? (f.size/1048576).toFixed(1)+'MB' : (f.size/1024).toFixed(0)+'KB') : '';
+    return `<div class="fich-file-item">
+      <span class="fich-file-icon">${icon}</span>
+      <div class="fich-file-info">
+        <div class="fich-file-name">${f.name}</div>
+        <div class="fich-file-meta">${size}${size?' • ':''}${new Date(f.addedAt).toLocaleDateString('pt-BR')}</div>
+      </div>
+      <div class="fich-file-actions">
+        ${f.dataUrl ? `<button class="fich-file-btn" onclick="downloadFichFile(${i})" title="Baixar">⬇️</button>` : ''}
+        <button class="fich-file-btn del" onclick="deleteFichFile(${i})" title="Remover">✕</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function handleFichFileUpload(event) {
+  const files = Array.from(event.target.files);
+  if(!files.length) return;
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  let loaded = 0;
+  files.forEach(file => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      node.ficheiro.arquivos.push({ name: file.name, size: file.size, type: file.type, dataUrl: e.target.result, addedAt: new Date().toISOString() });
+      loaded++;
+      if(loaded === files.length) { saveState(); renderFichPanel('arquivos'); renderSubjects(); showNotif(`📁 ${files.length} arquivo(s) adicionado(s)!`, 'green'); }
+    };
+    reader.readAsDataURL(file);
+  });
+  event.target.value = '';
+}
+
+function downloadFichFile(idx) {
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  const f = node.ficheiro.arquivos[idx];
+  if(!f || !f.dataUrl) return;
+  const a = document.createElement('a');
+  a.href = f.dataUrl;
+  a.download = f.name;
+  a.click();
+}
+
+function deleteFichFile(idx) {
+  const node = getNodeFicheiro(fichCurrentSubId, fichCurrentNodeId);
+  node.ficheiro.arquivos.splice(idx, 1);
+  saveState(); renderFichPanel('arquivos'); renderSubjects();
+}
+
+function fichDragOver(e) { e.preventDefault(); document.getElementById('fich-upload-area').classList.add('drag'); }
+function fichDragLeave(e) { document.getElementById('fich-upload-area').classList.remove('drag'); }
+function fichDrop(e) {
+  e.preventDefault();
+  document.getElementById('fich-upload-area').classList.remove('drag');
+  const files = Array.from(e.dataTransfer.files);
+  if(!files.length) return;
+  const fakeEvent = { target: { files, value:'' } };
+  handleFichFileUpload(fakeEvent);
+}
+
+// Listener Enter nos inputs de link
+document.addEventListener('keydown', function(e) {
+  if(e.key === 'Enter' && document.getElementById('fich-link-url-inp') === document.activeElement) addFichLink();
+});
+// Sempre puxa da nuvem primeiro, depois inicializa tudo
 pullSync().then(() => {
   loadGlobalState();
   migrateOldData();
@@ -1614,7 +1837,7 @@ pullSync().then(() => {
   renderDashboard();
   updateTimerDisplay();
   document.getElementById('pomodoroCount').textContent = state.pomodoroCount;
-  // Salva a cada 30s e ao fechar aba
+  // Push a cada 30s e ao fechar
   setInterval(pushSync, 30000);
   window.addEventListener('beforeunload', pushSync);
 });
