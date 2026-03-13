@@ -6,13 +6,6 @@
 <title>EstudoPro — Seu Painel de Estudos</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script>
-const supabaseUrl = "https://ksdvfjthgnzrsytgigjw.supabase.co"
-const supabaseKey = "SUA_ANON_KEY"
-const supabase = supabase.createClient(supabaseUrl, supabaseKey)
-
-</script>
 <style>
   :root {
     --bg: #0a0d14;
@@ -864,29 +857,33 @@ const supabase = supabase.createClient(supabaseUrl, supabaseKey)
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 
+const supabaseUrl = "https://ksdvfjthgnzrsytgigjw.supabase.co"
+const supabaseKey = "SUA_ANON_KEY"
 
+// cria cliente
+const db = supabase.createClient(supabaseUrl, supabaseKey)
 
-// Enviar dados do localStorage
-async function pushSync() {
+async function pushSync(){
 
-  const data = {...localStorage}
+  const data = JSON.parse(JSON.stringify(localStorage))
 
-  await supabase
+  await db
     .from("sync")
     .upsert({
-      id: 1,
-      data: data,
-      updated_at: new Date()
+      id:1,
+      data:data,
+      updated_at:new Date()
     })
 
 }
 
-// Baixar dados
 async function pullSync(){
 
-  const { data } = await supabase
+  const { data } = await db
     .from("sync")
     .select("*")
     .eq("id",1)
@@ -900,10 +897,13 @@ async function pullSync(){
 
 }
 
-// Automatizar:
 pullSync()
-pushSync()
 setInterval(pushSync,30000)
+
+</script>
+
+<script>
+
 
 // ==================== MULTI-CONTEST STATE ====================
 // Global state: list of contests, each with its own isolated data
