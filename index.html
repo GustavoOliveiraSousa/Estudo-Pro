@@ -857,6 +857,51 @@
 </div>
 
 <script>
+
+// Conectando o site superbase
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+const supabaseUrl = "https://ksdvfjthgnzrsytgigjw.supabase.co"
+const supabaseKey = "sb_publishable_69El10c7oeMMmkUaYnA31w_0vu1AUSy"
+const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+// Enviar dados do localStorage
+async function pushSync() {
+
+  const data = {...localStorage}
+
+  await supabase
+    .from("sync")
+    .upsert({
+      id: 1,
+      data: data,
+      updated_at: new Date()
+    })
+
+}
+
+// Baixar dados
+async function pullSync(){
+
+  const { data } = await supabase
+    .from("sync")
+    .select("*")
+    .eq("id",1)
+    .single()
+
+  if(data){
+    Object.entries(data.data).forEach(([k,v])=>{
+      localStorage.setItem(k,v)
+    })
+  }
+
+}
+
+// Automatizar:
+pullSync()
+pushSync()
+setInterval(pushSync,30000)
+
 // ==================== MULTI-CONTEST STATE ====================
 // Global state: list of contests, each with its own isolated data
 let globalState = {
