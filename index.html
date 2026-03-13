@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -186,12 +185,129 @@
   .notif { position:fixed; top:24px; right:24px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 18px; font-size:13px; z-index:9999; animation:slideIn .3s ease; max-width:320px; }
   @keyframes slideIn { from { transform:translateX(120%); } to { transform:translateX(0); } }
 
+  /* ========= MOBILE ========= */
   @media(max-width:768px) {
-    .sidebar { width:200px; }
-    .main { margin-left:200px; padding:20px; }
-    .grid3 { grid-template-columns:1fr 1fr; }
-    .grid4 { grid-template-columns:1fr 1fr; }
+    /* Esconde sidebar, mostra bottom nav */
+    .sidebar { 
+      transform: translateX(-100%);
+      transition: transform .3s cubic-bezier(.4,0,.2,1);
+      width: 280px;
+      z-index: 1000;
+      top: 56px;
+      height: calc(100vh - 56px);
+      padding-top: 16px;
+    }
+    .sidebar.mobile-open { transform: translateX(0); }
+    .mobile-overlay { 
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.6);
+      z-index: 999; backdrop-filter: blur(2px);
+    }
+    .mobile-overlay.open { display: block; }
+
+    /* Header mobile */
+    .mobile-header {
+      display: flex; align-items: center; justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; height: 56px;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 0 16px; z-index: 998;
+    }
+    .mobile-header-logo { 
+      font-family: Syne, sans-serif; font-size: 18px; font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .mobile-menu-btn {
+      width: 36px; height: 36px; border-radius: 9px; border: 1px solid var(--border);
+      background: var(--surface2); color: var(--text); font-size: 18px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .mobile-contest-pill {
+      flex: 1; margin: 0 12px; background: rgba(79,140,255,.08);
+      border: 1px solid rgba(79,140,255,.18); border-radius: 20px;
+      padding: 6px 12px; font-size: 12px; font-weight: 600; color: var(--text);
+      cursor: pointer; display: flex; align-items: center; gap: 6px;
+      overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 180px;
+    }
+
+    /* Bottom nav */
+    .bottom-nav {
+      display: flex; position: fixed; bottom: 0; left: 0; right: 0; height: 64px;
+      background: var(--surface); border-top: 1px solid var(--border);
+      z-index: 997; padding: 0 4px;
+    }
+    .bottom-nav-item {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 3px; cursor: pointer; border-radius: 10px;
+      transition: all .2s; color: var(--muted); padding: 4px 2px;
+      font-size: 10px; font-weight: 600; letter-spacing: .3px;
+    }
+    .bottom-nav-item .bnav-icon { font-size: 20px; transition: transform .2s; }
+    .bottom-nav-item.active { color: var(--accent); }
+    .bottom-nav-item.active .bnav-icon { transform: scale(1.15); }
+    .bottom-nav-item.active .bnav-label { color: var(--accent); }
+    .bnav-label { font-size: 10px; }
+
+    /* Main layout */
+    .main { 
+      margin-left: 0; padding: 16px 14px; 
+      padding-top: 72px; /* header height + gap */
+      padding-bottom: 80px; /* bottom nav + gap */
+    }
+
+    /* Grids responsivos */
+    .grid2 { grid-template-columns: 1fr; }
+    .grid3 { grid-template-columns: 1fr; }
+    .grid4 { grid-template-columns: 1fr 1fr; }
+
+    /* Textos menores */
+    .page-title { font-size: 22px; }
+    .stat-value { font-size: 26px; }
+    .value { font-size: 20px; }
+    .timer-display { font-size: 36px; }
+    .timer-ring { width: 200px; height: 200px; }
+
+    /* Header de página adaptado */
+    .flex.between.mb24 { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .flex.between.mb24 button { width: 100%; justify-content: center; }
+
+    /* Cards com menos padding */
+    .card { padding: 16px; }
+    .stat-card { padding: 14px; }
+
+    /* Sync indicator acima do bottom nav */
+    .sync-indicator { bottom: 74px; right: 12px; font-size: 11px; padding: 6px 10px; }
+
+    /* Notificações menores */
+    .notif { top: 64px; right: 12px; left: 12px; max-width: 100%; font-size: 13px; }
+
+    /* Timer controls */
+    .timer-controls { flex-wrap: wrap; gap: 8px; }
+    .timer-controls .btn { flex: 1; min-width: 100px; justify-content: center; }
+
+    /* Mode tabs */
+    .mode-tabs { margin-bottom: 20px; }
+    .mode-tab { font-size: 12px; padding: 7px 4px; }
+
+    /* Popup */
+    .popup-box { padding: 24px 20px; border-radius: 16px; }
+
+    /* Contest dropdown */
+    .contest-dropdown { left: 12px !important; right: 12px !important; min-width: unset; top: 60px !important; }
+
+    /* Tree actions sempre visíveis no mobile (sem hover) */
+    .tree-actions { opacity: 1; }
+
+    /* Heatmap scroll horizontal */
+    .heatmap { overflow-x: auto; }
+
+    /* week planner */
+    .grid3.planner-week { grid-template-columns: 1fr; }
   }
+
+  /* Header mobile: escondido no desktop */
+  .mobile-header { display: none; }
+  .bottom-nav { display: none; }
+  .mobile-overlay { display: none; }
 
   .glow-blue { box-shadow:0 0 20px rgba(79,140,255,.15); }
   .glow-green { box-shadow:0 0 20px rgba(34,211,165,.15); }
@@ -331,7 +447,40 @@
   <span id="sync-text">Offline</span>
 </div>
 
-<div class="sidebar">
+<!-- MOBILE HEADER -->
+<div class="mobile-header" id="mobile-header">
+  <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+  <div class="mobile-contest-pill" onclick="toggleContestDropdown()">
+    <span id="mobile-switcher-emoji">🏛️</span>
+    <span id="mobile-switcher-name" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Nenhum</span>
+    <span style="color:var(--muted);margin-left:auto">▾</span>
+  </div>
+  <div class="mobile-header-logo">EP</div>
+</div>
+
+<!-- MOBILE OVERLAY -->
+<div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileMenu()"></div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav" id="bottom-nav">
+  <div class="bottom-nav-item active" id="bnav-dashboard" onclick="showPage('dashboard');setBottomNav('dashboard')">
+    <span class="bnav-icon">🏠</span><span class="bnav-label">Início</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-timer" onclick="showPage('timer');setBottomNav('timer')">
+    <span class="bnav-icon">⏱️</span><span class="bnav-label">Timer</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-materias" onclick="showPage('materias');setBottomNav('materias')">
+    <span class="bnav-icon">📚</span><span class="bnav-label">Matérias</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-revisoes" onclick="showPage('revisoes');setBottomNav('revisoes')">
+    <span class="bnav-icon">🔄</span><span class="bnav-label">Revisões</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-more" onclick="toggleMobileMenu()">
+    <span class="bnav-icon">⋯</span><span class="bnav-label">Mais</span>
+  </div>
+</div>
+
+<div class="sidebar" id="sidebar">
   <div class="sidebar-logo">
     <h1>EstudoPro</h1>
     <span>Painel Inteligente</span>
@@ -1413,6 +1562,49 @@ function showNotif(msg,type='blue'){const colors={blue:'var(--accent)',green:'va
 
 // ==================== INIT ÚNICO ====================
 // Puxa dados da nuvem primeiro, depois inicializa tudo
+// ==================== MOBILE UI ====================
+function toggleMobileMenu() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('mobile-overlay');
+  sidebar.classList.toggle('mobile-open');
+  overlay.classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('sidebar').classList.remove('mobile-open');
+  document.getElementById('mobile-overlay').classList.remove('open');
+}
+function setBottomNav(page) {
+  document.querySelectorAll('.bottom-nav-item').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById('bnav-' + page);
+  if(el) el.classList.add('active');
+}
+// Sync mobile contest display with desktop
+function syncMobileContestDisplay() {
+  const emoji = document.getElementById('switcher-emoji');
+  const name = document.getElementById('switcher-name');
+  const mEmoji = document.getElementById('mobile-switcher-emoji');
+  const mName = document.getElementById('mobile-switcher-name');
+  if(emoji && mEmoji) mEmoji.textContent = emoji.textContent;
+  if(name && mName) mName.textContent = name.textContent;
+}
+// Patch showPage to also close mobile menu and update bottom nav
+const _origShowPage = showPage;
+showPage = function(page) {
+  _origShowPage(page);
+  closeMobileMenu();
+  // map page names to bottom nav ids
+  const map = {dashboard:'dashboard', timer:'timer', materias:'materias', revisoes:'revisoes'};
+  if(map[page]) setBottomNav(map[page]);
+};
+// Patch renderContestSwitcher to keep mobile in sync
+const _origRenderContestSwitcher = typeof renderContestSwitcher === 'function' ? renderContestSwitcher : null;
+if(_origRenderContestSwitcher) {
+  renderContestSwitcher = function() {
+    _origRenderContestSwitcher();
+    setTimeout(syncMobileContestDisplay, 50);
+  };
+}
+
 pullSync().then(() => {
   loadGlobalState();
   migrateOldData();
@@ -1423,6 +1615,7 @@ pullSync().then(() => {
   checkForgettingCurve();
   setInterval(checkForgettingCurve, 60000);
   renderDashboard();
+  setTimeout(syncMobileContestDisplay, 100);
   updateTimerDisplay();
   document.getElementById('pomodoroCount').textContent = state.pomodoroCount;
   // Salva a cada 30s e ao fechar aba
