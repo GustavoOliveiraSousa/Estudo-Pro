@@ -224,84 +224,38 @@
   .font-sm { font-size:13px; }
   .between { justify-content:space-between; }
 
-  /* ===== MULTI-CONTEST / PROFILES ===== */
-  .contest-switcher {
-    padding: 12px 14px;
-    margin: 0 10px 8px;
-    background: rgba(79,140,255,.07);
-    border: 1px solid rgba(79,140,255,.18);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all .2s;
-    position: relative;
-  }
-  .contest-switcher:hover { background: rgba(79,140,255,.13); border-color: rgba(79,140,255,.35); }
+  .contest-switcher { padding:12px 14px; margin:0 10px 8px; background:rgba(79,140,255,.07); border:1px solid rgba(79,140,255,.18); border-radius:12px; cursor:pointer; transition:all .2s; position:relative; }
+  .contest-switcher:hover { background:rgba(79,140,255,.13); border-color:rgba(79,140,255,.35); }
   .contest-switcher-label { font-size:10px; text-transform:uppercase; letter-spacing:1.2px; color:var(--muted); font-weight:600; margin-bottom:5px; }
   .contest-switcher-name { font-size:13px; font-weight:700; color:var(--text); display:flex; align-items:center; justify-content:space-between; gap:6px; }
   .contest-switcher-emoji { font-size:16px; }
   .contest-switcher-arrow { color:var(--muted); font-size:11px; transition:transform .2s; }
   .contest-switcher.open .contest-switcher-arrow { transform:rotate(180deg); }
 
-  .contest-dropdown {
-    position:fixed; z-index:9000;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 8px;
-    min-width: 220px;
-    max-height: 400px;
-    overflow-y: auto;
-    box-shadow: 0 8px 32px rgba(0,0,0,.5);
-    display: none;
-  }
-  .contest-dropdown.open { display:block; animation: fadeIn .15s ease; }
+  .contest-dropdown { position:fixed; z-index:9000; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:8px; min-width:220px; max-height:400px; overflow-y:auto; box-shadow:0 8px 32px rgba(0,0,0,.5); display:none; }
+  .contest-dropdown.open { display:block; animation:fadeIn .15s ease; }
   @keyframes fadeIn { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
 
-  .contest-option {
-    display: flex; align-items: center; gap:10px;
-    padding: 10px 12px; border-radius: 9px;
-    cursor: pointer; transition: background .15s;
-    border: 1px solid transparent;
-    margin-bottom: 3px;
-  }
-  .contest-option:hover { background: rgba(79,140,255,.09); border-color: rgba(79,140,255,.2); }
-  .contest-option.active { background: rgba(79,140,255,.14); border-color: rgba(79,140,255,.35); }
+  .contest-option { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:9px; cursor:pointer; transition:background .15s; border:1px solid transparent; margin-bottom:3px; }
+  .contest-option:hover { background:rgba(79,140,255,.09); border-color:rgba(79,140,255,.2); }
+  .contest-option.active { background:rgba(79,140,255,.14); border-color:rgba(79,140,255,.35); }
   .contest-option-emoji { font-size:18px; flex-shrink:0; }
   .contest-option-info { flex:1; min-width:0; }
   .contest-option-name { font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .contest-option-meta { font-size:11px; color:var(--muted); margin-top:2px; }
   .contest-option-check { color:var(--accent); font-size:14px; flex-shrink:0; }
-  .contest-option-badge { display:inline-block; padding:1px 7px; border-radius:10px; font-size:10px; font-weight:700; }
 
   .contest-dropdown-header { padding:6px 12px 10px; border-bottom:1px solid var(--border); margin-bottom:6px; }
   .contest-dropdown-title { font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--muted); font-weight:600; }
   .contest-add-btn { display:flex; align-items:center; gap:8px; padding:10px 12px; border-radius:9px; cursor:pointer; color:var(--accent); font-size:13px; font-weight:600; border:1px dashed rgba(79,140,255,.3); margin-top:6px; transition:background .15s; }
   .contest-add-btn:hover { background:rgba(79,140,255,.09); }
 
-  /* contest color dot */
   .cdot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
 
-  /* Sidebar active contest strip */
-  .sidebar-contest-strip {
-    margin: 0 10px 4px;
-    padding: 6px 12px;
-    background: transparent;
-    border-radius: 8px;
-    display: flex; align-items:center; gap:6px;
-  }
-
-  /* Contest manager page */
-  .contest-card {
-    background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px;
-    transition: border-color .2s;
-    position:relative; overflow:hidden;
-  }
-  .contest-card::before {
-    content:''; position:absolute; top:0; left:0; right:0; height:3px;
-    background: var(--ccolor, var(--accent));
-  }
-  .contest-card:hover { border-color: var(--ccolor, var(--accent)); }
-  .contest-card.current { border-color: var(--ccolor, var(--accent)); box-shadow: 0 0 20px rgba(79,140,255,.1); }
+  .contest-card { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:20px; transition:border-color .2s; position:relative; overflow:hidden; }
+  .contest-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--ccolor, var(--accent)); }
+  .contest-card:hover { border-color:var(--ccolor, var(--accent)); }
+  .contest-card.current { border-color:var(--ccolor, var(--accent)); box-shadow:0 0 20px rgba(79,140,255,.1); }
   .contest-card-emoji { font-size:32px; margin-bottom:10px; }
   .contest-card-name { font-size:17px; font-weight:700; margin-bottom:4px; }
   .contest-card-date { font-size:12px; color:var(--muted); margin-bottom:12px; }
@@ -310,169 +264,71 @@
   .contest-stat-val { font-size:20px; font-weight:800; font-family:'Syne',sans-serif; }
   .contest-stat-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.8px; }
 
-  /* Countdown badge */
   .countdown-badge { display:inline-flex; align-items:center; gap:5px; padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; }
   .countdown-urgent { background:rgba(248,113,113,.15); color:var(--red); }
   .countdown-warning { background:rgba(251,191,36,.15); color:var(--yellow); }
   .countdown-ok { background:rgba(34,211,165,.15); color:var(--green); }
 
-  /* Edit contest popup */
   .color-picker { display:flex; gap:8px; flex-wrap:wrap; margin-top:8px; }
   .color-swatch { width:28px; height:28px; border-radius:50%; cursor:pointer; border:2px solid transparent; transition:all .15s; }
   .color-swatch:hover, .color-swatch.selected { border-color:#fff; transform:scale(1.15); }
 
-  /* ===== INFINITE SUBTOPIC TREE ===== */
-  .tree-node {
-    position: relative;
-  }
-  .tree-node + .tree-node { margin-top: 4px; }
+  .tree-node { position:relative; }
+  .tree-node + .tree-node { margin-top:4px; }
+  .tree-row { display:flex; align-items:center; gap:6px; padding:7px 10px; border-radius:9px; border:1px solid var(--border); background:var(--surface2); transition:border-color .18s, background .18s; min-height:38px; }
+  .tree-row:hover { border-color:rgba(79,140,255,.4); background:rgba(79,140,255,.04); }
+  .tree-toggle { width:20px; height:20px; display:flex; align-items:center; justify-content:center; cursor:pointer; border-radius:5px; font-size:10px; color:var(--muted); flex-shrink:0; transition:background .15s, transform .2s; user-select:none; }
+  .tree-toggle:hover { background:rgba(79,140,255,.15); color:var(--accent); }
+  .tree-toggle.open { transform:rotate(90deg); color:var(--accent); }
+  .tree-toggle.leaf { cursor:default; opacity:0; pointer-events:none; }
+  .tree-checkbox { width:18px; height:18px; border-radius:5px; border:1.5px solid var(--border); cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; transition:all .15s; }
+  .tree-checkbox:hover { border-color:var(--green); }
+  .tree-checkbox.checked { background:var(--green); border-color:var(--green); color:#0a1a14; }
+  .tree-name { flex:1; font-size:13px; cursor:pointer; line-height:1.3; word-break:break-word; }
+  .tree-name:hover { color:var(--accent); }
+  .tree-depth-indicator { width:3px; border-radius:2px; flex-shrink:0; align-self:stretch; min-height:16px; }
+  .tree-actions { display:flex; align-items:center; gap:3px; flex-shrink:0; opacity:0; transition:opacity .15s; }
+  .tree-row:hover .tree-actions { opacity:1; }
+  .tree-action-btn { width:24px; height:24px; border-radius:6px; border:none; background:transparent; color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:12px; transition:background .15s, color .15s; }
+  .tree-action-btn:hover { background:rgba(79,140,255,.15); color:var(--accent); }
+  .tree-action-btn.danger:hover { background:rgba(248,113,113,.15); color:var(--red); }
+  .tree-children { display:none; margin-top:4px; margin-left:16px; padding-left:12px; border-left:1.5px dashed rgba(79,140,255,.2); }
+  .tree-children.open { display:block; }
+  .tree-add-row { display:flex; align-items:center; gap:8px; margin-top:4px; padding:6px 8px; border-radius:8px; border:1px dashed rgba(79,140,255,.2); background:rgba(79,140,255,.03); transition:border-color .15s; }
+  .tree-add-row:focus-within { border-color:var(--accent); }
+  .tree-add-input { flex:1; background:transparent; border:none; color:var(--text); font-size:12px; padding:0; outline:none; min-width:0; }
+  .tree-add-input::placeholder { color:var(--muted); }
+  .tree-add-btn { padding:3px 10px; border-radius:6px; border:1px solid var(--accent); background:transparent; color:var(--accent); font-size:11px; font-weight:600; cursor:pointer; white-space:nowrap; transition:background .15s; }
+  .tree-add-btn:hover { background:rgba(79,140,255,.15); }
 
-  .tree-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 10px;
-    border-radius: 9px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    transition: border-color .18s, background .18s;
-    min-height: 38px;
-  }
-  .tree-row:hover { border-color: rgba(79,140,255,.4); background: rgba(79,140,255,.04); }
-
-  .tree-toggle {
-    width: 20px; height: 20px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 10px;
-    color: var(--muted);
-    flex-shrink: 0;
-    transition: background .15s, transform .2s;
-    user-select: none;
-  }
-  .tree-toggle:hover { background: rgba(79,140,255,.15); color: var(--accent); }
-  .tree-toggle.open { transform: rotate(90deg); color: var(--accent); }
-  .tree-toggle.leaf { cursor: default; opacity: 0; pointer-events: none; }
-
-  .tree-checkbox {
-    width: 18px; height: 18px;
-    border-radius: 5px;
-    border: 1.5px solid var(--border);
-    cursor: pointer;
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px;
-    transition: all .15s;
-  }
-  .tree-checkbox:hover { border-color: var(--green); }
-  .tree-checkbox.checked { background: var(--green); border-color: var(--green); color: #0a1a14; }
-  .tree-checkbox.exercise { background: var(--accent); border-color: var(--accent); color: #fff; }
-
-  .tree-name {
-    flex: 1;
-    font-size: 13px;
-    cursor: pointer;
-    line-height: 1.3;
-    word-break: break-word;
-  }
-  .tree-name:hover { color: var(--accent); }
-
-  .tree-depth-indicator {
-    width: 3px;
-    border-radius: 2px;
-    flex-shrink: 0;
-    align-self: stretch;
-    min-height: 16px;
-  }
-
-  .tree-actions {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    flex-shrink: 0;
-    opacity: 0;
-    transition: opacity .15s;
-  }
-  .tree-row:hover .tree-actions { opacity: 1; }
-
-  .tree-action-btn {
-    width: 24px; height: 24px;
-    border-radius: 6px;
-    border: none;
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px;
-    transition: background .15s, color .15s;
-  }
-  .tree-action-btn:hover { background: rgba(79,140,255,.15); color: var(--accent); }
-  .tree-action-btn.danger:hover { background: rgba(248,113,113,.15); color: var(--red); }
-
-  .tree-children {
-    display: none;
-    margin-top: 4px;
-    margin-left: 16px;
-    padding-left: 12px;
-    border-left: 1.5px dashed rgba(79,140,255,.2);
-  }
-  .tree-children.open { display: block; }
-
-  .tree-add-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 4px;
-    padding: 6px 8px;
-    border-radius: 8px;
-    border: 1px dashed rgba(79,140,255,.2);
-    background: rgba(79,140,255,.03);
-    transition: border-color .15s;
-  }
-  .tree-add-row:focus-within { border-color: var(--accent); }
-  .tree-add-input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: var(--text);
-    font-size: 12px;
-    padding: 0;
-    outline: none;
-    min-width: 0;
-  }
-  .tree-add-input::placeholder { color: var(--muted); }
-  .tree-add-btn {
-    padding: 3px 10px;
-    border-radius: 6px;
-    border: 1px solid var(--accent);
-    background: transparent;
-    color: var(--accent);
-    font-size: 11px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background .15s;
-  }
-  .tree-add-btn:hover { background: rgba(79,140,255,.15); }
-
-  /* depth colors */
-  .depth-0 { background: var(--accent); }
-  .depth-1 { background: var(--accent2); }
-  .depth-2 { background: var(--green); }
-  .depth-3 { background: var(--yellow); }
-  .depth-4 { background: #f87171; }
-
-  .depth-row-0 { background: var(--surface2); }
-  .depth-row-1 { background: rgba(168,85,247,.05); }
-  .depth-row-2 { background: rgba(34,211,165,.05); }
-  .depth-row-3 { background: rgba(251,191,36,.05); }
-  .depth-row-4 { background: rgba(248,113,113,.05); }
-
+  .depth-0 { background:var(--accent); }
+  .depth-1 { background:var(--accent2); }
+  .depth-2 { background:var(--green); }
+  .depth-3 { background:var(--yellow); }
+  .depth-4 { background:#f87171; }
+  .depth-row-0 { background:var(--surface2); }
+  .depth-row-1 { background:rgba(168,85,247,.05); }
+  .depth-row-2 { background:rgba(34,211,165,.05); }
+  .depth-row-3 { background:rgba(251,191,36,.05); }
+  .depth-row-4 { background:rgba(248,113,113,.05); }
   .tree-badge-exercise { display:inline-flex; align-items:center; padding:1px 6px; border-radius:10px; font-size:10px; font-weight:600; background:rgba(79,140,255,.15); color:var(--accent); margin-left:4px; }
+
+  /* Sync indicator */
+  .sync-indicator { position:fixed; bottom:16px; right:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px 14px; font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; z-index:500; transition:all .3s; }
+  .sync-dot { width:8px; height:8px; border-radius:50%; background:var(--muted); transition:background .3s; }
+  .sync-dot.syncing { background:var(--yellow); animation:pulse .8s infinite; }
+  .sync-dot.synced { background:var(--green); }
+  .sync-dot.error { background:var(--red); }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 </style>
 </head>
 <body>
+
+<!-- SYNC INDICATOR -->
+<div class="sync-indicator" id="sync-indicator">
+  <div class="sync-dot" id="sync-dot"></div>
+  <span id="sync-text">Offline</span>
+</div>
 
 <div class="sidebar">
   <div class="sidebar-logo">
@@ -480,7 +336,6 @@
     <span>Painel Inteligente</span>
   </div>
 
-  <!-- CONTEST SWITCHER -->
   <div class="contest-switcher" id="contest-switcher" onclick="toggleContestDropdown()">
     <div class="contest-switcher-label">Concurso Ativo</div>
     <div class="contest-switcher-name">
@@ -504,7 +359,6 @@
   <div class="nav-item" onclick="showPage('revisoes')"><span class="nav-icon">🔄</span> Revisões</div>
 </div>
 
-<!-- CONTEST DROPDOWN (portaled outside sidebar for z-index) -->
 <div class="contest-dropdown" id="contest-dropdown">
   <div class="contest-dropdown-header">
     <div class="contest-dropdown-title">Alternar Concurso</div>
@@ -746,8 +600,8 @@
     <button class="btn btn-primary" onclick="openNewContestPopup()">+ Novo Concurso</button>
   </div>
   <div id="contests-grid" class="grid3"></div>
-  <div id="contests-empty" style="display:none" class="text-center" style="padding:60px">
-    <div style="font-size:48px;margin-bottom:16px">🏛️</div>
+  <div id="contests-empty" style="display:none" class="text-center">
+    <div style="font-size:48px;margin-bottom:16px;padding-top:40px">🏛️</div>
     <div class="font-bold mb8">Nenhum concurso cadastrado</div>
     <div class="text-muted font-sm mb24">Crie seu primeiro perfil de concurso</div>
     <button class="btn btn-primary" onclick="openNewContestPopup()">+ Criar Concurso</button>
@@ -800,7 +654,6 @@
   </div>
 </div>
 
-<!-- NEW/EDIT CONTEST POPUP -->
 <div class="popup-overlay" id="contest-popup">
   <div class="popup-box" style="max-width:480px;text-align:left">
     <div class="flex between mb20">
@@ -857,87 +710,80 @@
   </div>
 </div>
 
+<!-- ============================================================
+     ÚNICO BLOCO DE SCRIPTS — tudo aqui dentro, na ordem certa
+     ============================================================ -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
 
-const supabaseUrl = "https://ksdvfjthgnzrsytgigjw.supabase.co"
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzZHZmanRoZ256cnN5dGdpZ2p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTg4MTMsImV4cCI6MjA4ODk3NDgxM30.sXPlEdbo_VPv9dKgVavCvGzhtVDQTdC2TzWiESDL0fg"
+// ==================== SUPABASE SYNC ====================
+const SUPA_URL = "https://ksdvfjthgnzrsytgigjw.supabase.co";
+const SUPA_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzZHZmanRoZ256cnN5dGdpZ2p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTg4MTMsImV4cCI6MjA4ODk3NDgxM30.sXPlEdbo_VPv9dKgVavCvGzhtVDQTdC2TzWiESDL0fg";
+const db = supabase.createClient(SUPA_URL, SUPA_KEY);
 
-const db = supabase.createClient(supabaseUrl, supabaseKey)
+function setSyncStatus(status) {
+  const dot = document.getElementById('sync-dot');
+  const txt = document.getElementById('sync-text');
+  if(!dot || !txt) return;
+  dot.className = 'sync-dot ' + status;
+  const labels = { syncing:'Sincronizando...', synced:'Sincronizado ✓', error:'Erro de sync', '':'Offline' };
+  txt.textContent = labels[status] || 'Offline';
+}
 
 async function pushSync() {
+  setSyncStatus('syncing');
   try {
-    const data = {}
+    const data = {};
     for(let i = 0; i < localStorage.length; i++) {
-      const k = localStorage.key(i)
-      data[k] = localStorage.getItem(k)
+      const k = localStorage.key(i);
+      data[k] = localStorage.getItem(k);
     }
     const { error } = await db.from("sync").upsert({
       id: 1,
       data: data,
       updated_at: new Date().toISOString()
-    })
-    if(error) console.warn("Sync push error:", error.message)
-    else console.log("✅ Dados sincronizados!")
+    });
+    if(error) { console.warn("pushSync error:", error.message); setSyncStatus('error'); }
+    else setSyncStatus('synced');
   } catch(e) {
-    console.warn("pushSync falhou:", e)
+    console.warn("pushSync falhou:", e);
+    setSyncStatus('error');
   }
 }
 
 async function pullSync() {
+  setSyncStatus('syncing');
   try {
     const { data, error } = await db
       .from("sync")
       .select("*")
       .eq("id", 1)
-      .single()
+      .single();
 
     if(error && error.code !== 'PGRST116') {
-      console.warn("pullSync error:", error.message)
-      return
+      console.warn("pullSync error:", error.message);
+      setSyncStatus('error');
+      return;
     }
     if(data && data.data) {
-      Object.entries(data.data).forEach(([k, v]) => {
-        localStorage.setItem(k, v)
-      })
-      console.log("✅ Dados carregados da nuvem!")
+      Object.entries(data.data).forEach(([k, v]) => localStorage.setItem(k, v));
+      console.log("✅ Dados carregados da nuvem!");
     }
+    setSyncStatus('synced');
   } catch(e) {
-    console.warn("pullSync falhou:", e)
+    console.warn("pullSync falhou:", e);
+    setSyncStatus('error');
   }
 }
 
-// Ao carregar: puxa dados da nuvem, depois inicializa
-pullSync().then(() => {
-  loadGlobalState()
-  migrateOldData()
-  if(globalState.activeContestId) loadContestState(globalState.activeContestId)
-  else state = getEmptyState()
-  updateSwitcherUI()
-  renderDropdownList()
-  checkForgettingCurve()
-  renderDashboard()
-  updateTimerDisplay()
-  document.getElementById('pomodoroCount').textContent = state.pomodoroCount
-})
-
-// Salva na nuvem a cada 30s e quando fechar a aba
-setInterval(pushSync, 30000)
-window.addEventListener('beforeunload', pushSync)
-</script>
-
-
 // ==================== MULTI-CONTEST STATE ====================
-// Global state: list of contests, each with its own isolated data
 let globalState = {
-  contests: [],      // [{id, name, emoji, color, banca, cargo, examDate, dailyHours, createdAt}]
+  contests: [],
   activeContestId: null,
   globalStreak: 0,
   lastStudyDate: null
 };
 
-// Per-contest state (isolated)
 let state = {
   subjects: [],
   sessions: [],
@@ -959,6 +805,7 @@ function loadGlobalState() {
 
 function saveGlobalState() {
   localStorage.setItem('ep_global', JSON.stringify(globalState));
+  pushSync();
 }
 
 function loadContestState(contestId) {
@@ -977,6 +824,7 @@ function loadContestState(contestId) {
 function saveState() {
   if(!globalState.activeContestId) return;
   localStorage.setItem('ep_contest_' + globalState.activeContestId, JSON.stringify(state));
+  pushSync();
 }
 
 function getEmptyState() {
@@ -1005,7 +853,6 @@ function getCurrentPage() {
   return active ? active.id.replace('page-','') : 'dashboard';
 }
 
-// Migrate old data if exists
 function migrateOldData() {
   const old = localStorage.getItem('estudopro_state');
   if(!old) return;
@@ -1029,7 +876,6 @@ function toggleContestDropdown() {
   const dd = document.getElementById('contest-dropdown');
   const isOpen = dd.classList.contains('open');
   if(isOpen) { closeContestDropdown(); return; }
-  // Position dropdown below switcher
   const rect = sw.getBoundingClientRect();
   dd.style.top = (rect.bottom + 6) + 'px';
   dd.style.left = rect.left + 'px';
@@ -1037,7 +883,6 @@ function toggleContestDropdown() {
   dd.classList.add('open');
   sw.classList.add('open');
   renderDropdownList();
-  // Close on outside click
   setTimeout(() => document.addEventListener('click', outsideDropdownClick, {once:true}), 10);
 }
 
@@ -1067,10 +912,7 @@ function renderDropdownList() {
         <span class="contest-option-emoji">${c.emoji||'🏛️'}</span>
         <div class="contest-option-info">
           <div class="contest-option-name">${c.name}</div>
-          <div class="contest-option-meta">
-            ${cs.subjects} mat. • ${cs.pct}% concluído
-            ${daysLeft !== null ? ` • ${daysLeft}d` : ''}
-          </div>
+          <div class="contest-option-meta">${cs.subjects} mat. • ${cs.pct}% concluído${daysLeft !== null ? ` • ${daysLeft}d` : ''}</div>
         </div>
         ${isActive ? '<span class="contest-option-check">✓</span>' : `<div class="cdot" style="background:${c.color}"></div>`}
       </div>
@@ -1163,7 +1005,6 @@ function saveContest() {
     cargo: document.getElementById('cp-cargo').value.trim(),
     dailyHours: parseInt(document.getElementById('cp-hours').value)||4
   };
-
   if(editId) {
     const c = globalState.contests.find(x=>x.id===editId);
     if(c) Object.assign(c, contestData);
@@ -1171,7 +1012,6 @@ function saveContest() {
   } else {
     const id = 'contest_' + Date.now();
     globalState.contests.push({ id, ...contestData, createdAt: new Date().toISOString() });
-    // Auto-switch to new contest if none active
     if(!globalState.activeContestId) {
       globalState.activeContestId = id;
       loadContestState(id);
@@ -1208,8 +1048,7 @@ function renderContestsPage() {
   const grid = document.getElementById('contests-grid');
   const empty = document.getElementById('contests-empty');
   if(!globalState.contests.length) {
-    grid.style.display='none'; empty.style.display='block';
-    return;
+    grid.style.display='none'; empty.style.display='block'; return;
   }
   grid.style.display='grid'; empty.style.display='none';
   grid.innerHTML = globalState.contests.map(c => {
@@ -1256,74 +1095,31 @@ function renderContestsPage() {
   }).join('');
 }
 
-// INIT: Load global state, migrate old data, load active contest
-loadGlobalState();
-migrateOldData();
-if(globalState.activeContestId) {
-  loadContestState(globalState.activeContestId);
-} else {
-  state = getEmptyState();
-}
-updateSwitcherUI();
-renderDropdownList();
-
 // ==================== TREE UTILS ====================
 function ensureChildren(node) {
   if(!node.children) node.children = [];
   node.children.forEach(c => ensureChildren(c));
   return node;
 }
-
 function makeNode(name) {
-  return { id: 'n_' + Date.now() + '_' + Math.random().toString(36).slice(2), name, children: [], watched: false, exerciseDone: false, exerciseDate: null, reviews: [] };
+  return { id:'n_'+Date.now()+'_'+Math.random().toString(36).slice(2), name, children:[], watched:false, exerciseDone:false, exerciseDate:null, reviews:[] };
 }
-
-function countAllNodes(nodes) {
-  let c = 0;
-  nodes.forEach(n => { c++; c += countAllNodes(n.children || []); });
-  return c;
-}
-
-function countWatchedNodes(nodes) {
-  let c = 0;
-  nodes.forEach(n => { if(n.watched) c++; c += countWatchedNodes(n.children || []); });
-  return c;
-}
-
-function collectAllNodes(nodes, arr=[]) {
-  nodes.forEach(n => { arr.push(n); collectAllNodes(n.children||[], arr); });
-  return arr;
-}
-
-function findNodeById(nodes, id) {
-  for(const n of nodes) {
-    if(n.id === id) return n;
-    const found = findNodeById(n.children||[], id);
-    if(found) return found;
-  }
-  return null;
-}
-
-function findParentArray(nodes, id) {
-  for(let i=0; i<nodes.length; i++) {
-    if(nodes[i].id === id) return nodes;
-    const found = findParentArray(nodes[i].children||[], id);
-    if(found) return found;
-  }
-  return null;
-}
+function countAllNodes(nodes) { let c=0; nodes.forEach(n=>{c++;c+=countAllNodes(n.children||[]);}); return c; }
+function countWatchedNodes(nodes) { let c=0; nodes.forEach(n=>{if(n.watched)c++;c+=countWatchedNodes(n.children||[]);}); return c; }
+function collectAllNodes(nodes, arr=[]) { nodes.forEach(n=>{arr.push(n);collectAllNodes(n.children||[],arr);}); return arr; }
+function findNodeById(nodes, id) { for(const n of nodes){if(n.id===id)return n;const f=findNodeById(n.children||[],id);if(f)return f;} return null; }
+function findParentArray(nodes, id) { for(let i=0;i<nodes.length;i++){if(nodes[i].id===id)return nodes;const f=findParentArray(nodes[i].children||[],id);if(f)return f;} return null; }
 
 // ==================== NAVIGATION ====================
 function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   document.getElementById('page-'+id).classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(n => {
-    if(n.getAttribute('onclick') && n.getAttribute('onclick').includes(id)) n.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n=>{
+    if(n.getAttribute('onclick')&&n.getAttribute('onclick').includes(id)) n.classList.add('active');
   });
   renderPage(id);
 }
-
 function renderPage(id) {
   if(id==='dashboard') renderDashboard();
   if(id==='materias') renderSubjects();
@@ -1334,7 +1130,6 @@ function renderPage(id) {
   if(id==='planner') renderPlanner();
   if(id==='concursos') renderContestsPage();
 }
-
 function renderPlanner() {
   if(state.aiTips) document.getElementById('ai-study-tips').innerHTML = state.aiTips;
   const c = getActiveContest();
@@ -1369,44 +1164,25 @@ function saveNotes(){const topId=document.getElementById('timerTopic').value;if(
 
 // ==================== AI CONTENT ====================
 async function processContentWithAI() {
-  if(!globalState.activeContestId) {
-    showNotif('⚠️ Selecione ou crie um concurso primeiro!','yellow');
-    setTimeout(()=>showPage('concursos'),1000);
-    return;
-  }
+  if(!globalState.activeContestId){showNotif('⚠️ Selecione ou crie um concurso primeiro!','yellow');setTimeout(()=>showPage('concursos'),1000);return;}
   const name=document.getElementById('contestName').value.trim();
   const content=document.getElementById('contestContent').value.trim();
   if(!name||!content){showNotif('⚠️ Preencha nome e conteúdo!','yellow');return;}
   const resultEl=document.getElementById('ai-result');
   resultEl.innerHTML=`<div class="loading" style="justify-content:center;padding:40px"><div class="spinner"></div>Processando com IA...</div>`;
   try {
-    const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:2000,messages:[{role:"user",content:`Analise este conteúdo programático e organize em matérias e tópicos.
-Concurso: ${name}
-Conteúdo: ${content}
-Retorne APENAS JSON (sem markdown):
-{"subjects":[{"name":"Matéria","emoji":"📖","estimatedHours":20,"priority":"alta","topics":[{"name":"Tópico","subtopics":["sub1","sub2"]}]}]}`}]})});
+    const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:2000,messages:[{role:"user",content:`Analise este conteúdo programático e organize em matérias e tópicos.\nConcurso: ${name}\nConteúdo: ${content}\nRetorne APENAS JSON (sem markdown):\n{"subjects":[{"name":"Matéria","emoji":"📖","estimatedHours":20,"priority":"alta","topics":[{"name":"Tópico","subtopics":["sub1","sub2"]}]}]}`}]})});
     const data=await response.json();
     let text=data.content.map(b=>b.text||'').join('').replace(/```json|```/g,'').trim();
     const parsed=JSON.parse(text);
     const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];
     parsed.subjects.forEach((s,i)=>{
       if(!state.subjects.find(x=>x.name===s.name)){
-        state.subjects.push({
-          id:'sub_'+Date.now()+'_'+i,name:s.name,emoji:s.emoji||'📚',estimatedHours:s.estimatedHours||10,
-          priority:s.priority||'media',color:colors[i%colors.length],
-          topics:(s.topics||[]).map((t,j)=>{
-            const node=makeNode(t.name);
-            // Convert flat subtopics to children
-            if(t.subtopics&&t.subtopics.length){node.children=t.subtopics.map(st=>makeNode(typeof st==='string'?st:st.name));}
-            return node;
-          }),
-          difficulty:'medium'
-        });
+        state.subjects.push({id:'sub_'+Date.now()+'_'+i,name:s.name,emoji:s.emoji||'📚',estimatedHours:s.estimatedHours||10,priority:s.priority||'media',color:colors[i%colors.length],topics:(s.topics||[]).map(t=>{const node=makeNode(t.name);if(t.subtopics&&t.subtopics.length){node.children=t.subtopics.map(st=>makeNode(typeof st==='string'?st:st.name));}return node;}),difficulty:'medium'});
       }
     });
     saveState();renderAIResult(parsed.subjects);showNotif('✅ Conteúdo organizado!','green');updateDashStats();
   } catch(e) {
-    // Fallback
     const lines=document.getElementById('contestContent').value.split('\n').filter(l=>l.trim());
     const subjects=[];let current=null;
     const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171'];
@@ -1418,9 +1194,7 @@ Retorne APENAS JSON (sem markdown):
 function renderAIResult(subjects){
   const el=document.getElementById('ai-result');
   if(!subjects||!subjects.length){el.innerHTML='<div class="text-muted text-center">Nenhuma matéria encontrada.</div>';return;}
-  el.innerHTML=`<div class="flex between mb16"><div class="text-muted font-sm">${subjects.length} matérias</div><span class="badge badge-green">✅ Importado</span></div>
-  ${subjects.map(s=>`<div class="topic-item" onclick="this.querySelector('.subtopic-list').classList.toggle('open');this.classList.toggle('expanded')"><div class="flex between"><div class="flex gap8"><span>${s.emoji||'📚'}</span><span class="font-bold font-sm">${s.name}</span></div><div class="flex gap8"><span class="badge ${s.priority==='alta'?'badge-red':'badge-yellow'}">${s.priority||'média'}</span><span class="text-muted font-sm">${s.topics?.length||0} tópicos ▾</span></div></div><div class="subtopic-list">${(s.topics||[]).map(t=>`<div class="subtopic-item">• ${t.name}${t.children&&t.children.length?' ('+t.children.length+' subtópicos)':''}</div>`).join('')}</div></div>`).join('')}
-  <div class="mt12 flex gap8"><button class="btn btn-primary w100" onclick="showPage('materias')">📚 Editar Matérias</button><button class="btn btn-outline w100" onclick="showPage('quiz-dificuldade')">🎯 Fazer Quiz</button></div>`;
+  el.innerHTML=`<div class="flex between mb16"><div class="text-muted font-sm">${subjects.length} matérias</div><span class="badge badge-green">✅ Importado</span></div>${subjects.map(s=>`<div class="topic-item" onclick="this.querySelector('.subtopic-list').classList.toggle('open');this.classList.toggle('expanded')"><div class="flex between"><div class="flex gap8"><span>${s.emoji||'📚'}</span><span class="font-bold font-sm">${s.name}</span></div><div class="flex gap8"><span class="badge ${s.priority==='alta'?'badge-red':'badge-yellow'}">${s.priority||'média'}</span><span class="text-muted font-sm">${s.topics?.length||0} tópicos ▾</span></div></div><div class="subtopic-list">${(s.topics||[]).map(t=>`<div class="subtopic-item">• ${t.name}${t.children&&t.children.length?' ('+t.children.length+' subtópicos)':''}</div>`).join('')}</div></div>`).join('')}<div class="mt12 flex gap8"><button class="btn btn-primary w100" onclick="showPage('materias')">📚 Editar Matérias</button><button class="btn btn-outline w100" onclick="showPage('quiz-dificuldade')">🎯 Fazer Quiz</button></div>`;
 }
 
 // ==================== QUIZ ====================
@@ -1430,36 +1204,42 @@ function startDifficultyQuiz(){quizIndex=0;quizAnswers={};renderQuizQuestion();}
 function renderQuizQuestion(){const subjects=state.subjects;if(quizIndex>=subjects.length){finishQuiz();return;}const sub=subjects[quizIndex];const pct=Math.round((quizIndex/subjects.length)*100);document.getElementById('quiz-container').innerHTML=`<div class="quiz-progress-bar mb24"><div class="quiz-progress-fill" style="width:${pct}%"></div></div><div class="text-muted font-sm mb8">Matéria ${quizIndex+1} de ${subjects.length}</div><div class="font-bold mb16" style="font-size:18px">${sub.emoji} ${sub.name}</div><div class="text-muted font-sm mb24">Como você se sente?</div><div onclick="selectDiff(this,'easy')" class="quiz-option">😊 <b>Fácil</b></div><div onclick="selectDiff(this,'medium')" class="quiz-option">😐 <b>Médio</b></div><div onclick="selectDiff(this,'hard')" class="quiz-option">😰 <b>Difícil</b></div><div class="flex gap8 mt24">${quizIndex>0?'<button class="btn btn-outline" onclick="quizIndex--;renderQuizQuestion()">← Anterior</button>':''}<button class="btn btn-primary" style="margin-left:auto" id="quiz-next-btn" disabled onclick="nextQuizQuestion()">Próximo →</button></div>`;}
 function selectDiff(el,diff){document.querySelectorAll('.quiz-option').forEach(o=>{o.classList.remove('selected-easy','selected-hard');});el.classList.add(diff==='easy'?'selected-easy':'selected-hard');quizAnswers[state.subjects[quizIndex].id]=diff;document.getElementById('quiz-next-btn').disabled=false;}
 function nextQuizQuestion(){if(!quizAnswers[state.subjects[quizIndex].id]){showNotif('⚠️ Selecione!','yellow');return;}quizIndex++;renderQuizQuestion();}
-async function finishQuiz(){Object.keys(quizAnswers).forEach(id=>{const sub=state.subjects.find(s=>s.id===id);if(sub)sub.difficulty=quizAnswers[id];state.difficultyMap[id]=quizAnswers[id];});saveState();document.getElementById('quiz-container').innerHTML=`<div class="loading" style="justify-content:center;padding:40px"><div class="spinner"></div>Gerando dicas...</div>`;try{const hard=state.subjects.filter(s=>s.difficulty==='hard').map(s=>s.name);const easy=state.subjects.filter(s=>s.difficulty==='easy').map(s=>s.name);const medium=state.subjects.filter(s=>s.difficulty==='medium').map(s=>s.name);const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:800,messages:[{role:"user",content:`Estudante para concurso. Dê 4-5 dicas práticas em português:\nDifíceis: ${hard.join(', ')||'nenhuma'}\nMédias: ${medium.join(', ')||'nenhuma'}\nFáceis: ${easy.join(', ')||'nenhuma'}`}]})});const data=await response.json();state.aiTips=data.content.map(b=>b.text||'').join('');saveState();}catch(e){state.aiTips=`Foque nas matérias difíceis primeiro. Revise as fáceis nos dias de menor energia.`;}
-document.getElementById('quiz-container').innerHTML=`<div class="text-center" style="padding:20px"><div style="font-size:48px;margin-bottom:12px">🎉</div><div class="font-bold mb8" style="font-size:20px">Concluído!</div></div>`;
-document.getElementById('quiz-results').style.display='block';
-const hard=state.subjects.filter(s=>s.difficulty==='hard');const medium2=state.subjects.filter(s=>s.difficulty==='medium');const easy=state.subjects.filter(s=>s.difficulty==='easy');
-document.getElementById('quiz-result-content').innerHTML=`<div class="mb16">${hard.length?`<div class="mb8"><span class="badge badge-red mb8">😰 Difícil</span><br>${hard.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''} ${medium2.length?`<div class="mb8"><span class="badge badge-yellow mb8">😐 Médio</span><br>${medium2.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''} ${easy.length?`<div class="mb8"><span class="badge badge-green mb8">😊 Fácil</span><br>${easy.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''}</div><div class="ai-bubble"><div class="font-bold mb8">🤖 Dicas</div><div class="font-sm" style="line-height:1.7;white-space:pre-line">${state.aiTips}</div></div><div class="mt16 flex gap8"><button class="btn btn-primary w100" onclick="generateSchedule();showPage('planner')">📅 Gerar Plano</button></div>`;
-showNotif('✅ Quiz concluído!','green');}
+async function finishQuiz(){
+  Object.keys(quizAnswers).forEach(id=>{const sub=state.subjects.find(s=>s.id===id);if(sub)sub.difficulty=quizAnswers[id];state.difficultyMap[id]=quizAnswers[id];});
+  saveState();
+  document.getElementById('quiz-container').innerHTML=`<div class="loading" style="justify-content:center;padding:40px"><div class="spinner"></div>Gerando dicas...</div>`;
+  try{
+    const hard=state.subjects.filter(s=>s.difficulty==='hard').map(s=>s.name);
+    const easy=state.subjects.filter(s=>s.difficulty==='easy').map(s=>s.name);
+    const medium=state.subjects.filter(s=>s.difficulty==='medium').map(s=>s.name);
+    const response=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:800,messages:[{role:"user",content:`Estudante para concurso. Dê 4-5 dicas práticas em português:\nDifíceis: ${hard.join(', ')||'nenhuma'}\nMédias: ${medium.join(', ')||'nenhuma'}\nFáceis: ${easy.join(', ')||'nenhuma'}`}]})});
+    const data=await response.json();
+    state.aiTips=data.content.map(b=>b.text||'').join('');
+    saveState();
+  }catch(e){state.aiTips=`Foque nas matérias difíceis primeiro. Revise as fáceis nos dias de menor energia.`;}
+  document.getElementById('quiz-container').innerHTML=`<div class="text-center" style="padding:20px"><div style="font-size:48px;margin-bottom:12px">🎉</div><div class="font-bold mb8" style="font-size:20px">Concluído!</div></div>`;
+  document.getElementById('quiz-results').style.display='block';
+  const hard=state.subjects.filter(s=>s.difficulty==='hard');
+  const medium2=state.subjects.filter(s=>s.difficulty==='medium');
+  const easy=state.subjects.filter(s=>s.difficulty==='easy');
+  document.getElementById('quiz-result-content').innerHTML=`<div class="mb16">${hard.length?`<div class="mb8"><span class="badge badge-red mb8">😰 Difícil</span><br>${hard.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''} ${medium2.length?`<div class="mb8"><span class="badge badge-yellow mb8">😐 Médio</span><br>${medium2.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''} ${easy.length?`<div class="mb8"><span class="badge badge-green mb8">😊 Fácil</span><br>${easy.map(s=>`<span class="tag">${s.emoji} ${s.name}</span>`).join('')}</div>`:''}</div><div class="ai-bubble"><div class="font-bold mb8">🤖 Dicas</div><div class="font-sm" style="line-height:1.7;white-space:pre-line">${state.aiTips}</div></div><div class="mt16 flex gap8"><button class="btn btn-primary w100" onclick="generateSchedule();showPage('planner')">📅 Gerar Plano</button></div>`;
+  showNotif('✅ Quiz concluído!','green');
+}
 
-// ==================== SUBJECTS PAGE — INFINITE TREE ====================
+// ==================== SUBJECTS PAGE ====================
 function renderSubjects() {
   const el = document.getElementById('subjects-container');
   if(!state.subjects.length) {
-    el.innerHTML = `<div class="text-center" style="padding:60px"><div style="font-size:48px;margin-bottom:16px">📚</div><div class="font-bold mb8">Nenhuma matéria adicionada</div><div class="text-muted font-sm mb24">Use a IA para processar</div><div class="flex gap8" style="justify-content:center"><button class="btn btn-primary" onclick="showPage('ia-conteudo')">🤖 Adicionar com IA</button><button class="btn btn-outline" onclick="addSubjectManual()">✏️ Manual</button></div></div>`;
+    el.innerHTML=`<div class="text-center" style="padding:60px"><div style="font-size:48px;margin-bottom:16px">📚</div><div class="font-bold mb8">Nenhuma matéria adicionada</div><div class="text-muted font-sm mb24">Use a IA para processar</div><div class="flex gap8" style="justify-content:center"><button class="btn btn-primary" onclick="showPage('ia-conteudo')">🤖 Adicionar com IA</button><button class="btn btn-outline" onclick="addSubjectManual()">✏️ Manual</button></div></div>`;
     return;
   }
-  el.innerHTML = `
-    <div class="flex between mb16">
-      <div class="text-muted font-sm">${state.subjects.length} matéria(s)</div>
-      <div class="flex gap8">
-        <button class="btn btn-sm btn-outline" onclick="addSubjectManual()">+ Nova Matéria</button>
-        <button class="btn btn-sm btn-outline" onclick="showPage('ia-conteudo')">🤖 Importar com IA</button>
-      </div>
-    </div>
-    ${state.subjects.map(sub => renderSubjectCard(sub)).join('')}
-  `;
+  el.innerHTML=`<div class="flex between mb16"><div class="text-muted font-sm">${state.subjects.length} matéria(s)</div><div class="flex gap8"><button class="btn btn-sm btn-outline" onclick="addSubjectManual()">+ Nova Matéria</button><button class="btn btn-sm btn-outline" onclick="showPage('ia-conteudo')">🤖 Importar com IA</button></div></div>${state.subjects.map(sub=>renderSubjectCard(sub)).join('')}`;
 }
 
 function renderSubjectCard(sub) {
-  const totalNodes = countAllNodes(sub.topics);
-  const doneNodes = countWatchedNodes(sub.topics);
-  const pct = totalNodes ? Math.round(doneNodes/totalNodes*100) : 0;
+  const totalNodes=countAllNodes(sub.topics);
+  const doneNodes=countWatchedNodes(sub.topics);
+  const pct=totalNodes?Math.round(doneNodes/totalNodes*100):0;
   return `
     <div class="card mb16" id="subcard-${sub.id}">
       <div class="flex between mb12">
@@ -1487,23 +1267,14 @@ function renderSubjectCard(sub) {
           <div class="text-muted font-sm">${doneNodes}/${totalNodes} vistos</div>
         </div>
       </div>
-
       <div class="progress-bar mb16"><div class="progress-fill" style="width:${pct}%;background:${sub.color}"></div></div>
-
-      <!-- TREE -->
-      <div id="tree-${sub.id}">
-        ${renderTreeLevel(sub.id, sub.topics, 0)}
-      </div>
-
-      <!-- Add root topic -->
+      <div id="tree-${sub.id}">${renderTreeLevel(sub.id,sub.topics,0)}</div>
       <div class="tree-add-row mt16">
         <span style="color:var(--accent);font-size:14px;flex-shrink:0">+</span>
         <input type="text" class="tree-add-input" id="newtopic-${sub.id}" placeholder="Novo tópico raiz...">
         <button class="tree-add-btn" onclick="addRootTopic('${sub.id}')">Adicionar</button>
       </div>
       <div style="font-size:11px;color:var(--muted);margin-top:6px;padding-left:4px">💡 Clique em <b>+</b> em qualquer nó para adicionar subtópico dentro dele</div>
-
-      <!-- Subject footer -->
       <div class="flex gap8 mt12" style="border-top:1px solid var(--border);padding-top:12px">
         <button class="btn btn-sm btn-outline" onclick="openYouTube('${sub.name}','')">▶ Vídeos</button>
         <button class="btn btn-sm btn-outline" onclick="editSubjectHours('${sub.id}')">⏱ Horas</button>
@@ -1516,34 +1287,24 @@ function renderSubjectCard(sub) {
 }
 
 function renderTreeLevel(subId, nodes, depth) {
-  if(!nodes || !nodes.length) return '';
-  const depthColors = ['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171'];
-  const color = depthColors[Math.min(depth, depthColors.length-1)];
-  const depthRowClass = `depth-row-${Math.min(depth, 4)}`;
-  return nodes.map(node => {
-    const hasChildren = node.children && node.children.length > 0;
-    const childHtml = hasChildren ? renderTreeLevel(subId, node.children, depth+1) : '';
-    const nodeId = `tn-${node.id}`;
-    const childrenId = `tc-${node.id}`;
-    const addRowId = `ta-${node.id}`;
-    const indentPx = depth * 0; // Indent handled by border-left
-    const sizeAdjust = Math.max(12, 14 - depth * 0.5);
+  if(!nodes||!nodes.length) return '';
+  const depthColors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171'];
+  const color=depthColors[Math.min(depth,depthColors.length-1)];
+  const depthRowClass=`depth-row-${Math.min(depth,4)}`;
+  return nodes.map(node=>{
+    const hasChildren=node.children&&node.children.length>0;
+    const childHtml=hasChildren?renderTreeLevel(subId,node.children,depth+1):'';
+    const childrenId=`tc-${node.id}`;
+    const addRowId=`ta-${node.id}`;
+    const sizeAdjust=Math.max(12,14-depth*0.5);
     return `
-      <div class="tree-node" id="${nodeId}">
-        <div class="tree-row ${depthRowClass}" style="padding-left:${8 + depth*2}px">
-          <!-- Depth bar -->
-          <div class="tree-depth-indicator depth-${Math.min(depth,4)}" style="background:${color};opacity:${0.5 + depth*0.1};width:3px"></div>
-          <!-- Expand toggle -->
-          <div class="tree-toggle ${hasChildren?'':'leaf'} ${hasChildren?'':'leaf'}" id="tg-${node.id}" onclick="toggleTreeNode('${node.id}','${childrenId}')" style="flex-shrink:0">▶</div>
-          <!-- Watch checkbox -->
-          <div class="tree-checkbox ${node.watched?'checked':''}" onclick="toggleNodeWatched('${subId}','${node.id}')" title="Marcar aula assistida">
-            ${node.watched?'✓':''}
-          </div>
-          <!-- Name -->
+      <div class="tree-node" id="tn-${node.id}">
+        <div class="tree-row ${depthRowClass}" style="padding-left:${8+depth*2}px">
+          <div class="tree-depth-indicator" style="background:${color};opacity:${0.5+depth*0.1};width:3px;border-radius:2px;align-self:stretch;min-height:16px;flex-shrink:0"></div>
+          <div class="tree-toggle ${hasChildren?'':'leaf'}" id="tg-${node.id}" onclick="toggleTreeNode('${node.id}','${childrenId}')" style="flex-shrink:0">▶</div>
+          <div class="tree-checkbox ${node.watched?'checked':''}" onclick="toggleNodeWatched('${subId}','${node.id}')" title="Marcar aula assistida">${node.watched?'✓':''}</div>
           <span class="tree-name" style="font-size:${sizeAdjust}px" ondblclick="startEditNodeName('${subId}','${node.id}')">${node.name}</span>
-          <!-- Exercise badge -->
-          ${node.exerciseDone ? `<span class="tree-badge-exercise">✏️</span>` : ''}
-          <!-- Actions (visible on hover) -->
+          ${node.exerciseDone?`<span class="tree-badge-exercise">✏️</span>`:''}
           <div class="tree-actions">
             <button class="tree-action-btn" onclick="startEditNodeName('${subId}','${node.id}')" title="Renomear">✏️</button>
             <button class="tree-action-btn" onclick="toggleNodeExercise('${subId}','${node.id}')" title="${node.exerciseDone?'Desmarcar exercício':'Marcar exercício'}">📝</button>
@@ -1552,7 +1313,6 @@ function renderTreeLevel(subId, nodes, depth) {
             <button class="tree-action-btn danger" onclick="removeNode('${subId}','${node.id}')" title="Remover">✕</button>
           </div>
         </div>
-        <!-- Add child row (hidden by default) -->
         <div class="tree-children" id="${addRowId}-wrap" style="margin-left:${16+depth*4}px;display:none;margin-top:4px">
           <div class="tree-add-row">
             <span style="color:${color};font-size:14px;flex-shrink:0">↳</span>
@@ -1561,136 +1321,25 @@ function renderTreeLevel(subId, nodes, depth) {
             <button class="tree-action-btn" onclick="document.getElementById('${addRowId}-wrap').style.display='none'" style="opacity:.5">✕</button>
           </div>
         </div>
-        <!-- Children -->
-        ${hasChildren ? `<div class="tree-children" id="${childrenId}" style="margin-left:${16+depth*4}px">${childHtml}</div>` : `<div class="tree-children" id="${childrenId}" style="margin-left:${16+depth*4}px"></div>`}
+        <div class="tree-children" id="${childrenId}" style="margin-left:${16+depth*4}px">${childHtml}</div>
       </div>
     `;
   }).join('');
 }
 
-function toggleTreeNode(nodeId, childrenId) {
-  const tg = document.getElementById('tg-'+nodeId);
-  const ch = document.getElementById(childrenId);
-  if(!tg || !ch) return;
-  const isOpen = ch.classList.contains('open');
-  if(isOpen) { ch.classList.remove('open'); tg.classList.remove('open'); }
-  else { ch.classList.add('open'); tg.classList.add('open'); }
-}
-
-function showAddChild(nodeId, addRowId) {
-  const wrap = document.getElementById(addRowId+'-wrap');
-  if(!wrap) return;
-  const isVisible = wrap.style.display !== 'none';
-  wrap.style.display = isVisible ? 'none' : 'block';
-  if(!isVisible) {
-    const inp = document.getElementById(addRowId);
-    if(inp) { inp.focus(); inp.addEventListener('keydown', e => { if(e.key==='Enter') e.target.closest('.tree-children').querySelector('.tree-add-btn').click(); }); }
-  }
-}
-
-function addChildNode(subId, parentId, addRowId) {
-  const inp = document.getElementById(addRowId);
-  if(!inp) return;
-  const name = inp.value.trim();
-  if(!name) { showNotif('⚠️ Digite o nome!','yellow'); return; }
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(!sub) return;
-  const parent = findNodeById(sub.topics, parentId);
-  if(!parent) return;
-  if(!parent.children) parent.children = [];
-  parent.children.push(makeNode(name));
-  saveState();
-  renderSubjects();
-  showNotif('✅ Subtópico adicionado!','green');
-  // Re-open the parent's children
-  setTimeout(() => {
-    const childrenId = 'tc-'+parentId;
-    const tg = document.getElementById('tg-'+parentId);
-    const ch = document.getElementById(childrenId);
-    if(ch && !ch.classList.contains('open')) { ch.classList.add('open'); if(tg) tg.classList.add('open'); }
-  }, 50);
-}
-
-function addRootTopic(subId) {
-  const inp = document.getElementById('newtopic-'+subId);
-  if(!inp) return;
-  const name = inp.value.trim();
-  if(!name) { showNotif('⚠️ Digite o nome!','yellow'); return; }
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(sub) { sub.topics.push(makeNode(name)); saveState(); renderSubjects(); showNotif('✅ Tópico adicionado!','green'); updateDashStats(); }
-}
-
-function startEditNodeName(subId, nodeId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  const node = findNodeById(sub?.topics||[], nodeId);
-  if(!node) return;
-  const name = node.name;
-  const newName = prompt('Renomear:', name);
-  if(newName && newName.trim()) { node.name = newName.trim(); saveState(); renderSubjects(); showNotif('✅ Renomeado!','green'); }
-}
-
-function startEditSubjectName(subId) {
-  const span = document.getElementById('subname-'+subId);
-  const current = span.textContent;
-  span.innerHTML = `<input type="text" value="${current}" style="width:220px;font-size:16px;font-weight:700;padding:2px 8px;height:30px" onblur="finishEditSubjectName('${subId}',this.value)" onkeydown="if(event.key==='Enter')this.blur();if(event.key==='Escape'){this.value='${current}';this.blur()}" onclick="event.stopPropagation()">`;
-  span.querySelector('input').focus(); span.querySelector('input').select();
-}
-
-function finishEditSubjectName(subId, newName) {
-  newName = newName.trim();
-  if(!newName) { renderSubjects(); return; }
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(sub) { sub.name = newName; saveState(); renderSubjects(); showNotif('✅ Nome atualizado!','green'); }
-}
-
-function toggleNodeWatched(subId, nodeId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  const node = findNodeById(sub?.topics||[], nodeId);
-  if(node) { node.watched = !node.watched; saveState(); renderSubjects(); updateDashStats(); }
-}
-
-function toggleNodeExercise(subId, nodeId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  const node = findNodeById(sub?.topics||[], nodeId);
-  if(!node) return;
-  node.exerciseDone = !node.exerciseDone;
-  if(node.exerciseDone) {
-    node.exerciseDate = new Date().toISOString();
-    node.reviews = [3,5,7,10,15].map(d=>({days:d,dueDate:new Date(Date.now()+d*86400000).toISOString(),done:false,triggered:false}));
-    showNotif('✏️ Exercício marcado! Revisões programadas.','blue');
-  } else { node.reviews = []; }
-  saveState(); renderSubjects(); updateDashStats(); renderReviews();
-}
-
-function removeNode(subId, nodeId) {
-  const sub = state.subjects.find(s=>s.id===subId);
-  if(!sub) return;
-  const parentArr = findParentArray(sub.topics, nodeId);
-  if(parentArr) {
-    const idx = parentArr.findIndex(n=>n.id===nodeId);
-    if(idx !== -1) parentArr.splice(idx, 1);
-    saveState(); renderSubjects(); updateDashStats();
-  }
-}
-
-function expandAll(subId) {
-  document.querySelectorAll(`#subcard-${subId} .tree-children`).forEach(c => c.classList.add('open'));
-  document.querySelectorAll(`#subcard-${subId} .tree-toggle`).forEach(t => { if(!t.classList.contains('leaf')) t.classList.add('open'); });
-}
-
-function collapseAll(subId) {
-  document.querySelectorAll(`#subcard-${subId} .tree-children`).forEach(c => c.classList.remove('open'));
-  document.querySelectorAll(`#subcard-${subId} .tree-toggle`).forEach(t => t.classList.remove('open'));
-}
-
-function addSubjectManual() {
-  const name = prompt('Nome da nova matéria:');
-  if(!name||!name.trim()) return;
-  const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];
-  state.subjects.push({id:'sub_'+Date.now(),name:name.trim(),emoji:'📚',estimatedHours:10,priority:'media',color:colors[state.subjects.length%colors.length],topics:[],difficulty:'medium'});
-  saveState(); renderSubjects(); showNotif('✅ Matéria adicionada!','green'); updateDashStats();
-}
-
+function toggleTreeNode(nodeId,childrenId){const tg=document.getElementById('tg-'+nodeId);const ch=document.getElementById(childrenId);if(!tg||!ch)return;const isOpen=ch.classList.contains('open');if(isOpen){ch.classList.remove('open');tg.classList.remove('open');}else{ch.classList.add('open');tg.classList.add('open');}}
+function showAddChild(nodeId,addRowId){const wrap=document.getElementById(addRowId+'-wrap');if(!wrap)return;const isVisible=wrap.style.display!=='none';wrap.style.display=isVisible?'none':'block';if(!isVisible){const inp=document.getElementById(addRowId);if(inp){inp.focus();inp.addEventListener('keydown',e=>{if(e.key==='Enter')e.target.closest('.tree-children').querySelector('.tree-add-btn').click();});}}}
+function addChildNode(subId,parentId,addRowId){const inp=document.getElementById(addRowId);if(!inp)return;const name=inp.value.trim();if(!name){showNotif('⚠️ Digite o nome!','yellow');return;}const sub=state.subjects.find(s=>s.id===subId);if(!sub)return;const parent=findNodeById(sub.topics,parentId);if(!parent)return;if(!parent.children)parent.children=[];parent.children.push(makeNode(name));saveState();renderSubjects();showNotif('✅ Subtópico adicionado!','green');setTimeout(()=>{const childrenId='tc-'+parentId;const tg=document.getElementById('tg-'+parentId);const ch=document.getElementById(childrenId);if(ch&&!ch.classList.contains('open')){ch.classList.add('open');if(tg)tg.classList.add('open');}},50);}
+function addRootTopic(subId){const inp=document.getElementById('newtopic-'+subId);if(!inp)return;const name=inp.value.trim();if(!name){showNotif('⚠️ Digite o nome!','yellow');return;}const sub=state.subjects.find(s=>s.id===subId);if(sub){sub.topics.push(makeNode(name));saveState();renderSubjects();showNotif('✅ Tópico adicionado!','green');updateDashStats();}}
+function startEditNodeName(subId,nodeId){const sub=state.subjects.find(s=>s.id===subId);const node=findNodeById(sub?.topics||[],nodeId);if(!node)return;const newName=prompt('Renomear:',node.name);if(newName&&newName.trim()){node.name=newName.trim();saveState();renderSubjects();showNotif('✅ Renomeado!','green');}}
+function startEditSubjectName(subId){const span=document.getElementById('subname-'+subId);const current=span.textContent;span.innerHTML=`<input type="text" value="${current}" style="width:220px;font-size:16px;font-weight:700;padding:2px 8px;height:30px" onblur="finishEditSubjectName('${subId}',this.value)" onkeydown="if(event.key==='Enter')this.blur();if(event.key==='Escape'){this.value='${current}';this.blur()}" onclick="event.stopPropagation()">`;span.querySelector('input').focus();span.querySelector('input').select();}
+function finishEditSubjectName(subId,newName){newName=newName.trim();if(!newName){renderSubjects();return;}const sub=state.subjects.find(s=>s.id===subId);if(sub){sub.name=newName;saveState();renderSubjects();showNotif('✅ Nome atualizado!','green');}}
+function toggleNodeWatched(subId,nodeId){const sub=state.subjects.find(s=>s.id===subId);const node=findNodeById(sub?.topics||[],nodeId);if(node){node.watched=!node.watched;saveState();renderSubjects();updateDashStats();}}
+function toggleNodeExercise(subId,nodeId){const sub=state.subjects.find(s=>s.id===subId);const node=findNodeById(sub?.topics||[],nodeId);if(!node)return;node.exerciseDone=!node.exerciseDone;if(node.exerciseDone){node.exerciseDate=new Date().toISOString();node.reviews=[3,5,7,10,15].map(d=>({days:d,dueDate:new Date(Date.now()+d*86400000).toISOString(),done:false,triggered:false}));showNotif('✏️ Exercício marcado! Revisões programadas.','blue');}else{node.reviews=[];}saveState();renderSubjects();updateDashStats();renderReviews();}
+function removeNode(subId,nodeId){const sub=state.subjects.find(s=>s.id===subId);if(!sub)return;const parentArr=findParentArray(sub.topics,nodeId);if(parentArr){const idx=parentArr.findIndex(n=>n.id===nodeId);if(idx!==-1)parentArr.splice(idx,1);saveState();renderSubjects();updateDashStats();}}
+function expandAll(subId){document.querySelectorAll(`#subcard-${subId} .tree-children`).forEach(c=>c.classList.add('open'));document.querySelectorAll(`#subcard-${subId} .tree-toggle`).forEach(t=>{if(!t.classList.contains('leaf'))t.classList.add('open');});}
+function collapseAll(subId){document.querySelectorAll(`#subcard-${subId} .tree-children`).forEach(c=>c.classList.remove('open'));document.querySelectorAll(`#subcard-${subId} .tree-toggle`).forEach(t=>t.classList.remove('open'));}
+function addSubjectManual(){const name=prompt('Nome da nova matéria:');if(!name||!name.trim())return;const colors=['#4f8cff','#a855f7','#22d3a5','#fbbf24','#f87171','#06b6d4','#84cc16'];state.subjects.push({id:'sub_'+Date.now(),name:name.trim(),emoji:'📚',estimatedHours:10,priority:'media',color:colors[state.subjects.length%colors.length],topics:[],difficulty:'medium'});saveState();renderSubjects();showNotif('✅ Matéria adicionada!','green');updateDashStats();}
 function editEmoji(subId){const e=prompt('Emoji:');if(!e)return;const sub=state.subjects.find(s=>s.id===subId);if(sub){sub.emoji=e.trim().substring(0,2);saveState();renderSubjects();}}
 function changeSubjectPriority(subId,val){const sub=state.subjects.find(s=>s.id===subId);if(sub){sub.priority=val;saveState();}}
 function editSubjectHours(subId){const sub=state.subjects.find(s=>s.id===subId);if(!sub)return;const h=prompt('Horas estimadas:',sub.estimatedHours||10);if(h&&!isNaN(h)){sub.estimatedHours=parseInt(h);saveState();renderSubjects();}}
@@ -1707,34 +1356,28 @@ async function generateSchedule(){const el=document.getElementById('weekly-sched
 
 // ==================== DASHBOARD ====================
 function renderDashboard(){
-  // Update greeting with contest name
-  const c = getActiveContest();
-  const titleEl = document.querySelector('#page-dashboard .page-title');
-  const subEl = document.querySelector('#page-dashboard .page-sub');
-  if(titleEl) titleEl.textContent = 'Bom dia! 👋';
-  if(subEl && c) {
-    const total = state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);
-    const daysLeft = c.examDate ? getDaysLeft(c.examDate) : null;
-    subEl.innerHTML = `<span style="color:${c.color};font-weight:600">${c.emoji} ${c.name}</span> — ${total} tópicos${daysLeft!==null?` • <span style="color:var(--yellow)">⏰ ${daysLeft} dias para prova</span>`:''}`;
-  } else if(subEl) {
-    subEl.innerHTML = `Sem concurso ativo. <span style="color:var(--accent);cursor:pointer" onclick="showPage('concursos')">Selecione um →</span>`;
-  }
+  const c=getActiveContest();
+  const titleEl=document.querySelector('#page-dashboard .page-title');
+  const subEl=document.querySelector('#page-dashboard .page-sub');
+  if(titleEl)titleEl.textContent='Bom dia! 👋';
+  if(subEl&&c){const total=state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);const daysLeft=c.examDate?getDaysLeft(c.examDate):null;subEl.innerHTML=`<span style="color:${c.color};font-weight:600">${c.emoji} ${c.name}</span> — ${total} tópicos${daysLeft!==null?` • <span style="color:var(--yellow)">⏰ ${daysLeft} dias para prova</span>`:''}`;
+  }else if(subEl){subEl.innerHTML=`Sem concurso ativo. <span style="color:var(--accent);cursor:pointer" onclick="showPage('concursos')">Selecione um →</span>`;}
   updateDashStats();renderTodaySchedule();renderReviewNow();renderDashSubjects();renderWeekChart();
 }
 function updateDashStats(){const hours=Math.round(state.totalMinutes/60*10)/10;document.getElementById('dash-total-hours').textContent=hours+'h';const done=state.subjects.reduce((a,s)=>a+countWatchedNodes(s.topics),0);document.getElementById('dash-done-topics').textContent=done;document.getElementById('dash-streak').textContent=state.streak||0;document.getElementById('dash-pending-reviews').textContent=countPendingReviews();const total=state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);document.getElementById('today-topics').textContent=total+' tópicos';}
 function countPendingReviews(){let count=0;const now=new Date();state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews)n.reviews.forEach(r=>{if(!r.done&&new Date(r.dueDate)<=now)count++;});});});return count;}
-function renderTodaySchedule(){const el=document.getElementById('today-schedule-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px 0">Sem matérias.</div>';return;}el.innerHTML=state.subjects.slice(0,4).map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);return`<div class="schedule-item mb8" style="border-left-color:${s.color}"><div class="schedule-item-title">${s.emoji} ${s.name}</div><div class="schedule-item-time">${done}/${total} nós</div></div>`}).join('');}
+function renderTodaySchedule(){const el=document.getElementById('today-schedule-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px 0">Sem matérias.</div>';return;}el.innerHTML=state.subjects.slice(0,4).map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);return`<div class="schedule-item mb8" style="border-left-color:${s.color}"><div class="schedule-item-title">${s.emoji} ${s.name}</div><div class="schedule-item-time">${done}/${total} nós</div></div>`;}).join('');}
 function renderReviewNow(){const el=document.getElementById('review-now-list');const now=new Date();const due=[];state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews)n.reviews.forEach(r=>{if(!r.done&&new Date(r.dueDate)<=now)due.push({sub,n,r});});});});if(!due.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px 0">Nenhuma revisão. ✅</div>';return;}el.innerHTML=due.slice(0,4).map(d=>`<div class="schedule-item mb8" style="border-left-color:var(--yellow)"><div class="schedule-item-title">🔄 ${d.n.name}</div><div class="schedule-item-time">${d.sub.name} • ${d.r.days} dias</div></div>`).join('');}
-function renderDashSubjects(){const el=document.getElementById('dash-subjects-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:16px">Adicione um concurso.</div>';return;}el.innerHTML=state.subjects.map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);const pct=total?Math.round(done/total*100):0;return`<div class="flex between mb16" style="align-items:center"><div style="flex:1"><div class="flex between mb8"><span class="font-sm">${s.emoji} ${s.name}</span><span class="font-sm" style="color:${s.color}">${pct}%</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div></div></div>`}).join('');}
+function renderDashSubjects(){const el=document.getElementById('dash-subjects-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:16px">Adicione um concurso.</div>';return;}el.innerHTML=state.subjects.map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);const pct=total?Math.round(done/total*100):0;return`<div class="flex between mb16" style="align-items:center"><div style="flex:1"><div class="flex between mb8"><span class="font-sm">${s.emoji} ${s.name}</span><span class="font-sm" style="color:${s.color}">${pct}%</span></div><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div></div></div>`;}).join('');}
 function renderWeekChart(){const canvas=document.getElementById('weekChart');if(!canvas)return;const ctx=canvas.getContext('2d');const w=canvas.offsetWidth||600;canvas.width=w;canvas.height=80;const days=['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];const data=days.map(()=>Math.floor(Math.random()*120));const max=Math.max(...data,1);const barW=(w-40)/7-8;ctx.clearRect(0,0,w,80);days.forEach((d,i)=>{const h=(data[i]/max)*60;const x=20+i*(barW+8);const y=70-h;ctx.fillStyle='rgba(79,140,255,0.3)';ctx.beginPath();ctx.roundRect(x,y,barW,h,4);ctx.fill();ctx.fillStyle='#6b7a99';ctx.font='11px DM Sans';ctx.textAlign='center';ctx.fillText(d,x+barW/2,78);});}
 
 // ==================== PROGRESS ====================
 function renderProgress(){document.getElementById('prog-total-time').textContent=Math.round(state.totalMinutes/60*10)/10+'h';const done=state.subjects.reduce((a,s)=>a+countWatchedNodes(s.topics),0);document.getElementById('prog-done').textContent=done;const exercises=state.subjects.reduce((a,s)=>a+collectAllNodes(s.topics).filter(n=>n.exerciseDone).length,0);document.getElementById('prog-exercises').textContent=exercises;document.getElementById('prog-streak').textContent=state.streak||0;renderHeatmap();renderSubjectProgress();}
 function renderHeatmap(){const el=document.getElementById('activity-heatmap');const cells=[];for(let i=0;i<91;i++){const r=Math.random();const cls=r>.8?'heat-4':r>.6?'heat-3':r>.4?'heat-2':r>.2?'heat-1':'';cells.push(`<div class="heat-cell ${cls}"></div>`);}el.innerHTML=cells.join('');}
-function renderSubjectProgress(){const el=document.getElementById('subject-progress-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px">Nenhuma matéria.</div>';return;}el.innerHTML=state.subjects.map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);const exercises=collectAllNodes(s.topics).filter(n=>n.exerciseDone).length;const pct=total?Math.round(done/total*100):0;return`<div class="flex between mb16" style="align-items:center;gap:16px"><div style="min-width:180px"><span class="font-sm font-bold">${s.emoji} ${s.name}</span></div><div style="flex:1"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div></div><div style="min-width:60px;text-align:right;font-weight:700;color:${s.color}">${pct}%</div><div style="min-width:100px"><span class="badge badge-blue">✏️ ${exercises}</span> <span class="badge badge-green">✅ ${done}</span></div></div>`}).join('');}
+function renderSubjectProgress(){const el=document.getElementById('subject-progress-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px">Nenhuma matéria.</div>';return;}el.innerHTML=state.subjects.map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);const exercises=collectAllNodes(s.topics).filter(n=>n.exerciseDone).length;const pct=total?Math.round(done/total*100):0;return`<div class="flex between mb16" style="align-items:center;gap:16px"><div style="min-width:180px"><span class="font-sm font-bold">${s.emoji} ${s.name}</span></div><div style="flex:1"><div class="progress-bar"><div class="progress-fill" style="width:${pct}%;background:${s.color}"></div></div></div><div style="min-width:60px;text-align:right;font-weight:700;color:${s.color}">${pct}%</div><div style="min-width:100px"><span class="badge badge-blue">✏️ ${exercises}</span> <span class="badge badge-green">✅ ${done}</span></div></div>`;}).join('');}
 
 // ==================== REVIEWS ====================
-function renderReviews(){const el=document.getElementById('all-reviews-list');const now=new Date();const allReviews=[];state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews&&n.reviews.length){n.reviews.forEach(r=>{allReviews.push({sub,n,r,due:new Date(r.dueDate)});});}});});if(!allReviews.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:32px">Nenhuma revisão.</div>';return;}allReviews.sort((a,b)=>a.due-b.due);el.innerHTML=allReviews.map(({sub,n,r,due})=>{const overdue=due<now&&!r.done;const daysLeft=Math.ceil((due-now)/86400000);return`<div class="flex between mb8" style="padding:12px 16px;background:${overdue?'rgba(248,113,113,.05)':'rgba(251,191,36,.05)'};border:1px solid ${overdue?'rgba(248,113,113,.2)':'rgba(251,191,36,.2)'};border-radius:10px"><div><div class="font-sm font-bold">${n.name}</div><div style="font-size:11px;color:var(--muted)">${sub.name} • ${r.days} dias</div></div><div style="text-align:right">${r.done?'<span class="badge badge-green">✅</span>':overdue?`<span class="badge badge-red">🔴 ${Math.abs(daysLeft)}d atraso</span>`:`<span class="badge badge-yellow">⏳ ${daysLeft}d</span>`}${!r.done?`<div class="mt8"><button class="btn btn-sm btn-green" onclick="markReviewDone('${sub.id}','${n.id}','${r.days}')">Feita</button></div>`:''}</div></div>`}).join('');}
+function renderReviews(){const el=document.getElementById('all-reviews-list');const now=new Date();const allReviews=[];state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews&&n.reviews.length){n.reviews.forEach(r=>{allReviews.push({sub,n,r,due:new Date(r.dueDate)});});}});});if(!allReviews.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:32px">Nenhuma revisão.</div>';return;}allReviews.sort((a,b)=>a.due-b.due);el.innerHTML=allReviews.map(({sub,n,r,due})=>{const overdue=due<now&&!r.done;const daysLeft=Math.ceil((due-now)/86400000);return`<div class="flex between mb8" style="padding:12px 16px;background:${overdue?'rgba(248,113,113,.05)':'rgba(251,191,36,.05)'};border:1px solid ${overdue?'rgba(248,113,113,.2)':'rgba(251,191,36,.2)'};border-radius:10px"><div><div class="font-sm font-bold">${n.name}</div><div style="font-size:11px;color:var(--muted)">${sub.name} • ${r.days} dias</div></div><div style="text-align:right">${r.done?'<span class="badge badge-green">✅</span>':overdue?`<span class="badge badge-red">🔴 ${Math.abs(daysLeft)}d atraso</span>`:`<span class="badge badge-yellow">⏳ ${daysLeft}d</span>`}${!r.done?`<div class="mt8"><button class="btn btn-sm btn-green" onclick="markReviewDone('${sub.id}','${n.id}','${r.days}')">Feita</button></div>`:''}</div></div>`;}).join('');}
 function markReviewDone(subId,nodeId,days){const sub=state.subjects.find(s=>s.id===subId);const n=findNodeById(sub?.topics||[],nodeId);const r=n?.reviews?.find(r=>r.days==days);if(r){r.done=true;saveState();renderReviews();showNotif('✅ Revisão feita!','green');}}
 
 // ==================== FORGETTING CURVE ====================
@@ -1747,12 +1390,25 @@ function openPopup(id){document.getElementById(id).classList.add('open');}
 function closePopup(id){document.getElementById(id).classList.remove('open');}
 function showNotif(msg,type='blue'){const colors={blue:'var(--accent)',green:'var(--green)',yellow:'var(--yellow)',red:'var(--red)'};const n=document.createElement('div');n.className='notif';n.style.borderLeft=`3px solid ${colors[type]||colors.blue}`;n.innerHTML=msg;document.body.appendChild(n);setTimeout(()=>{n.style.opacity='0';n.style.transition='opacity .4s';setTimeout(()=>n.remove(),400);},3500);}
 
-// ==================== INIT ====================
-checkForgettingCurve();
-setInterval(checkForgettingCurve, 60000);
-renderDashboard();
-updateTimerDisplay();
-document.getElementById('pomodoroCount').textContent = state.pomodoroCount;
+// ==================== INIT ÚNICO ====================
+// Puxa dados da nuvem primeiro, depois inicializa tudo
+pullSync().then(() => {
+  loadGlobalState();
+  migrateOldData();
+  if(globalState.activeContestId) loadContestState(globalState.activeContestId);
+  else state = getEmptyState();
+  updateSwitcherUI();
+  renderDropdownList();
+  checkForgettingCurve();
+  setInterval(checkForgettingCurve, 60000);
+  renderDashboard();
+  updateTimerDisplay();
+  document.getElementById('pomodoroCount').textContent = state.pomodoroCount;
+  // Salva a cada 30s e ao fechar aba
+  setInterval(pushSync, 30000);
+  window.addEventListener('beforeunload', pushSync);
+});
+
 </script>
 </body>
 </html>
