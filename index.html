@@ -862,47 +862,70 @@
 <script>
 
 const supabaseUrl = "https://ksdvfjthgnzrsytgigjw.supabase.co"
-const supabaseKey = "SUA_ANON_KEY"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtzZHZmanRoZ256cnN5dGdpZ2p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzOTg4MTMsImV4cCI6MjA4ODk3NDgxM30.sXPlEdbo_VPv9dKgVavCvGzhtVDQTdC2TzWiESDL0fg"
 
-// cria cliente
 const db = supabase.createClient(supabaseUrl, supabaseKey)
 
-async function pushSync(){
-
-  const data = JSON.parse(JSON.stringify(localStorage))
-
-  await db
-    .from("sync")
-    .upsert({
-      id:1,
-      data:data,
-      updated_at:new Date()
+async function pushSync() {
+  try {
+    const data = {}
+    for(let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i)
+      data[k] = localStorage.getItem(k)
+    }
+    const { error } = await db.from("sync").upsert({
+      id: 1,
+      data: data,
+      updated_at: new Date().toISOString()
     })
-
-}
-
-async function pullSync(){
-
-  const { data } = await db
-    .from("sync")
-    .select("*")
-    .eq("id",1)
-    .single()
-
-  if(data){
-    Object.entries(data.data).forEach(([k,v])=>{
-      localStorage.setItem(k,v)
-    })
+    if(error) console.warn("Sync push error:", error.message)
+    else console.log("✅ Dados sincronizados!")
+  } catch(e) {
+    console.warn("pushSync falhou:", e)
   }
-
 }
 
-pullSync()
-setInterval(pushSync,30000)
+async function pullSync() {
+  try {
+    const { data, error } = await db
+      .from("sync")
+      .select("*")
+      .eq("id", 1)
+      .single()
 
+    if(error && error.code !== 'PGRST116') {
+      console.warn("pullSync error:", error.message)
+      return
+    }
+    if(data && data.data) {
+      Object.entries(data.data).forEach(([k, v]) => {
+        localStorage.setItem(k, v)
+      })
+      console.log("✅ Dados carregados da nuvem!")
+    }
+  } catch(e) {
+    console.warn("pullSync falhou:", e)
+  }
+}
+
+// Ao carregar: puxa dados da nuvem, depois inicializa
+pullSync().then(() => {
+  loadGlobalState()
+  migrateOldData()
+  if(globalState.activeContestId) loadContestState(globalState.activeContestId)
+  else state = getEmptyState()
+  updateSwitcherUI()
+  renderDropdownList()
+  checkForgettingCurve()
+  renderDashboard()
+  updateTimerDisplay()
+  document.getElementById('pomodoroCount').textContent = state.pomodoroCount
+})
+
+// Salva na nuvem a cada 30s e quando fechar a aba
+setInterval(pushSync, 30000)
+window.addEventListener('beforeunload', pushSync)
 </script>
-
-<script>
 
 
 // ==================== MULTI-CONTEST STATE ====================
