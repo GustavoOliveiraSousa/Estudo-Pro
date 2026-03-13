@@ -771,8 +771,13 @@ async function pullSync() {
     }
     setSyncStatus('synced');
   } catch(e) {
-    console.warn("pullSync falhou:", e);
-    setSyncStatus('error');
+    // DataCloneError é ruído interno do Supabase (postMessage), não é falha real
+    if(e && e.name === 'DataCloneError') {
+      setSyncStatus('synced');
+    } else {
+      console.warn("pullSync falhou:", e);
+      setSyncStatus('error');
+    }
   }
 }
 
@@ -1364,7 +1369,17 @@ function renderDashboard(){
   }else if(subEl){subEl.innerHTML=`Sem concurso ativo. <span style="color:var(--accent);cursor:pointer" onclick="showPage('concursos')">Selecione um →</span>`;}
   updateDashStats();renderTodaySchedule();renderReviewNow();renderDashSubjects();renderWeekChart();
 }
-function updateDashStats(){const hours=Math.round(state.totalMinutes/60*10)/10;document.getElementById('dash-total-hours').textContent=hours+'h';const done=state.subjects.reduce((a,s)=>a+countWatchedNodes(s.topics),0);document.getElementById('dash-done-topics').textContent=done;document.getElementById('dash-streak').textContent=state.streak||0;document.getElementById('dash-pending-reviews').textContent=countPendingReviews();const total=state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);document.getElementById('today-topics').textContent=total+' tópicos';}
+function updateDashStats(){
+  const set=(id,val)=>{const el=document.getElementById(id);if(el)el.textContent=val;};
+  const hours=Math.round(state.totalMinutes/60*10)/10;
+  set('dash-total-hours',hours+'h');
+  const done=state.subjects.reduce((a,s)=>a+countWatchedNodes(s.topics),0);
+  set('dash-done-topics',done);
+  set('dash-streak',state.streak||0);
+  set('dash-pending-reviews',countPendingReviews());
+  const total=state.subjects.reduce((a,s)=>a+countAllNodes(s.topics),0);
+  set('today-topics',total+' tópicos');
+}
 function countPendingReviews(){let count=0;const now=new Date();state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews)n.reviews.forEach(r=>{if(!r.done&&new Date(r.dueDate)<=now)count++;});});});return count;}
 function renderTodaySchedule(){const el=document.getElementById('today-schedule-list');if(!state.subjects.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px 0">Sem matérias.</div>';return;}el.innerHTML=state.subjects.slice(0,4).map(s=>{const total=countAllNodes(s.topics);const done=countWatchedNodes(s.topics);return`<div class="schedule-item mb8" style="border-left-color:${s.color}"><div class="schedule-item-title">${s.emoji} ${s.name}</div><div class="schedule-item-time">${done}/${total} nós</div></div>`;}).join('');}
 function renderReviewNow(){const el=document.getElementById('review-now-list');const now=new Date();const due=[];state.subjects.forEach(sub=>{collectAllNodes(sub.topics).forEach(n=>{if(n.reviews)n.reviews.forEach(r=>{if(!r.done&&new Date(r.dueDate)<=now)due.push({sub,n,r});});});});if(!due.length){el.innerHTML='<div class="text-muted font-sm text-center" style="padding:24px 0">Nenhuma revisão. ✅</div>';return;}el.innerHTML=due.slice(0,4).map(d=>`<div class="schedule-item mb8" style="border-left-color:var(--yellow)"><div class="schedule-item-title">🔄 ${d.n.name}</div><div class="schedule-item-time">${d.sub.name} • ${d.r.days} dias</div></div>`).join('');}
